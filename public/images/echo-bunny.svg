@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="660" viewBox="0 0 600 660" role="img" aria-labelledby="title desc">
+<title id="title">ECHO ethereal bunny concept</title>
+<desc id="desc">Pearlescent celestial rabbit made from translucent white glass and a soft blue-violet glow. Temporary illustration for a future 3D rendering.</desc>
+<defs>
+ <radialGradient id="body" cx=".38" cy=".21" r=".9"><stop stop-color="#fff"/><stop offset=".45" stop-color="#FDFEFF"/><stop offset=".75" stop-color="#DCE8FC"/><stop offset="1" stop-color="#B5B8E8"/></radialGradient>
+ <linearGradient id="ear" x1=".15" y1="0" x2=".92" y2="1"><stop stop-color="#fff"/><stop offset=".44" stop-color="#EEF5FF"/><stop offset="1" stop-color="#C7C1EA"/></linearGradient>
+ <linearGradient id="innerEar" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#E7D5EF" stop-opacity=".52"/><stop offset="1" stop-color="#B6CBED" stop-opacity=".34"/></linearGradient>
+ <radialGradient id="shine"><stop stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="25"/></filter>
+ <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="13" flood-color="#8A83CC" flood-opacity=".20"/></filter>
+</defs>
+<ellipse cx="305" cy="339" rx="183" ry="255" fill="#C7C9FF" opacity=".47" filter="url(#blur)"/>
+<g filter="url(#shadow)">
+ <ellipse cx="222" cy="169" rx="54" ry="166" transform="rotate(-12 222 169)" fill="url(#ear)" stroke="#fff" stroke-opacity=".85" stroke-width="4"/>
+ <ellipse cx="383" cy="167" rx="54" ry="166" transform="rotate(12 383 167)" fill="url(#ear)" stroke="#fff" stroke-opacity=".85" stroke-width="4"/>
+ <ellipse cx="222" cy="171" rx="28" ry="130" transform="rotate(-12 222 171)" fill="url(#innerEar)"/>
+ <ellipse cx="383" cy="169" rx="28" ry="130" transform="rotate(12 383 169)" fill="url(#innerEar)"/>
+ <ellipse cx="306" cy="478" rx="157" ry="154" fill="url(#body)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+ <ellipse cx="207" cy="562" rx="77" ry="39" transform="rotate(-9 207 562)" fill="url(#ear)"/>
+ <ellipse cx="407" cy="562" rx="77" ry="39" transform="rotate(9 407 562)" fill="url(#ear)"/>
+ <ellipse cx="305" cy="354" rx="157" ry="151" fill="url(#body)" stroke="#fff" stroke-opacity=".84" stroke-width="5"/>
+ <ellipse cx="248" cy="358" rx="13" ry="19" fill="#4F527A" opacity=".92"/>
+ <ellipse cx="364" cy="358" rx="13" ry="19" fill="#4F527A" opacity=".92"/>
+ <ellipse cx="244" cy="352" rx="4" ry="6" fill="#fff"/>
+ <ellipse cx="360" cy="352" rx="4" ry="6" fill="#fff"/>
+ <ellipse cx="303" cy="399" rx="12" ry="8" fill="#D6A7C9" opacity=".83"/>
+ <path d="M303 405c-5 10-12 12-20 7m20-7c5 10 12 12 20 7" fill="none" stroke="#9994B1" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+ <ellipse cx="195" cy="402" rx="39" ry="23" fill="#F1BCD5" opacity=".15"/>
+ <ellipse cx="408" cy="402" rx="39" ry="23" fill="#F1BCD5" opacity=".15"/>
+ <path d="M207 271c11-26 43-38 63-41" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="8" stroke-linecap="round"/>
+</g>
+<circle cx="238" cy="286" r="80" fill="url(#shine)" opacity=".85"/>
+<g fill="none" stroke="#fff" stroke-opacity=".76"><path d="M102 214v24m-12-12h24" stroke-width="2"/><path d="M484 333v16m-8-8h16" stroke-width="2"/><path d="M119 484v10m-5-5h10" stroke-width="1.6"/></g>
+</svg>
