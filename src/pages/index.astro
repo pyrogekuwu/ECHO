@@ -4,7 +4,7 @@ const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "ECHO",
-  description: "Experimental audio brand — headphones, earbuds, speakers and everyday audio accessories.",
+  description: "A concept audio brand exploring headphones, earbuds, speakers and accessories.",
 };
 ---
 
@@ -13,21 +13,19 @@ const organization = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="discover ECHO - expressive audio devices, considered design and a new perspective on everyday listening." />
-    <meta name="theme-color" content="#080A29" />
+    <meta name="description" content="ECHO is a concept audio brand focused on headphones, earbuds, speakers and everyday accessories." />
+    <meta name="theme-color" content="#0d0e13" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ECHO" />
-    <meta property="og:description" content="Headphones, earbuds and speakers with a different point of view." />
-    <!-- Dla publikacji zastąp względny adres absolutnym URL własnej domeny. -->
+    <meta property="og:title" content="ECHO — Audio objects" />
+    <meta property="og:description" content="Meet the ECHO collection: headphones, earbuds, speakers and accessories." />
+    <!-- Replace with an absolute image URL when ECHO has a published domain. -->
     <meta property="og:image" content="/images/echo-header-light.png" />
-    <title>ECHO</title>
+    <title>ECHO — Audio objects</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Bootstrap 5: arkusz frameworka najpierw, własne style po nim. -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/style.css" />
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
   </head>
@@ -37,168 +35,180 @@ const organization = {
     <header class="echo-site-header">
       <nav class="navbar navbar-expand-lg echo-navbar" aria-label="Main navigation">
         <div class="container echo-container">
-          <a class="navbar-brand echo-wordmark" href="#top" aria-label="ECHO homepage">echo<span aria-hidden="true">.</span></a>
-          <button class="navbar-toggler echo-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#echo-navigation" aria-controls="echo-navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <a class="navbar-brand echo-wordmark" href="#top" aria-label="ECHO home">echo<span aria-hidden="true">.</span></a>
+          <button
+            class="navbar-toggler echo-navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#echo-navigation"
+            aria-controls="echo-navigation" aria-expanded="false" aria-label="Toggle navigation"
+          ><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="echo-navigation">
             <ul class="navbar-nav ms-auto align-items-lg-center echo-nav-list">
-              <li class="nav-item"><a class="nav-link echo-nav-link" href="#o-nas">our world</a></li>
-              <li class="nav-item"><a class="nav-link echo-nav-link" href="#oferta">collection</a></li>
-              <li class="nav-item"><a class="nav-link echo-nav-link" href="#kontakt">contact</a></li>
+              <li class="nav-item"><a class="nav-link echo-nav-link" href="#shop">Shop</a></li>
+              <li class="nav-item"><a class="nav-link echo-nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link echo-nav-link" href="#contact">Contact</a></li>
             </ul>
-            <a class="echo-nav-cta" href="#kontakt">Get in touch <span aria-hidden="true">↗</span></a>
+            <a class="echo-nav-cta" href="#shop">Explore collection <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="main">
-      <!-- Hero: full-width artwork by the ECHO designer, kept unchanged. -->
+      <!-- HERO: original user-supplied artwork, untouched. -->
       <section class="echo-hero" aria-labelledby="hero-title">
         <div class="echo-hero-artwork">
-          <img
-            src="/images/echo-header-light.png"
-            alt="Sculptural pearl-white futuristic over-ear headphones surrounded by flowing pastel-pink light trails"
-            width="2048"
-            height="857"
-            fetchpriority="high"
-          />
+          <img src="/images/echo-header-light.png"
+               alt="Pearlescent over-ear headphones with pink light trails on a pale blue background"
+               width="2048" height="857" fetchpriority="high" />
         </div>
-        <div class="container echo-container echo-hero-container">
-          <div class="row align-items-center echo-hero-grid">
-            <div class="col-12 col-lg-6 col-xl-5 echo-hero-copy">
-              <p class="echo-kicker"><span class="echo-kicker-dot" aria-hidden="true"></span> A NEW FREQUENCY OF DESIGN</p>
-              <h1 id="hero-title">Sound, <em>reimagined.</em></h1>
-              <p class="echo-hero-lead">Unexpected forms. Immersive sound. Meet audio made to feel as distinctive as your world.</p>
-              <div class="d-flex flex-wrap gap-3 align-items-center echo-hero-actions">
-                <a class="btn echo-btn echo-btn-primary" href="#o-nas">Discover ECHO <span aria-hidden="true">↗</span></a>
-                <a class="echo-text-link" href="#oferta">Explore the collection <span aria-hidden="true">→</span></a>
-              </div>
-              <div class="echo-hero-caption"><span class="echo-mini-line" aria-hidden="true"></span> DESIGN-LED AUDIO / EST. 2026</div>
+        <div class="container echo-container echo-hero-inner">
+          <div class="echo-hero-copy">
+            <p class="echo-eyebrow">ECHO / CONCEPT AUDIO BRAND</p>
+            <h1 id="hero-title">Meet ECHO.</h1>
+            <p class="echo-hero-description">Headphones, earbuds and speakers. Everyday audio with a little more character.</p>
+            <div class="echo-hero-actions">
+              <a class="echo-button echo-button-dark" href="#shop">Explore the collection <span aria-hidden="true">↗</span></a>
             </div>
           </div>
+          <span class="echo-hero-index" aria-hidden="true">01 / 04 &nbsp;—&nbsp; ECHO AUDIO</span>
         </div>
       </section>
 
-      <div class="echo-signal-bar" aria-label="ECHO design principles">
-      </div>
-
-      <section id="o-nas" class="echo-section echo-about" aria-labelledby="about-title">
+      <!-- SHOP / CATEGORY: first content section, before About. -->
+      <section id="shop" class="echo-section echo-shop" aria-labelledby="shop-title">
         <div class="container echo-container">
-          <div class="row align-items-center gy-5 gx-lg-5">
-            <div class="col-12 col-lg-6">
-              <div class="echo-about-art">
-                
-                <span class="echo-art-note">FORM / FREQUENCY / FEELING</span>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <p class="echo-section-label">01 / ABOUT ECHO</p>
-              <h2 id="about-title" class="echo-section-heading">Made for the way <em>you listen.</em></h2>
-              <p class="echo-paragraph">ECHO explores the space between sound, technology and self-expression. We create audio essentials with considered details and a distinct visual language.</p>
-              <p class="echo-paragraph">Our world is playful and a little unreal — but our approach to everyday audio is simple: feel immersed, stay curious, and make listening your own.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="oferta" class="echo-section echo-collection" aria-labelledby="collection-title">
-        <div class="container echo-container">
-          <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 echo-section-intro">
+          <div class="echo-section-head">
             <div>
-              <p class="echo-section-label">02 / THE COLLECTION</p>
-              <h2 id="collection-title" class="echo-section-heading">Find your <em>frequency.</em></h2>
+              <p class="echo-eyebrow">01 / COLLECTION</p>
+              <h2 id="shop-title" class="echo-section-title">Shop by category</h2>
             </div>
-            <p class="echo-intro-note">Three ways to make sound your own. More to come.</p>
+            <p class="echo-section-note">Explore the collection. Individual product pages are coming later.</p>
           </div>
-          <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-              <article class="card echo-category-card h-100">
-                <div class="echo-category-visual echo-category-headphones">
-                  <span class="echo-category-index">01 / LISTEN</span>
-                  <svg viewBox="0 0 320 250" class="echo-product-sketch" role="img" aria-label="Stylized illustration of over-ear headphones" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="hShell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#A3B7F0"/></linearGradient></defs>
-                    <path d="M82 160v-42a78 78 0 0 1 156 0v42" fill="none" stroke="#22274F" stroke-width="23" stroke-linecap="round"/>
-                    <path d="M82 147v-30a78 78 0 0 1 156 0v30" fill="none" stroke="#EDF1FF" stroke-width="11" stroke-linecap="round"/>
-                    <rect x="61" y="139" width="47" height="75" rx="22" fill="url(#hShell)" stroke="#A8ADCB" stroke-width="2" transform="rotate(7 84 176)"/>
-                    <rect x="212" y="139" width="47" height="75" rx="22" fill="url(#hShell)" stroke="#A8ADCB" stroke-width="2" transform="rotate(-7 236 176)"/>
-                    <rect x="78" y="158" width="11" height="33" rx="6" fill="#6F6A95" opacity=".4"/>
-                    <rect x="231" y="158" width="11" height="33" rx="6" fill="#6F6A95" opacity=".4"/>
-                  </svg>
-                </div>
-                <div class="card-body echo-category-body">
-                  <div><h3>Headphones</h3><p>Comfort, character and sound that stays with you.</p></div>
-                  <a class="echo-card-footnote" href="#kontakt" aria-label="Ask about ECHO headphones">ASK ABOUT HEADPHONES <span aria-hidden="true">↗</span></a>
-                </div>
+
+          <div class="row g-3 echo-product-grid">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card echo-product-card h-100">
+                <a class="echo-card-link" href="#contact" data-category="products" aria-label="Ask about headphones">
+                  <div class="echo-product-image echo-image-headphones">
+                    <img src="/images/echo-header-light.png" alt="Pearl-white over-ear headphones with pink light trails" width="2048" height="857" loading="lazy" />
+                    <span class="echo-product-number">01</span>
+                  </div>
+                  <div class="card-body echo-product-info">
+                    <h3>Headphones</h3><span class="echo-product-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </a>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <article class="card echo-category-card h-100">
-                <div class="echo-category-visual echo-category-earbuds">
-                  <span class="echo-category-index">02 / MOVE</span>
-                  <svg viewBox="0 0 320 250" class="echo-product-sketch" role="img" aria-label="Stylized illustration of wireless earbuds" xmlns="http://www.w3.org/2000/svg">
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card echo-product-card h-100">
+                <a class="echo-card-link" href="#contact" data-category="products" aria-label="Ask about earbuds">
+                  <div class="echo-product-image echo-image-earbuds">
+                    <span class="echo-product-number">02</span>
+                    <!-- Temporary product sketch inherited from the original ECHO site. -->
+                    <svg viewBox="0 0 320 250" class="echo-product-sketch" role="img" aria-label="Stylized illustration of wireless earbuds" xmlns="http://www.w3.org/2000/svg">
                     <defs><linearGradient id="eShell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#B8A9F1"/></linearGradient></defs>
                     <g transform="rotate(-16 114 130)"><rect x="96" y="70" width="49" height="71" rx="25" fill="url(#eShell)" stroke="#A8A2CA" stroke-width="2"/><rect x="114" y="128" width="18" height="77" rx="9" fill="url(#eShell)" stroke="#A8A2CA" stroke-width="1.5"/><circle cx="120" cy="95" r="6" fill="#6863A1" opacity=".8"/></g>
                     <g transform="rotate(16 207 125)"><rect x="177" y="67" width="49" height="71" rx="25" fill="url(#eShell)" stroke="#A8A2CA" stroke-width="2"/><rect x="189" y="124" width="18" height="77" rx="9" fill="url(#eShell)" stroke="#A8A2CA" stroke-width="1.5"/><circle cx="201" cy="92" r="6" fill="#6863A1" opacity=".8"/></g>
                   </svg>
-                </div>
-                <div class="card-body echo-category-body">
-                  <div><h3>Earbuds</h3><p>Compact essentials for every soundtrack and every day.</p></div>
-                  <a class="echo-card-footnote" href="#kontakt" aria-label="Ask about ECHO earbuds">ASK ABOUT EARBUDS <span aria-hidden="true">↗</span></a>
-                </div>
+                  </div>
+                  <div class="card-body echo-product-info">
+                    <h3>Earbuds</h3><span class="echo-product-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </a>
               </article>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <article class="card echo-category-card h-100">
-                <div class="echo-category-visual echo-category-speakers">
-                  <span class="echo-category-index">03 / SHARE</span>
-                  <svg viewBox="0 0 320 250" class="echo-product-sketch" role="img" aria-label="Stylized illustration of a portable mini speaker" xmlns="http://www.w3.org/2000/svg">
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card echo-product-card h-100">
+                <a class="echo-card-link" href="#contact" data-category="products" aria-label="Ask about speakers">
+                  <div class="echo-product-image echo-image-speakers">
+                    <span class="echo-product-number">03</span>
+                    <!-- Temporary product sketch inherited from the original ECHO site. -->
+                    <svg viewBox="0 0 320 250" class="echo-product-sketch" role="img" aria-label="Stylized illustration of a portable mini speaker" xmlns="http://www.w3.org/2000/svg">
                     <defs><linearGradient id="sShell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#C3D6F1"/></linearGradient></defs>
                     <rect x="72" y="65" width="176" height="144" rx="42" fill="url(#sShell)" stroke="#A5B7CD" stroke-width="2"/>
                     <circle cx="160" cy="137" r="54" fill="#394167"/><circle cx="160" cy="137" r="43" fill="#848CB5"/><circle cx="160" cy="137" r="29" fill="#343B61"/><circle cx="160" cy="137" r="12" fill="#9EA5D4"/>
                     <circle cx="202" cy="85" r="4" fill="#5826C7"/>
                   </svg>
-                </div>
-                <div class="card-body echo-category-body">
-                  <div><h3>Mini speakers</h3><p>Small forms. Room-filling energy. Sound to share.</p></div>
-                  <a class="echo-card-footnote" href="#kontakt" aria-label="Ask about ECHO mini speakers">ASK ABOUT SPEAKERS <span aria-hidden="true">↗</span></a>
-                </div>
+                  </div>
+                  <div class="card-body echo-product-info">
+                    <h3>Speakers</h3><span class="echo-product-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+              <article class="card echo-product-card h-100">
+                <a class="echo-card-link" href="#contact" data-category="accessories" aria-label="Ask about audio accessories">
+                  <div class="echo-product-image echo-image-accessories">
+                    <span class="echo-product-number">04</span>
+                    <div class="echo-accessory-type" aria-hidden="true">
+                      <span>cases</span><span>docks</span><span>stands</span><span>tips</span>
+                    </div>
+                  </div>
+                  <div class="card-body echo-product-info">
+                    <h3>Accessories</h3><span class="echo-product-arrow" aria-hidden="true">↗</span>
+                  </div>
+                </a>
               </article>
             </div>
           </div>
-          <div class="echo-accessories-note"><span>AND THE LITTLE THINGS</span> Protective cases, charging docks, stands, ear tips and carry accessories.</div>
+          <p class="echo-collection-footnote">ECHO is a student concept project. The collection is a preview; purchases are not currently available.</p>
         </div>
       </section>
 
-      <section id="kontakt" class="echo-section echo-contact" aria-labelledby="contact-title">
+      <section id="about" class="echo-section echo-about" aria-labelledby="about-title">
         <div class="container echo-container">
-          <div class="row gx-lg-5 gy-5 align-items-start">
+          <div class="row g-5 align-items-center">
+            <div class="col-12 col-lg-6">
+              <p class="echo-eyebrow">02 / OUR WORLD</p>
+              <h2 id="about-title" class="echo-section-title echo-about-title">About ECHO</h2>
+              <p class="echo-about-lead">ECHO is a concept audio brand exploring the relationship between product design and everyday listening.</p>
+              <p class="echo-body-copy">We focus on form, color and the small details that make objects feel personal. Our collection brings together headphones, wireless earbuds, compact speakers and the accessories that go with them.</p>
+              <p class="echo-body-copy">Designed as a university project, ECHO is a space to experiment with what consumer audio could look like.</p>
+              <a class="echo-inline-link" href="#contact">Talk to us <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="echo-about-poster" aria-label="ECHO brand typography panel">
+                <div class="echo-poster-meta"><span>ECHO / 2026</span><span>DESIGN STUDY</span></div>
+                <span class="echo-poster-type" aria-hidden="true">echo<span>.</span></span>
+                <div class="echo-poster-footer"><span>HEADPHONES</span><span>EARBUDS</span><span>SPEAKERS</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="echo-section echo-contact" aria-labelledby="contact-title">
+        <div class="container echo-container">
+          <div class="row g-5">
             <div class="col-12 col-lg-5">
-              <p class="echo-section-label echo-section-label-light">03 / CONTACT</p>
-              <h2 id="contact-title" class="echo-section-heading echo-contact-heading">Let's make <em>some noise.</em></h2>
-              <p class="echo-contact-copy">Questions about ECHO, our collection or a future collaboration? Drop us a message.</p>
-              <dl class="echo-contact-details">
+              <p class="echo-eyebrow">03 / CONTACT</p>
+              <h2 id="contact-title" class="echo-section-title echo-contact-title">Get in touch.</h2>
+              <p class="echo-contact-lead">Questions about the collection or the ECHO concept? Send us a note.</p>
+              <dl class="echo-contact-list">
                 <div><dt>Email</dt><dd>hello@echo.example <small>(demo)</small></dd></div>
                 <div><dt>Phone</dt><dd>+48 000 000 000 <small>(demo)</small></dd></div>
-                <div><dt>Location</dt><dd>Poland · fictional brand</dd></div>
+                <div><dt>Based in</dt><dd>Poland · concept brand</dd></div>
               </dl>
             </div>
             <div class="col-12 col-lg-7">
               <form id="echo-contact-form" class="echo-contact-form">
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <label for="echo-name" class="form-label">Your name *</label>
-                    <input class="form-control echo-form-control" type="text" id="echo-name" name="name" autocomplete="name" placeholder="Full name" required />
+                <div class="row g-4">
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="echo-name">Name <span aria-hidden="true">*</span></label>
+                    <input class="form-control echo-form-control" type="text" id="echo-name" name="name" autocomplete="name" placeholder="Your name" required />
                   </div>
-                  <div class="col-12 col-md-6">
-                    <label for="echo-email" class="form-label">Email address *</label>
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="echo-email">Email <span aria-hidden="true">*</span></label>
                     <input class="form-control echo-form-control" type="email" id="echo-email" name="email" autocomplete="email" placeholder="you@example.com" required />
                   </div>
                   <div class="col-12">
-                    <label for="echo-subject" class="form-label">What's this about? *</label>
+                    <label class="form-label" for="echo-subject">Subject <span aria-hidden="true">*</span></label>
                     <select class="form-select echo-form-control" id="echo-subject" name="subject" required>
-                      <option value="" selected disabled>Choose a topic</option>
+                      <option value="" selected disabled>Select a topic</option>
                       <option value="products">Products & availability</option>
                       <option value="accessories">Accessories</option>
                       <option value="collaboration">Collaborations</option>
@@ -206,13 +216,13 @@ const organization = {
                     </select>
                   </div>
                   <div class="col-12">
-                    <label for="echo-message" class="form-label">Your message *</label>
-                    <textarea class="form-control echo-form-control" id="echo-message" name="message" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+                    <label class="form-label" for="echo-message">Message <span aria-hidden="true">*</span></label>
+                    <textarea class="form-control echo-form-control" id="echo-message" name="message" rows="4" placeholder="Your message" required></textarea>
                   </div>
-                  <div class="col-12 d-flex flex-column gap-3 align-items-start">
-                    <button class="btn echo-btn echo-btn-secondary" type="submit">Send message <span aria-hidden="true">↗</span></button>
-                    <p class="echo-form-disclaimer">Demo form — messages are not sent yet.</p>
-                    <p id="echo-form-status" class="echo-form-status" role="status" hidden>This is a design preview. Your message has not been sent.</p>
+                  <div class="col-12">
+                    <button class="echo-button echo-button-light" type="submit">Send message <span aria-hidden="true">↗</span></button>
+                    <p class="echo-form-disclaimer">Demo form — messages are not sent.</p>
+                    <p id="echo-form-status" class="echo-form-status" role="status" hidden>This is a demo form. Your message has not been sent.</p>
                   </div>
                 </div>
               </form>
@@ -223,19 +233,24 @@ const organization = {
     </main>
 
     <footer class="echo-footer">
-      <div class="container echo-container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
-        <a href="#top" class="echo-wordmark echo-footer-logo" aria-label="ECHO — back to top">echo<span aria-hidden="true">.</span></a>
-        <span>© {year} ECHO. Concept brand for a university project.</span>
-        <a href="#top" class="echo-back-to-top">Back to top ↑</a>
+      <div class="container echo-container">
+        <div class="echo-footer-top">
+          <a class="echo-footer-wordmark" href="#top" aria-label="ECHO back to top">echo<span>.</span></a>
+          <div class="echo-footer-links"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+        </div>
+        <div class="echo-footer-bottom"><span>© {year} ECHO. University concept project.</span><a href="#top">Back to top ↑</a></div>
       </div>
     </footer>
-
-    
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
-
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
     <script>
       const form = document.querySelector<HTMLFormElement>("#echo-contact-form");
       const status = document.querySelector<HTMLElement>("#echo-form-status");
+      const subject = document.querySelector<HTMLSelectElement>("#echo-subject");
+      document.querySelectorAll<HTMLAnchorElement>("[data-category]").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (subject) subject.value = link.dataset.category || "products";
+        });
+      });
       form?.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.reportValidity()) return;
