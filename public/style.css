@@ -37,11 +37,26 @@ img { display: block; }
 /* HERO: dark photographic stage floating under the cloud strip. */
 .hero { background: var(--echo-black); color: #fff; }
 .hero-stage { position: relative; min-height: clamp(39rem, 54vw, 50rem); background: #050508; isolation: isolate; }
-.hero-photo { position: absolute; inset: 0 0 0 auto; z-index: -2; width: 78%; background: url('/images/hero-lumia.webp') left center / auto 100% no-repeat; }
+.hero-photo { position: absolute; inset: 0 0 0 auto; z-index: -2; width: 78%; background: url('/images/hero-lumia.png') left center / auto 100% no-repeat; }
 .hero-stage::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #030305 0%, #030305 12%, rgba(3,3,5,.96) 28%, rgba(3,3,5,.52) 47%, rgba(3,3,5,0) 70%); }
 .site-header { position: fixed; z-index: 1000; top: 0; left: 0; right: 0; width: 100%; transition: transform .25s ease; }
 .site-header.is-hidden { transform: translateY(-100%); }
-.echo-navbar { min-height: 4.5rem; background: #08090d; border: 1px solid rgba(188,196,218,.20); padding: 0; }
+.echo-navbar {
+  min-height: 4.5rem;
+  padding: 0;
+
+  background: rgba(12, 14, 22, 0.62);
+
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 8px 32px rgba(0, 0, 0, 0.12);
+}
+  
 .nav-inner { position: relative; max-width: 94rem; margin: auto; padding: 0 clamp(1.15rem, 4.8vw, 5rem); min-height: 4.5rem; }
 .wordmark { font-family: var(--font-logo); font-weight: 800; line-height: .8; color: #fff; text-decoration: none; letter-spacing: -.025em; }
 .wordmark:hover { color: #fff; }
@@ -76,7 +91,23 @@ img { display: block; }
 .hero-discover { margin-left: clamp(3rem, 12vw, 17rem); }
 
 /* SHOP SECTIONS: lavender-grey surface with an editorial grid. */
-.catalog-background { background: var(--echo-cloud); position: relative; isolation: isolate; }
+
+.catalog-background {
+  position: relative;
+  isolation: isolate;
+
+  background-color: #eef1ff;
+  background-image: url('/images/violet-background.png');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Remove the old CSS-generated violet gradients */
+.catalog-background::before {
+  display: none;
+}
+
 .catalog-background::before { content: ''; position: absolute; inset: 0 0 0 auto; width: 50%; pointer-events: none; z-index: -1; background: radial-gradient(ellipse 35% 12% at 65% 18%, rgba(119,112,227,.19), transparent 95%), radial-gradient(ellipse 40% 35% at 63% 44%, rgba(147,147,255,.23), transparent 90%); filter: blur(13px); }
 .shop-categories { padding-top: clamp(3.2rem, 6vw, 6rem); padding-bottom: 4rem; }
 .editorial-heading { font: 500 clamp(2rem, 2.7vw, 3.3rem)/1 var(--font-serif); letter-spacing: -.022em; display: flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; margin: 0 0 3rem; color: #0b0b0c; }
@@ -190,6 +221,20 @@ img { display: block; }
   .about-star-left { left: 0; }
   .about-star-right { right: 0; }
 }
+
+/* TABLET HERO FIX — iPad Mini, Air, Pro */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .hero-photo {
+    width: 100%;
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
 @media (max-width: 767.98px) {
   .hero-stage, .hero-content { min-height: 43rem; }
   .hero-photo { width: 100%; background-size: auto 65%; background-position: center bottom; opacity: .8; }
