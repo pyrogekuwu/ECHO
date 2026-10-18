@@ -7,15 +7,15 @@
  */
 const year = new Date().getFullYear();
 const categories = [
-  { name: 'headphones', image: '/images/category-headphones.webp', alt: 'Metallic over-ear ECHO headphones on a black background', href: '#product-lumia-white' },
-  { name: 'earbuds', image: '/images/category-earbuds.webp', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
-  { name: 'speakers', image: '/images/category-speakers.webp', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
-  { name: 'accessories', image: '/images/category-accessories.webp', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
+  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '#product-lumia-white' },
+  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
+  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
+  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
 ];
 const bestsellers = [
-  { id: 'product-lumia-white', name: 'Lumia Pro 2 White', price: '€89.99', image: '/images/product-lumia-white.webp', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
-  { id: 'product-aerospace-black', name: 'Aerospace Earbuds Black', price: '€59.99', image: '/images/product-aerospace-black.webp', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes' },
-  { id: 'product-lumia-silver', name: 'Lumia Pro 2 White', price: '€89', image: '/images/product-lumia-silver.webp', alt: 'Silver and black over-ear headphones shown on a white background' },
+  { id: 'product-lumia-white', name: 'Lumia Pro 2 White', price: '€89.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
+  { id: 'product-aerospace-black', name: 'Aerospace Earbuds Black', price: '€59.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes' },
+  { id: 'product-lumia-silver', name: 'Lumia 1 Metallic Silver', price: '€89.99', image: '/images/product-lumia-silver.png', alt: 'Silver and black over-ear headphones shown on a white background' },
 ];
 const organization = {
   '@context': 'https://schema.org',
@@ -32,10 +32,10 @@ const organization = {
     <meta name="theme-color" content="#050507" />
     <meta name="description" content="Explore ECHO: Lumia Pro 2 headphones, Aerospace earbuds, speakers and accessories. An experimental audio brand concept." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="ECHO — Lumia Pro 2 and the world of audio" />
+    <meta property="og:title" content="ECHO" />
     <meta property="og:description" content="Headphones, earbuds, speakers and accessories. ECHO audio brand concept." />
-    <meta property="og:image" content="/images/hero-lumia.webp" />
-    <title>ECHO — Lumia Pro 2</title>
+    <meta property="og:image" content="/images/hero-lumia.png" />
+    <title>ECHO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DotGothic16&family=Genos:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -51,7 +51,9 @@ const organization = {
           <nav class="navbar navbar-expand-lg echo-navbar" aria-label="Main navigation">
             <div class="container-fluid nav-inner">
               <a class="wordmark wordmark-nav" href="#top" aria-label="ECHO home">ECHO</a>
-              <button class="navbar-toggler mobile-menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler mobile-menu-toggle" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" 
+              aria-label="Toggle navigation">
                 <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
               </button>
               <div class="collapse navbar-collapse nav-collapse" id="main-navigation">
@@ -62,7 +64,8 @@ const organization = {
                   <li class="nav-item"><a class="nav-link" href="#shop">accessories</a></li>
                 </ul>
                 <div class="nav-icons">
-                  <button type="button" class="icon-button" id="search-toggle" aria-label="Search ECHO" aria-expanded="false" aria-controls="site-search">
+                  <button type="button" class="icon-button" id="search-toggle" aria-label="Search ECHO" 
+                  aria-expanded="false" aria-controls="site-search">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 5 5"/></svg>
                   </button>
                   <a class="icon-button" href="#contact" aria-label="Contact ECHO">
@@ -95,7 +98,7 @@ const organization = {
           <div class="hero-copy">
             <p class="hero-meta">NEW ITEM <span>|</span> NEW EXPERIENCE <span>|</span> NEW SOUND</p>
             <h1 id="hero-heading">LUMIA PRO 2</h1>
-            <p class="hero-description">so these are very cool looking earbuds from a very cool very collection idk what else to say there has to be som text here</p>
+            <p class="hero-description">so these are very cool looking headphones from a very cool collection idk what else to say there has to be som text here</p>
             <p class="hero-description hero-material">made from very sturdy material.</p>
             <a class="rectangle-button button-light hero-discover" href="#product-lumia-white">discover</a>
           </div>
@@ -107,7 +110,8 @@ const organization = {
         <!-- SHOP BY CATEGORIES -->
         <section id="shop" class="shop-categories content-section" aria-labelledby="categories-heading">
           <div class="container-fluid echo-container">
-            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
+            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" 
+              aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
             <div class="row g-3 g-xl-4 category-row">
               {categories.map((category) => (
                 <div class="col-6 col-lg-3">
@@ -132,8 +136,8 @@ const organization = {
             </div>
             <div class="aerospace-editorial">
               <h3>AEROSPACE</h3>
-              <div class="editorial-detail"><img src="/images/aerospace-detail.webp" alt="Close-up of a metallic silver Aerospace earbud worn on an ear" loading="lazy" /></div>
-              <div class="editorial-portrait"><img src="/images/aerospace-portrait.webp" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></div>
+              <div class="editorial-detail"><img src="/images/aerospace-detail.png" alt="Close-up of a metallic silver Aerospace earbud worn on an ear" loading="lazy" /></div>
+              <div class="editorial-portrait"><img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></div>
               <div class="editorial-copy">
                 <p>so these are very cool looking earbuds from a very cool collection idk what else to say there has to be som text here</p>
                 <p>made from very sturdy material. if u want u can buy. feel free. very cool earbuds i recommend.</p>
@@ -146,7 +150,7 @@ const organization = {
       <!-- ABOUT OUR WORLD -->
       <section id="about" class="about-section" aria-labelledby="about-heading">
         <div class="container-fluid echo-container about-inner">
-          <img class="about-star about-star-left" src="/images/about-star-left.webp" alt="" loading="eager" />
+          <img class="about-star about-star-left" src="/images/about-star-left.png" alt="" loading="eager" />
           <div class="about-copy">
             <h2 id="about-heading">ABOUT OUR WORLD</h2>
             <p>ECHO is a concept audio brand based in South Korea.</p>
@@ -154,7 +158,7 @@ const organization = {
             <p>Designed as a university project, ECHO is a space to experiment with what consumer audio could look like.</p>
             <a class="rectangle-button button-light about-contact" href="#contact">get in contact</a>
           </div>
-          <img class="about-star about-star-right" src="/images/about-star-right.webp" alt="" loading="eager" />
+          <img class="about-star about-star-right" src="/images/about-star-right.png" alt="" loading="eager" />
         </div>
       </section>
 
