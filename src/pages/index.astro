@@ -47,13 +47,7 @@ const organization = {
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <main id="main">
-    <!-- HERO: a full-width image stage with the dark nav floating over it -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-clouds" aria-hidden="true"></div>
-      <div class="hero-stage">
-        <div class="hero-photo" aria-hidden="true"></div>
-        <header class="site-header">
+    <header class="site-header">
           <nav class="navbar navbar-expand-lg echo-navbar" aria-label="Main navigation">
             <div class="container-fluid nav-inner">
               <a class="wordmark wordmark-nav" href="#top" aria-label="ECHO home">ECHO</a>
@@ -90,6 +84,13 @@ const organization = {
             <p id="search-feedback" aria-live="polite">Choose a category or search for a product.</p>
           </div>
         </header>
+
+    <main id="main">
+    <!-- HERO: dark image begins directly below the fixed navigation -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-stage">
+        <div class="hero-photo" aria-hidden="true"></div>
+
         <div class="hero-content container-fluid">
           <div class="hero-copy">
             <p class="hero-meta">NEW ITEM <span>|</span> NEW EXPERIENCE <span>|</span> NEW SOUND</p>
@@ -291,6 +292,29 @@ const organization = {
         const category = ['headphones', 'earbuds', 'ear buds', 'speakers', 'accessories'].find(c => c.includes(q) || q.includes(c));
         searchFeedback.textContent = match ? 'Matching item in Our bestsellers below.' : category ? 'Explore this category in Shop by categories.' : 'No results in this concept preview.';
       });
+
+      // Hide the navigation on downward scrolling, reveal it when scrolling up.
+      // Keep it visible while the search or mobile navigation is open.
+      const header = document.querySelector<HTMLElement>('.site-header');
+      const mobileNavigation = document.querySelector<HTMLElement>('#main-navigation');
+      let previousScrollY = Math.max(0, window.scrollY);
+      const scrollThreshold = 8;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = Math.max(0, window.scrollY);
+        const delta = currentScrollY - previousScrollY;
+        if (Math.abs(delta) < scrollThreshold) return;
+
+        const mobileMenuOpen = mobileNavigation?.classList.contains('show') || mobileNavigation?.classList.contains('collapsing');
+        const searchOpen = searchPanel ? !searchPanel.hidden : false;
+        const shouldShow = currentScrollY < 80 || delta < 0 || mobileMenuOpen || searchOpen;
+        header?.classList.toggle('is-hidden', !shouldShow);
+        previousScrollY = currentScrollY;
+      }, { passive: true });
+
+      header?.addEventListener('focusin', () => header.classList.remove('is-hidden'));
+      mobileNavigation?.addEventListener('show.bs.collapse', () => header?.classList.remove('is-hidden'));
+
     </script>
   </body>
 </html>
