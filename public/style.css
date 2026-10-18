@@ -223,17 +223,60 @@ img { display: block; }
 }
 
 /* TABLET HERO FIX — iPad Mini, Air, Pro */
+/* TABLET — blurred background + sharp product */
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .hero-photo {
     width: 100%;
-    background-size: contain;
-    background-position: right center;
-    background-repeat: no-repeat;
-
+    overflow: hidden;
+    isolation: isolate;
+    background-image: none;
     -webkit-mask-image: none;
     mask-image: none;
   }
+
+  .hero-photo::before,
+  .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+  }
+
+  /* Blurred background layer */
+  .hero-photo::before {
+    z-index: 0;
+    background-image: url('/images/hero-lumia.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px) brightness(0.65);
+    transform: scale(1.08);
+  }
+
+  /* Sharp foreground layer */
+  .hero-photo::after {
+    z-index: 1;
+    background-image: url('/images/hero-lumia.png');
+    background-size: contain;
+    background-position: right center;
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 5%,
+      black 25%,
+      black 75%,
+      transparent 95%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 5%,
+      black 25%,
+      black 75%,
+      transparent 95%
+    );
+  }
 }
+
 
 @media (max-width: 767.98px) {
   .hero-stage, .hero-content { min-height: 43rem; }
