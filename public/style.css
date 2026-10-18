@@ -164,7 +164,11 @@ textarea.echo-form-control { resize: vertical; min-height: 128px; }
     width: 100%;
     height: 100%;
   }
-  .echo-hero-artwork img { object-position: 25% center; transform: translateX(10vw) scale(1.1); }
+  .echo-hero-artwork img {
+  object-fit: cover;
+  object-position: 25% 65%;
+  transform: translateX(7vw);
+}
   .echo-hero::after {
     content: "";
     position: absolute;
