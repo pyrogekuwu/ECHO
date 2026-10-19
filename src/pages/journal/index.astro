@@ -1,0 +1,20 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+const stories = [
+  { title: 'When sound becomes something you wear', image: '/images/aerospace-portrait.png', alt: 'Model wearing a sculptural Aerospace earbud', summary: 'On jewellery, audio and the objects we choose to show.', fragment: '' },
+  { title: 'A different language of headphones', image: '/images/hero-lumia.png', alt: 'Lumia Pro 2 editorial headphone image', summary: 'Shape, finish and the visual presence of personal audio.', fragment: '#form' },
+  { title: 'The case for visible technology', image: '/images/aerospace-detail.png', alt: 'Chrome Aerospace earbud detail', summary: 'Why a functional object can also be a form of self-expression.', fragment: '#culture' }
+];
+---
+<InnerLayout title="Journal | ECHO" description="ECHO editorial notes on design, audio and visual culture." schema={{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'ECHO Journal' }}>
+  <section class="inner-hero"><div class="container-fluid echo-container"><p class="inner-eyebrow">ECHO / EDITORIAL</p><h1>the sound of things.</h1><p class="inner-lead">Stories where audio, fashion and design overlap.</p></div></section>
+  <section class="inner-section"><div class="container-fluid echo-container"><h2 class="inner-section-title">the latest notes</h2>
+    <div class="row gx-4 gx-xl-5 journal-grid">{stories.map((story, index) => <div class="col-12 col-md-6 col-lg-4"><article class="journal-card">
+      <a class="journal-card-media" href={'/journal/sound-as-style/' + story.fragment}><img src={story.image} alt={story.alt} loading="lazy" /></a>
+      <p class="inner-eyebrow journal-card-kicker">DESIGN CULTURE / 00{index + 1}</p>
+      <h2><a href={'/journal/sound-as-style/' + story.fragment}>{story.title}</a></h2><p>{story.summary}</p>
+      <a class="journal-read" href={'/journal/sound-as-style/' + story.fragment}>read the story ↗</a>
+    </article></div>)}</div>
+    <p class="inner-caption">Editorial previews link to sections of our first complete sample article.</p>
+  </div></section>
+</InnerLayout>
