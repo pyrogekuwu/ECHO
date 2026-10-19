@@ -1,0 +1,30 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+import { products } from '../../data/products';
+export function getStaticPaths() {
+  return products.map(product => ({ params: { slug: product.slug }, props: { product } }));
+}
+const { product } = Astro.props;
+const related = products.filter(item => item.slug !== product.slug);
+---
+<InnerLayout title={product.name + ' | ECHO'} description={product.description} schema={{ '@context': 'https://schema.org', '@type': 'Product', name: product.name, description: product.description, image: product.image, brand: { '@type': 'Brand', name: 'ECHO' } }}>
+  <section class="product-detail"><div class="container-fluid echo-container">
+    <nav class="inner-breadcrumb product-breadcrumb" aria-label="Breadcrumb"><a href="/">home</a><span>/</span><a href="/shop">shop</a><span>/</span><span aria-current="page">{product.name}</span></nav>
+    <div class="row gx-4 gx-xl-5 gy-4">
+      <div class="col-12 col-lg-7"><div class="product-gallery"><img src={product.image} alt={product.alt} /></div><div class="product-secondary-photo"><img src={product.heroImage} alt={'Editorial presentation of ' + product.name} loading="lazy" /></div></div>
+      <div class="col-12 col-lg-5"><div class="product-information">
+        <p class="inner-eyebrow">{product.kicker} / {product.category}</p>
+        <h1>{product.name}</h1><p class="product-tagline">{product.tagline}</p><p class="product-description">{product.description}</p>
+        <p class="product-concept-price">€{product.price.toFixed(2)}</p><p class="product-disclaimer">Illustrative concept price. Not available for purchase.</p>
+        <div class="product-features"><h2>design notes</h2><ul>{product.details.map(detail => <li>{detail}</li>)}</ul></div>
+        <a href="/contact" class="rectangle-button button-dark">ask about this concept ↗</a>
+      </div></div>
+    </div>
+  </div></section>
+  <section class="inner-section product-related"><div class="container-fluid echo-container"><h2 class="inner-section-title">on another frequency</h2>
+    <div class="row g-4 catalog-grid">{related.map(item => <div class="col-12 col-sm-6"><article class="catalog-product">
+      <a class="catalog-product-visual" href={'/product/' + item.slug + '/'}><img src={item.image} alt={item.alt} loading="lazy" /></a>
+      <div class="catalog-product-meta"><h3><a href={'/product/' + item.slug + '/'}>{item.name}</a></h3><p>€{item.price.toFixed(2)}</p></div>
+    </article></div>)}</div>
+  </div></section>
+</InnerLayout>
