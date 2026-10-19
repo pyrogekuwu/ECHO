@@ -1,23 +1,21 @@
 # ECHO
 
-**Autorka:** Julia Gonkiewicz  
-**Nazwa serwisu:** ECHO  
-**Forma realizacji:** indywidualna  
-**Profil podmiotu:** komercyjny (fikcyjna marka koncepcyjna)  
-**Repozytorium:** https://github.com/pyrogekuwu/ECHO  
-**Projekt interfejsu:** https://www.figma.com/design/ZNbElkiCFw3ZDcek7ghxgi/echo?node-id=12-28  
+**autorka:** Julia Gonkiewicz  
+**nazwa serwisu:** ECHO  
+**forma realizacji:** indywidualna  
+**profil podmiotu:** komercyjny (fikcyjna marka koncepcyjna)  
+**repozytorium:** https://github.com/pyrogekuwu/ECHO  
+**projekt interfejsu:** https://www.figma.com/design/ZNbElkiCFw3ZDcek7ghxgi/echo?node-id=12-28  
 
-## 1. Koncepcja i profil działalności
+## KONCEPCJA
 
 ECHO jest fikcyjną marką elektroniki użytkowej inspirowaną współczesnym wzornictwem produktów audio, osadzoną w kontekście południowokoreańskiego rynku technologicznego. Serwis prezentuje kolekcje słuchawek nausznych, słuchawek bezprzewodowych, głośników przenośnych i akcesoriów, eksponując ich formę, materiały oraz charakter wizualny. Strona łączy funkcję wizerunkową z katalogiem produktów i stanowi podstawę do rozbudowy o blog oraz moduł sprzedażowy.
 
-**Grupa docelowa.** Osoby zainteresowane elektroniką audio, wzornictwem przemysłowym i modą, w szczególności młodzi dorośli orientacyjnie w wieku 18–35 lat. Projekt zakłada zarówno szybkie przeglądanie oferty na smartfonie, jak i bardziej szczegółowe poznawanie kolekcji na tablecie i komputerze. Wiek i urządzenia są założeniami projektowymi, a nie wynikami badań użytkowników.
+Grupa docelowa soby zainteresowane elektroniką audio, wzornictwem przemysłowym i modą, w szczególności młodzi dorośli orientacyjnie w wieku 18–35 lat. Projekt zakłada zarówno szybkie przeglądanie oferty na smartfonie, jak i bardziej szczegółowe poznawanie kolekcji na tablecie i komputerze. Wiek i urządzenia są założeniami projektowymi, a nie wynikami badań użytkowników.
 
-**Główny cel konwersji.** W docelowej wersji serwisu: przejście na kartę produktu i zakup. W obecnym etapie: zapoznanie się z kategoriami, przejście do wyróżnionych produktów oraz wysłanie zapytania przez formularz kontaktowy (obecnie demonstracyjny, bez backendu).
+W docelowej wersji serwisu: przejście na kartę produktu i zakup. W obecnym etapie: zapoznanie się z kategoriami, przejście do wyróżnionych produktów oraz wysłanie zapytania przez formularz kontaktowy (obecnie demonstracyjny, bez backendu).
 
-## 2. Wytyczne identyfikacji wizualnej — Style Guide
-
-### 2.1. Kolorystyka
+## STYL GUIDE
 
 | Funkcja | Kolor | HEX |
 |---|---|---|
@@ -30,7 +28,7 @@ ECHO jest fikcyjną marką elektroniki użytkowej inspirowaną współczesnym wz
 
 Paleta bazuje na czerni i chłodnych odcieniach bieli. Jasnolawendowe tła i rozmyte fioletowe formy stanowią uzupełnienie fotografii produktowej, a nie dominujący kolor interfejsu. Dla wskazanych par tekst–tło kontrast wynosi orientacyjnie: `#F8F9FF` na `#050506` — **19,39:1**, `#101114` na `#EEF0FF` — **16,67:1**, `#06070B` na `#EFF2FF` — **18,04:1**. Spełniają wymaganie WCAG AA dla zwykłego tekstu; pozostałe warianty, stany interakcji i tekst na zdjęciach wymagają osobnego sprawdzenia.
 
-### 2.2. Typografia
+## TYPOGRAFIA
 
 | Funkcja | Krój pisma | Zastosowanie |
 |---|---|---|
@@ -40,11 +38,11 @@ Paleta bazuje na czerni i chłodnych odcieniach bieli. Jasnolawendowe tła i roz
 | Logotyp | **Genos** | Znak słowny ECHO w nawigacji i stopce |
 | Drobne etykiety techniczne | **IBM Plex Mono** | Metadane, numery, opisy o charakterze technicznym |
 
-### 2.3. Zasady kompozycji
+## KOMPOZYCJA
 
 Estetyka ECHO opiera się na dużych fotografiach produktowych, prostokątnych przyciskach i płaskich kartach bez nadmiernego zaokrąglania. Kontrast czarnych sekcji z jasnym katalogiem, asymetryczny układ materiałów redakcyjnych oraz chromowane detale budują futurystyczny, minimalistyczny charakter. Nawigacja pozostaje oszczędna; na mniejszych ekranach przechodzi w menu zwijane. Inspiracje nowoczesnymi sklepami technologicznymi służą do opracowania własnego języka wizualnego marki.
 
-## 3. Architektura informacji i zakres strony głównej
+## ZAKRES
 
 Aktualny **One-Page Hub** zawiera następujące bloki, ułożone od góry strony:
 
@@ -59,7 +57,7 @@ Aktualny **One-Page Hub** zawiera następujące bloki, ułożone od góry strony
 
 **Priorytet nawigacyjny:** produkty i kolekcje są prezentowane przed informacjami o marce. Odbiorca może przejść od produktu promowanego do kategorii, a następnie do oferty wyróżnionej lub kontaktu. Obecne odnośniki działają głównie jako kotwice; osobne strony produktów zostaną opracowane później.
 
-## 4. Technologia i zasady wdrożenia
+## TECHNOLOGIA
 
 **Środowisko:** Astro (szablony `.astro` generujące semantyczny HTML5), CSS3, Bootstrap 5 udostępniany przez CDN, niewielkie skrypty JavaScript i GitHub Codespaces. Główny widok znajduje się w `src/pages/index.astro`, niestandardowe style w `public/style.css`, grafiki w `public/images/`.
 
@@ -67,19 +65,19 @@ Aktualny **One-Page Hub** zawiera następujące bloki, ułożone od góry strony
 
 **Wymogi do utrzymania podczas kolejnych etapów:** układ mobile-first, testy przy szerokościach 360–390, 768 i co najmniej 1200 px, brak niekontrolowanego poziomego przewijania, elastyczne obrazy i typografia, cele dotykowe minimum 44 × 44 px, logiczna hierarchia nagłówków i widoczny fokus klawiatury. Dokumentacja projektu wymaga także walidacji danych strukturalnych oraz audytu Lighthouse. Obecny arkusz zawiera również reguły `@media (max-width: …)`, dlatego przejście na konsekwentnie mobile-first pozostaje zadaniem porządkującym, a nie zakończonym wdrożeniem.
 
-## 5. Plan rozbudowy serwisu
+## PLAN ROZBUDOWY
 
 | Etap | Planowany moduł | Zakres |
 |---|---|---|
-| 1 — wizytówka | Strona główna | Prezentacja oferty, tożsamości marki i kontaktu; aktualny etap projektu |
-| 2 — informacyjny | Blog / artykuły | Poradniki i treści redakcyjne dotyczące sprzętu audio oraz projektowania produktów |
-| 3 — sprzedażowy | Sklep internetowy | Podstrony produktów, filtrowanie katalogu, koszyk i proces zamówienia w zakresie wymagań prowadzącego |
-| 4 — architektura | Brakujące podstrony | Np. szczegóły produktu, informacje o marce, kontakt i inne wymagane widoki |
-| 5 — optymalizacja | Audyt i poprawki | Lighthouse, WCAG, SEO, testy responsywności i poprawność linków |
+| Wizytówka | Strona główna | Prezentacja oferty, tożsamości marki i kontaktu; aktualny etap projektu |
+| Informacyjny | Blog / artykuły | Poradniki i treści redakcyjne dotyczące sprzętu audio oraz projektowania produktów |
+| Sprzedażowy | Sklep internetowy | Podstrony produktów, filtrowanie katalogu, koszyk i proces zamówienia w zakresie wymagań prowadzącego |
+| Architektura | Brakujące podstrony | Np. szczegóły produktu, informacje o marce, kontakt i inne wymagane widoki |
+| Optymalizacja | Audyt i poprawki | Lighthouse, WCAG, SEO, testy responsywności i poprawność linków |
 
 Projekt prowadzony jest przyrostowo w jednym repozytorium. Kolejne etapy powinny być dokumentowane commitami na GitHubie, zgodnie z zasadami przedmiotu.
 
-## 6. Wzorcowy System Prompt do kolejnych ćwiczeń
+## PROMPT
 
 > Jesteś front-end developerem pracującym nad studenckim projektem ECHO — responsywnym serwisem fikcyjnej marki elektroniki audio. Rozwijaj istniejący projekt w Astro, wykorzystując semantyczny HTML5, czysty CSS3 i Bootstrap 5 z CDN do siatki i niezbędnych komponentów. Nie zmieniaj samowolnie przyjętej architektury, nazewnictwa klas ani identyfikacji wizualnej. Pracuj przyrostowo: zachowuj działające sekcje i modyfikuj tylko zakres wymagany w bieżącym zadaniu.
 >
@@ -89,10 +87,4 @@ Projekt prowadzony jest przyrostowo w jednym repozytorium. Kolejne etapy powinny
 >
 > Style własne zapisuj w zewnętrznym pliku public/style.css, a obrazy odwołuj do public/images/. Nie zastępuj dostarczonych grafik generowanymi zamiennikami. Nie dodawaj nieuzgodnionych frameworków. Nie pozoruj działających zakupów, płatności, logowania lub wysyłania wiadomości: funkcje demonstracyjne oznaczaj wyraźnie. Zanim zaproponujesz kod, wskaż pliki i sekcje do zmiany; po zmianach podaj krótką listę testów w DevTools.
 
-## 7. Kontrola jakości i materiały do oddania
 
-Karta obejmuje wymaganą metrykę, koncepcję, grupę docelową, Style Guide i powtarzalny prompt. Osobnym wymogiem ćwiczenia jest **tabela testu generatorów AI**; nie wpisano ocen Lovable, v0 ani generatora czatowego, ponieważ nie przekazano wyników audytu.
-
-Przed oddaniem projektu końcowego trzeba zweryfikować kontrast wszystkich stanów interaktywnych, działanie formularza, kompletność podstron i linków, wyniki Lighthouse oraz responsywność. Obecny formularz, wyszukiwarka i funkcje zakupowe mają charakter demonstracyjny; nie należy deklarować ich jako pełnego systemu e-commerce.
-
-**Uwaga organizacyjna:** instrukcja przewiduje pracę zespołową; indywidualną realizację ECHO należy potwierdzić u prowadzącego.
