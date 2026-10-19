@@ -1,0 +1,34 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+const title = 'When Sound Becomes Something You Wear';
+const description = 'ECHO editorial essay on audio design, jewellery and personal expression.';
+---
+<InnerLayout title={title + ' | ECHO Journal'} description={description} ogType="article" schema={{ '@context': 'https://schema.org', '@type': 'Article', headline: title, description, image: '/images/aerospace-portrait.png', author: { '@type': 'Organization', name: 'ECHO Editorial' }, publisher: { '@type': 'Organization', name: 'ECHO' } }}>
+  <section class="inner-hero"><div class="container-fluid echo-container">
+    <nav class="inner-breadcrumb" aria-label="Breadcrumb"><a href="/">home</a><span>/</span><a href="/journal">journal</a><span>/</span><span aria-current="page">sound as style</span></nav>
+    <p class="inner-eyebrow" style="margin-top:3rem">ECHO JOURNAL / DESIGN CULTURE / 001</p>
+    <h1>when sound becomes something you wear.</h1>
+    <p class="inner-lead">An exploration of the shifting role of headphones, jewellery and the objects we carry close to our bodies.</p>
+  </div></section>
+  <img class="article-cover" src="/images/aerospace-portrait.png" alt="Profile of a model wearing a sculptural metallic Aerospace earbud" />
+  <article class="article-body">
+    <p>For a long time, personal audio has been designed around disappearing. Smaller, lighter, more discreet: the ideal earbud was often the one you barely noticed. But what happens when listening devices become part of how we present ourselves?</p>
+    <p>Technology has a visual identity, even when its designers try to make it neutral. The objects we use every day communicate preferences through form, texture, colour and silhouette.</p>
+    <h2 id="form">the form has a voice</h2>
+    <p>Headphones frame the face, rest on the shoulders and appear in photographs. They can be as visible as sunglasses or a bag. In that context, their curves and materials contribute to a personal look just as much as the finish of a watch or the shape of a shoe.</p>
+    <blockquote>What if an audio product was designed to be noticed rather than hidden?</blockquote>
+    <p>ECHO's Lumia Pro 2 concept starts from that question. Its silhouette is intentionally expressive. This is a design exploration, not a claim about sound quality or technical performance.</p>
+    <h2 id="culture">between an object and an accessory</h2>
+    <p>The Aerospace earbud concept takes the argument further. Its metallic star-like details blur the line between an everyday listening device and a piece of jewellery. A sharp outline becomes a point of expression.</p>
+    <p>Neither approach is necessarily better. Discreet devices have their own appeal; expressive objects offer other possibilities. Both show that function and visual character are closely connected.</p>
+    <h2>two approaches, one question</h2>
+    <p>The comparison below describes ECHO's imagined design directions, not measured product specifications.</p>
+    <div class="table-responsive"><table>
+      <thead><tr><th scope="col">Design direction</th><th scope="col">Visual emphasis</th><th scope="col">ECHO concept</th></tr></thead>
+      <tbody><tr><td>Sculptural silhouette</td><td>Shape and proportion</td><td>Lumia Pro 2</td></tr><tr><td>Jewellery-inspired form</td><td>Metallic detail</td><td>Aerospace</td></tr><tr><td>Restrained industrial design</td><td>Finish and contrast</td><td>Vesper</td></tr></tbody>
+    </table></div>
+    <p>In the end, the interesting question is not whether technology should imitate fashion. It is how personal these everyday objects already are — and what that means for the way we design them.</p>
+    <aside class="article-author" aria-label="Author"><strong>ECHO Editorial</strong><p>A fictional editorial voice exploring audio, design and visual culture for a university project.</p></aside>
+    <p style="margin-top:3rem"><a class="rectangle-button button-dark" href="/journal">← back to journal</a></p>
+  </article>
+</InnerLayout>
