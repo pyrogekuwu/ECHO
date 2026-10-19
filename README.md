@@ -1,6 +1,5 @@
-# ECHO — karta projektu
+# ECHO
 
-**Projekt semestralny: Responsive Web Design**  
 **Autorka:** Julia Gonkiewicz  
 **Nazwa serwisu:** ECHO  
 **Forma realizacji:** indywidualna  
