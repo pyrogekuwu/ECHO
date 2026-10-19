@@ -1,0 +1,34 @@
+---
+import InnerLayout from '../../layouts/InnerLayout.astro';
+import { products } from '../../data/products';
+const categories = ['all', 'headphones', 'earbuds', 'speakers', 'accessories'];
+---
+<InnerLayout title="Shop | ECHO" description="Explore ECHO concept headphones, earbuds and audio accessories." schema={{'@context':'https://schema.org','@type':'CollectionPage',name:'ECHO concept product catalogue'}}>
+  <section class="inner-hero"><div class="container-fluid echo-container"><p class="inner-eyebrow">ECHO / COLLECTION</p><h1>made to stand out.</h1><p class="inner-lead">Explore imagined audio objects shaped by form, feeling and visual expression.</p></div></section>
+  <section class="inner-section"><div class="container-fluid echo-container">
+    <h2 class="inner-section-title">shop by design</h2>
+    <div class="catalog-filters" role="group" aria-label="Filter catalogue">{categories.map(category => <button class="catalog-filter" type="button" data-category={category} aria-pressed={category === 'all' ? 'true' : 'false'}>{category}</button>)}</div>
+    <p class="catalog-count" id="catalog-count" aria-live="polite">{products.length} concept products</p>
+    <div class="row g-3 g-xl-4 catalog-grid">{products.map(product => <div class="col-12 col-sm-6 col-lg-4 catalog-card" data-product-category={product.category}><article class="catalog-product">
+      <a class="catalog-product-visual" href={`/product/${product.slug}/`}><img src={product.image} alt={product.alt} loading="lazy" /></a>
+      <div class="catalog-product-meta"><h3><a href={`/product/${product.slug}/`}>{product.name}</a></h3><p>€{product.price.toFixed(2)}</p></div>
+      <p class="catalog-product-label">{product.category} / concept price</p>
+    </article></div>)}</div>
+    <div class="catalog-empty" id="catalog-empty" hidden><h3>More designs are on the way.</h3><p>There are no items in this concept category yet.</p></div>
+    <p class="inner-caption">ECHO is a university design concept. Products and prices are illustrative. No online orders are available.</p>
+  </div></section>
+  <script>
+    const filters = [...document.querySelectorAll('.catalog-filter')];
+    const cards = [...document.querySelectorAll('.catalog-card')];
+    const count = document.querySelector('#catalog-count');
+    const empty = document.querySelector('#catalog-empty');
+    filters.forEach(button => button.addEventListener('click', () => {
+      const selected = button.dataset.category;
+      filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      let visible = 0;
+      cards.forEach(card => { const show = selected === 'all' || card.dataset.productCategory === selected; card.hidden = !show; if (show) visible++; });
+      if (count) count.textContent = visible + ' concept product' + (visible === 1 ? '' : 's');
+      if (empty) empty.hidden = visible > 0;
+    }));
+  </script>
+</InnerLayout>
