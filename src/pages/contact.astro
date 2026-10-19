@@ -1,0 +1,25 @@
+---
+import InnerLayout from '../layouts/InnerLayout.astro';
+---
+<InnerLayout title="Contact | ECHO" description="Get in touch with the fictional ECHO audio design project." schema={{ '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact ECHO' }}>
+  <section class="inner-hero contact-inner-hero"><div class="container-fluid echo-container"><p class="inner-eyebrow">ECHO / CONTACT</p><h1>let's connect.</h1><p class="inner-lead">Questions about the collection or the ideas behind it? Leave us a note.</p></div></section>
+  <section class="inner-section"><div class="container-fluid echo-container"><div class="row g-4 gx-xl-5">
+    <div class="col-12 col-lg-4"><aside class="contact-info-card"><h2>find our frequency.</h2><p class="inner-caption">ECHO is a university design concept; contact information is illustrative.</p>
+      <dl><dt>EMAIL</dt><dd>contact@echo.com (placeholder)</dd><dt>LOCATION</dt><dd>Seoul, South Korea (concept location)</dd><dt>ABOUT</dt><dd><a href="/#about">our world ↗</a></dd></dl>
+    </aside></div>
+    <div class="col-12 col-lg-8"><div class="contact-panel"><h2 class="inner-section-title" style="color:#fff">send a message.</h2>
+      <form id="inner-contact-form" class="contact-form"><div class="row g-3">
+        <div class="col-12 col-sm-6"><label for="inner-name" class="form-label">Name *</label><input class="form-control" id="inner-name" name="name" required autocomplete="name" /></div>
+        <div class="col-12 col-sm-6"><label for="inner-email" class="form-label">E-mail *</label><input class="form-control" id="inner-email" name="email" type="email" required autocomplete="email" /></div>
+        <div class="col-12"><label for="inner-subject" class="form-label">Subject *</label><select class="form-select" id="inner-subject" name="subject" required><option value="" selected disabled>Choose a subject</option><option value="products">Products</option><option value="collaboration">Collaboration</option><option value="other">Other</option></select></div>
+        <div class="col-12"><label for="inner-message" class="form-label">Message *</label><textarea class="form-control" id="inner-message" name="message" rows="6" required></textarea></div>
+        <div class="col-12"><button type="submit" class="rectangle-button button-light">send message ↗</button><p id="inner-status" class="contact-form-status" role="status" hidden>This is a design demo; your message was not sent.</p></div>
+      </div></form>
+    </div></div>
+  </div></div></section>
+  <script>
+    const form = document.querySelector('#inner-contact-form');
+    const status = document.querySelector('#inner-status');
+    form?.addEventListener('submit', event => { event.preventDefault(); if (form.reportValidity() && status) status.hidden = false; });
+  </script>
+</InnerLayout>
