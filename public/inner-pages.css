@@ -1,0 +1,118 @@
+/* ECHO multipage views — shared styling on top of /style.css */
+.inner-page { background: #eef0ff; }
+.inner-page .echo-navbar { background: rgba(12,14,22,.92); }
+.inner-site-header .nav-icons { align-items: center; }
+.inner-nav-contact { min-height: 2.8rem; display: inline-flex; align-items: center; gap: 1.4rem; border: 1px solid rgba(255,255,255,.45); color: #f8f9ff; text-decoration: none; padding: .45rem 1rem; font-size: .82rem; }
+.inner-nav-contact:hover { color: #050506; background: #eff2ff; }
+.inner-page .nav-link[aria-current="page"], .inner-nav-contact[aria-current="page"] { text-decoration: underline; text-underline-offset: .4em; }
+.inner-main { background: #eef0ff; min-height: 60vh; }
+.inner-shell { width: 100%; }
+.inner-eyebrow { font: 500 .7rem/1.6 var(--font-tech); letter-spacing: .11em; text-transform: uppercase; }
+.inner-hero { background: #050506; color: #f8f9ff; padding: clamp(4rem, 8vw, 8rem) 0 clamp(4rem, 7vw, 7rem); }
+.inner-hero h1 { font: 700 clamp(3.1rem, 8vw, 8.8rem)/.95 var(--font-main); letter-spacing: -.065em; max-width: 13ch; margin: 1.3rem 0 1.6rem; }
+.inner-hero .inner-lead { max-width: 39rem; font: 400 clamp(.95rem, 1.4vw, 1.16rem)/1.65 var(--font-main); color: #cfd2dd; }
+.inner-hero .inner-topline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+.inner-hero a, .inner-hero a:hover { color: inherit; }
+.inner-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; font: 400 .72rem/1.5 var(--font-tech); color: #aeb1bd; }
+.inner-breadcrumb a { text-underline-offset: .25rem; }
+.inner-section { padding: clamp(3.25rem, 7vw, 7rem) 0; }
+.inner-section h2 { letter-spacing: -.035em; }
+.inner-section-title { font: 500 clamp(2.25rem, 4vw, 4.5rem)/1.05 var(--font-serif); margin: 0 0 2.5rem; color: #101114; }
+.inner-caption { color: #555968; font-size: .86rem; line-height: 1.6; }
+.inner-inset { border-top: 1px solid #b8bdcf; padding-top: 1.2rem; }
+.inner-section .rectangle-button { min-height: 2.8rem; }
+.inner-page .site-footer { margin: 0; }
+.inner-footer-caption { color: #aeb2c2; margin: 1rem 0 0; font: 400 .75rem/1.4 var(--font-tech); letter-spacing: .08em; }
+.inner-page .wordmark-footer { line-height: 1; }
+
+/* Catalogue */
+.catalog-filters { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 1rem; }
+.catalog-filter { border: 1px solid #656a78; background: transparent; color: #101114; border-radius: 0; min-height: 2.8rem; padding: .6rem 1rem; font-size: .83rem; }
+.catalog-filter:hover, .catalog-filter[aria-pressed="true"] { background: #050506; border-color: #050506; color: #f8f9ff; }
+.catalog-grid { --bs-gutter-y: 2.6rem; }
+.catalog-product { height: 100%; }
+.catalog-product-visual { display: block; overflow: hidden; background: #fff; aspect-ratio: 1 / 1.04; }
+.catalog-product-visual img { height: 100%; width: 100%; object-fit: cover; transition: transform .3s ease; }
+.catalog-product-visual:hover img { transform: scale(1.035); }
+.catalog-product-meta { display: flex; align-items: start; justify-content: space-between; gap: .75rem; margin-top: 1rem; }
+.catalog-product-meta h3 { margin: 0; font: 500 clamp(.95rem, 1.1vw, 1.05rem)/1.5 var(--font-main); }
+.catalog-product-meta h3 a { text-decoration: none; }
+.catalog-product-meta h3 a:hover { text-decoration: underline; }
+.catalog-product-meta p { margin: 0; font-size: .9rem; white-space: nowrap; }
+.catalog-product-label { margin: .4rem 0 0; font: 400 .7rem/1.5 var(--font-tech); text-transform: uppercase; color: #5a5e6f; }
+.catalog-empty { background: #e0e3f4; padding: 2rem; margin: 2rem 0 0; }
+.catalog-empty h3 { font: 600 1.3rem/1.4 var(--font-main); }
+.catalog-empty[hidden], .catalog-card[hidden] { display: none !important; }
+.catalog-count { color: #45495a; margin-bottom: 2.4rem; font-size: .78rem; }
+
+/* Product detail */
+.product-detail { padding: clamp(2rem, 5vw, 5.5rem) 0 clamp(4rem, 8vw, 8rem); }
+.product-breadcrumb { color: #555b6c; margin: 0 0 2rem; }
+.product-gallery { background: #fff; }
+.product-gallery img { width: 100%; object-fit: cover; aspect-ratio: 1/1; }
+.product-secondary-photo { margin-top: 1rem; background: #dfe3f3; aspect-ratio: 1.65; overflow: hidden; }
+.product-secondary-photo img { height: 100%; aspect-ratio: auto; }
+.product-information { padding: clamp(.5rem, 3vw, 2rem) 0 0; }
+.product-information h1 { font: 700 clamp(2.7rem, 5vw, 5.5rem)/1 var(--font-main); letter-spacing: -.06em; margin: 1rem 0 1.4rem; }
+.product-tagline { font: 500 clamp(1.3rem, 2vw, 1.7rem)/1.35 var(--font-serif); }
+.product-description { max-width: 33rem; color: #393d4c; font-size: .94rem; line-height: 1.8; }
+.product-concept-price { margin: 2rem 0 .35rem; font: 500 1.4rem/1.4 var(--font-main); }
+.product-disclaimer { color: #52586a; font-size: .75rem; line-height: 1.65; }
+.product-features { padding: 1.5rem 0; margin: 2rem 0; border-top: 1px solid #b5b9ca; border-bottom: 1px solid #b5b9ca; }
+.product-features h2 { font: 600 .8rem/1.6 var(--font-tech); text-transform: uppercase; }
+.product-features ul { margin: .9rem 0 0; padding-left: 1.2rem; line-height: 1.9; font-size: .9rem; }
+.product-related { background: #e1e5f6; }
+
+/* Journal index and long-form article */
+.journal-grid { --bs-gutter-y: 3rem; }
+.journal-card { display: flex; flex-direction: column; height: 100%; }
+.journal-card-media { overflow: hidden; display: block; aspect-ratio: 1.38; background: #d8dced; }
+.journal-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.journal-card-media:hover img { transform: scale(1.03); }
+.journal-card-kicker { color: #4a4f5d; margin: 1.3rem 0 .7rem; }
+.journal-card h2 { font: 600 clamp(1.55rem, 2.4vw, 2.35rem)/1.1 var(--font-serif); margin: 0 0 1rem; }
+.journal-card h2 a { text-decoration: none; }
+.journal-card h2 a:hover { text-decoration: underline; }
+.journal-card p { font-size: .88rem; line-height: 1.7; color: #4d5160; max-width: 31rem; }
+.journal-card .journal-read { margin-top: auto; padding-top: 1.2rem; font: 500 .8rem/1.5 var(--font-tech); text-underline-offset: .3rem; }
+.article-cover { max-height: 34rem; width: 100%; object-fit: cover; aspect-ratio: 2.2; }
+.article-body { max-width: 47rem; margin: 0 auto; padding: clamp(3rem, 7vw, 6rem) 1.25rem; }
+.article-body p, .article-body li { font: 400 clamp(.98rem, 1.3vw, 1.1rem)/1.9 var(--font-main); color: #262a34; }
+.article-body p { margin-bottom: 1.7rem; }
+.article-body h2 { font: 600 clamp(2rem, 3vw, 3rem)/1.1 var(--font-serif); margin: 3.7rem 0 1.4rem; }
+.article-body blockquote { border-left: 2px solid #050506; margin: 3rem 0; padding: .7rem 0 .7rem 1.5rem; font: 500 clamp(1.5rem, 2.7vw, 2.35rem)/1.3 var(--font-serif); }
+.article-body table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: .84rem; }
+.article-body th, .article-body td { border-bottom: 1px solid #b8bfd1; padding: .9rem .7rem; text-align: left; vertical-align: top; }
+.article-body th { font-weight: 600; }
+.article-author { margin-top: 3rem; border-top: 1px solid #aeb3c5; padding-top: 1.5rem; }
+.article-author strong { display: block; font-size: .94rem; }
+.article-author p { font-size: .85rem; margin: .5rem 0 0; }
+
+/* Contact */
+.contact-inner-hero h1 { max-width: none; }
+.contact-panel { background: #0e1017; color: #fff; padding: clamp(1.4rem, 5vw, 4rem); }
+.contact-panel .form-label { color: #f2f3f7; }
+.contact-panel .contact-form .form-control, .contact-panel .contact-form .form-select { width: 100%; }
+.contact-info-card { background: #e0e3f4; padding: clamp(1.5rem, 4vw, 3rem); height: 100%; }
+.contact-info-card h2 { font: 600 clamp(2rem, 3vw, 3.2rem)/1 var(--font-serif); }
+.contact-info-card dt { font: 500 .72rem/1.4 var(--font-tech); color: #4d5362; }
+.contact-info-card dd { margin: .3rem 0 1.7rem; overflow-wrap: anywhere; }
+.contact-info-card a { text-underline-offset: .25rem; }
+.contact-form-status { margin: 1rem 0 0; color: #fff; font-size: .84rem; }
+.contact-form-status[hidden] { display: none !important; }
+@media (max-width: 991.98px) {
+  .inner-site-header .nav-collapse { padding: 1rem 1.5rem; }
+  .inner-site-header .nav-icons { margin-top: .7rem; }
+  .inner-nav-contact { width: max-content; }
+}
+@media (max-width: 767.98px) {
+  .inner-hero h1 { font-size: clamp(3.2rem, 13vw, 5.5rem); }
+  .product-gallery { margin-bottom: 2rem; }
+  .article-cover { aspect-ratio: 1.35; }
+  .article-body table { font-size: .74rem; }
+  .article-body th, .article-body td { padding: .65rem .4rem; }
+  .inner-site-header .wordmark-nav { top: 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-product-visual img, .journal-card-media img { transition: none; }
+}
