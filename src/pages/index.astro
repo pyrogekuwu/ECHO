@@ -13,9 +13,9 @@ const categories = [
   { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
 ];
 const bestsellers = [
-  { id: 'product-lumia-white', name: 'Lumia Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
-  { id: 'product-aerospace-black', name: 'Aerospace Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes' },
-  { id: 'product-lumia-silver', name: 'Lumia 1 Metallic Silver', price: '€99.99', image: '/images/product-lumia-silver.png', alt: 'Silver and black over-ear headphones shown on a white background' },
+  { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
+  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes' },
+  { id: 'product-vesper-silver', name: 'VESPER Metallic Silver', price: '€99.99', image: '/images/product-vesper-silver.png', alt: 'Silver and black over-ear headphones shown on a white background' },
 ];
 const organization = {
   '@context': 'https://schema.org',
@@ -114,8 +114,7 @@ const organization = {
         <!-- SHOP BY CATEGORIES -->
         <section id="shop" class="shop-categories content-section" aria-labelledby="categories-heading">
           <div class="container-fluid echo-container">
-            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" 
-              aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
+            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
             <div class="row g-3 g-xl-4 category-row">
               {categories.map((category) => (
                 <div class="col-6 col-lg-3">
@@ -139,16 +138,22 @@ const organization = {
               <a class="rectangle-button button-dark collection-more" href="#bestsellers">find more to like <span aria-hidden="true">❯</span></a>
             </div>
             <div class="aerospace-editorial">
-              <h3>AEROSPACE</h3>
-              <div class="editorial-detail"><img src="/images/aerospace-detail.png" alt="Close-up of a metallic silver Aerospace earbud worn on an ear" loading="lazy" /></div>
-              <div class="editorial-portrait"><img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></div>
+              <h3><a href="#product-aerospace-black" class="aerospace-link">AEROSPACE</a></h3>
+              <div class="editorial-detail">
+                <span class="korean-label">다른주파수에서</span>
+                <a href="#product-aerospace-black" aria-label="View Aerospace earbuds">
+                  <img src="/images/aerospace-detail.png" alt="Close-up of a metallic silver Aerospace earbud worn on an ear" loading="lazy" /></a>
+              </div>
+              <div class="editorial-portrait">
+                <a href="#product-aerospace-black" aria-label="View Aerospace earbuds">
+                  <img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></a>
+                <img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></div>
               <div class="editorial-copy">
                 <p>Aerospace is ECHO's more experimental take on wireless earbuds. Defined by sharp silhouettes, 
                   the collection draws inspiration from early-2000s cyber aesthetics and jewelry design. 
                   Familiar technology <b>NOT MADE TO BLEND IN.</b></p>
                 <p>While most earbuds are designed to go unnoticed, Aerospace takes the opposite approach. 
-                  The collection explores what happens when personal technology becomes part of personal style. 
-                  Something to wear, not just something to use.</p>
+                  The collection explores what happens when technology becomes part of personal style.</p>
               </div>
             </div>
           </div>
@@ -265,7 +270,7 @@ const organization = {
         </div>
         <div class="footer-bottom">
           <small>© {year} ECHO. University concept project.</small>
-          <a href="#top">back to top ↑</a>
+          <a href="#top">Back to top ↑</a>
         </div>
       </div>
     </footer>

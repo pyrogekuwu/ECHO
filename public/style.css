@@ -87,7 +87,7 @@ img { display: block; }
 .button-light { background: #eff2ff; color: #06070b; border-color: #eff2ff; }
 .button-light:hover { color: #111; background: #c4cbe1; }
 .button-dark { background: #050507; color: #fff; border-color: #050507; }
-.button-dark:hover { background: #282934; color: #fff; }
+.button-dark:hover { background: #373951; color: #fff; }
 .hero-discover { margin-left: clamp(3rem, 12vw, 17rem); }
 
 /* SHOP SECTIONS: lavender-grey surface with an editorial grid. */
@@ -112,7 +112,8 @@ img { display: block; }
 .shop-categories { padding-top: clamp(3.2rem, 6vw, 5rem); padding-bottom: 4rem; }
 .editorial-heading { font: 500 clamp(2rem, 2.7vw, 3.3rem)/1 var(--font-serif); letter-spacing: -.022em; display: flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; margin: 0 0 3rem; color: #0b0b0c; }
 .heading-line { width: clamp(2rem, 4.2vw, 5.4rem); height: 1px; background: #111; flex-shrink: 0; margin-left: .1rem; }
-.diamond { display: inline-block; width: 1.2rem; height: 1.2rem; border: 2px solid #151619; transform: rotate(45deg); margin: 0 .4rem 0 -.3rem; flex-shrink: 0; }
+.diamond { display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; border: none; transform: none; margin: 0 .4rem 0 -.3rem; flex-shrink: 0; }
+.diamond::before { content: "⟡"; font-family: Georgia, serif; font-size: 2.5rem; line-height: 1; color: #151619; }
 .category-tile { display: block; color: #fff; text-decoration: none; }
 .category-image { width: 100%; aspect-ratio: 1/1; background: #dae0f2; overflow: hidden; }
 .category-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
@@ -127,11 +128,16 @@ img { display: block; }
 .collection-more { min-width: 11rem; min-height: 2.5rem; justify-content: space-between; font-size: .79rem; padding: .5rem 1rem; }
 .aerospace-editorial { min-height: 56rem; position: relative; margin: 0 auto; }
 .aerospace-editorial h3 { position: absolute; left: 2%; top: 4.5rem; z-index: 3; font: 800 clamp(3.8rem, 6.3vw, 8.2rem)/.96 var(--font-main); letter-spacing: -.065em; color: #000; margin: 0; }
-.editorial-detail { position: absolute; left: 13%; top: 12rem; width: 39%; height: 37rem; z-index: 2; overflow: hidden; background: #dbe3f5; }
+.aerospace-editorial h3 a.aerospace-link { color: #000; text-decoration: none; display: inline-block; transition: color 0.2s ease; }
+.aerospace-editorial h3 a.aerospace-link:hover { color: #373951; text-decoration: none; }
+.editorial-detail { position: absolute; left: 13%; top: 12rem; width: 39%; height: 37rem; z-index: 2; overflow: visible; background: #dbe3f5; }
 .editorial-detail img, .editorial-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.korean-label { position: absolute; top: 0; bottom: 0; left: -3rem; writing-mode: vertical-rl; text-orientation: upright; font-size: 1.95rem; letter-spacing: 0.15em; color: #111; display: flex; align-items: flex-start; }
 .editorial-portrait { position: absolute; right: 6.2%; top: 0; width: 39%; height: 37rem; overflow: hidden; background: #dfe8fa; }
 .editorial-copy { position: absolute; right: 6.2%; top: 38.2rem; width: 39%; color: #131417; font: 400 .95rem/1.35 var(--font-main); }
 .editorial-copy p { margin: 0 0 1.1rem; }
+
+
 
 /* ABOUT: spare, black, symmetrical stars */
 .about-section { color: #fff; background: radial-gradient(ellipse 28% 44% at 50% 51%, #17181d 0, #060606 90%); padding: clamp(5rem, 7vw, 8rem) 0; }
@@ -301,7 +307,9 @@ img { display: block; }
   .shop-categories { padding-top: 3.4rem; }
   .editorial-heading { gap: .5rem; font-size: 1.8rem; }
   .heading-line { width: 1.7rem; }
-  .diamond { width: .76rem; height: .76rem; border-width: 1.5px; margin-right: 0; }
+  .diamond { width: 1.2rem; height: 1.2rem; margin-right: 0; }
+  .diamond::before { font-size: 2rem; }
+
   .category-label { margin-top: .25rem; min-height: 2.9rem; font-size: .76rem; }
   .collections-section { padding-top: 2rem; padding-bottom: 4rem; }
   .aerospace-editorial { column-gap: .75rem; }
