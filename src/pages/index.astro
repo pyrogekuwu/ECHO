@@ -7,10 +7,10 @@
  */
 const year = new Date().getFullYear();
 const categories = [
-  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '#product-lumia-white' },
-  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
-  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
-  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
+  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '/shop' },
+  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '/shop' },
+  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '/shop' },
+  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '/shop' },
 ];
 const bestsellers = [
   { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
@@ -50,7 +50,7 @@ const organization = {
     <header class="site-header">
           <nav class="navbar navbar-expand-lg echo-navbar" aria-label="Main navigation">
             <div class="container-fluid nav-inner">
-              <a class="wordmark wordmark-nav" href="#top" aria-label="ECHO home">ECHO</a>
+              <a class="wordmark wordmark-nav" href="/" aria-label="ECHO home">ECHO</a>
               <button class="navbar-toggler mobile-menu-toggle" type="button" data-bs-toggle="collapse" 
               data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" 
               aria-label="Toggle navigation">
@@ -58,27 +58,27 @@ const organization = {
               </button>
               <div class="collapse navbar-collapse nav-collapse" id="main-navigation">
                 <ul class="navbar-nav nav-categories">
-                  <li class="nav-item"><a class="nav-link" href="#shop">headphones</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">ear buds</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">speakers</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">accessories</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/shop">headphones</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/shop">ear buds</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/shop">speakers</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/shop">accessories</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/journal">journal</a></li>
                 </ul>
                 <div class="nav-icons">
                   <button type="button" class="icon-button" id="search-toggle" aria-label="Search ECHO" 
                   aria-expanded="false" aria-controls="site-search">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 5 5"/></svg>
                   </button>
-                  <a class="icon-button" href="#contact" aria-label="My account">
+                  <a class="icon-button" href="/contact" aria-label="Contact ECHO — accounts not yet available">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="m3 6 9 7 9-7M3 18l7-6M21 18l-7-6"/></svg>
                   </a>
-                  <a class="icon-button" href="#contact" aria-label="Contact us">
+                  <a class="icon-button" href="/contact" aria-label="Contact us">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.3" r="3.1"/><path d="M4.8 21v-2.4a7.2 7.2 0 0 1 14.4 0V21z"/></svg>
                   </a>
-                  <a class="icon-button" href="/wishlist" aria-label="Wishlist — add items to favourites in a later stage">
+                  <a class="icon-button" href="/shop" aria-label="Browse catalogue — saved wishlist not yet available">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 3.8 12.6a5.2 5.2 0 0 1 7.4-7.3L12 6l.8-.7a5.2 5.2 0 0 1 7.4 7.3Z"/></svg>
                   </a>
-                  <a class="icon-button" href="#shop" aria-label="Browse products — shopping cart coming in a later stage">
+                  <a class="icon-button" href="/shop" aria-label="Browse products — cart coming in a later stage">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1 12h-13z"/><path d="M9 9V6.7a3 3 0 0 1 6 0V9"/></svg>
                   </a>
                 </div>
@@ -104,7 +104,7 @@ const organization = {
             <h1 id="hero-heading">LUMIA PRO 2</h1>
             <p class="hero-description">Over-ear headphones with a sculptural silhouette and a sharp, metallic finish. Lumia Pro 2 takes a familiar form and shifts it into something more distinctive.</p>
             <p class="hero-description hero-material">ON ANOTHER FREQUENCY.</p>
-            <a class="rectangle-button button-light hero-discover" href="#product-lumia-white">discover</a>
+            <a class="rectangle-button button-light hero-discover" href="/product/lumia-pro-2-white/">discover</a>
           </div>
         </div>
       </div>
@@ -135,17 +135,17 @@ const organization = {
           <div class="container-fluid echo-container">
             <div class="collection-topline">
               <h2 id="collections-heading" class="editorial-heading">shop by collections <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
-              <a class="rectangle-button button-dark collection-more" href="#bestsellers">find more to like <span aria-hidden="true">❯</span></a>
+              <a class="rectangle-button button-dark collection-more" href="/shop">find more to like <span aria-hidden="true">❯</span></a>
             </div>
             <div class="aerospace-editorial">
-              <h3><a href="#product-aerospace-black" class="aerospace-link">AEROSPACE</a></h3>
+              <h3><a href="/product/aerospace-earbuds-black/" class="aerospace-link">AEROSPACE</a></h3>
               <div class="editorial-detail">
                 <span class="korean-label">다른주파수에서</span>
-                <a href="#product-aerospace-black" aria-label="View Aerospace earbuds">
+                <a href="/product/aerospace-earbuds-black/" aria-label="View Aerospace earbuds">
                   <img src="/images/aerospace-detail.png" alt="Close-up of a metallic silver Aerospace earbud worn on an ear" loading="lazy" /></a>
               </div>
               <div class="editorial-portrait">
-                <a href="#product-aerospace-black" aria-label="View Aerospace earbuds">
+                <a href="/product/aerospace-earbuds-black/" aria-label="View Aerospace earbuds">
                   <img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></a>
                 <img src="/images/aerospace-portrait.png" alt="Profile of a model wearing a chrome Aerospace earbud" loading="lazy" /></div>
               <div class="editorial-copy">
@@ -189,7 +189,7 @@ const organization = {
                       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 3.8 12.6a5.2 5.2 0 0 1 7.4-7.3L12 6l.8-.7a5.2 5.2 0 0 1 7.4 7.3Z"/></svg>
                     </button>
                   </div>
-                  <h3>{product.name}</h3>
+                  <h3><a href={product.id === 'product-lumia-white' ? '/product/lumia-pro-2-white/' : product.id === 'product-aerospace-black' ? '/product/aerospace-earbuds-black/' : '/product/vesper-metallic-silver/'}>{product.name}</a></h3>
                   <p class="price">{product.price}</p>
                 </article>
               </div>
@@ -262,10 +262,12 @@ const organization = {
             </div>
           </div>
           <nav class="footer-links" aria-label="Footer navigation">
-            <a href="#shop">headphones</a>
-            <a href="#shop">ear buds</a>
-            <a href="#shop">speakers</a>
-            <a href="#shop">accessories</a>
+            <a href="/shop">headphones</a>
+            <a href="/shop">ear buds</a>
+            <a href="/shop">speakers</a>
+            <a href="/shop">accessories</a>
+            <a href="/journal">journal</a>
+            <a href="/contact">contact</a>
           </nav>
         </div>
         <div class="footer-bottom">
