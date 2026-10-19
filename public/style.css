@@ -109,7 +109,7 @@ img { display: block; }
 }
 
 .catalog-background::before { content: ''; position: absolute; inset: 0 0 0 auto; width: 50%; pointer-events: none; z-index: -1; background: radial-gradient(ellipse 35% 12% at 65% 18%, rgba(119,112,227,.19), transparent 95%), radial-gradient(ellipse 40% 35% at 63% 44%, rgba(147,147,255,.23), transparent 90%); filter: blur(13px); }
-.shop-categories { padding-top: clamp(3.2rem, 6vw, 6rem); padding-bottom: 4rem; }
+.shop-categories { padding-top: clamp(3.2rem, 6vw, 5rem); padding-bottom: 4rem; }
 .editorial-heading { font: 500 clamp(2rem, 2.7vw, 3.3rem)/1 var(--font-serif); letter-spacing: -.022em; display: flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; margin: 0 0 3rem; color: #0b0b0c; }
 .heading-line { width: clamp(2rem, 4.2vw, 5.4rem); height: 1px; background: #111; flex-shrink: 0; margin-left: .1rem; }
 .diamond { display: inline-block; width: 1.2rem; height: 1.2rem; border: 2px solid #151619; transform: rotate(45deg); margin: 0 .4rem 0 -.3rem; flex-shrink: 0; }
@@ -222,28 +222,14 @@ img { display: block; }
   .about-star-right { right: 0; }
 }
 
-/* TABLET HERO FIX — iPad Mini, Air, Pro */
-/* TABLET — blurred background + sharp product */
+/* TABLET HERO FIX — iPad Mini, Air, Pro + blurred hero background */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .hero-photo {
-    width: 100%;
-    overflow: hidden;
-    isolation: isolate;
-    background-image: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
+  .hero-photo { width: 100%; overflow: hidden; isolation: isolate; background-image: none;
+    -webkit-mask-image: none; mask-image: none;}
   .hero-photo::before,
-  .hero-photo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-repeat: no-repeat;
+  .hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background-repeat: no-repeat;
   }
-
-  /* Blurred background layer */
+  /* blurred background layer */
   .hero-photo::before {
     z-index: 0;
     background-image: url('/images/hero-lumia.png');
@@ -252,28 +238,15 @@ img { display: block; }
     filter: blur(30px) brightness(0.65);
     transform: scale(1.08);
   }
-
-  /* Sharp foreground layer */
+  /* sharp foreground layer */
   .hero-photo::after {
     z-index: 1;
     background-image: url('/images/hero-lumia.png');
     background-size: contain;
     background-position: right center;
-
     -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 5%,
-      black 25%,
-      black 75%,
-      transparent 95%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 5%,
-      black 25%,
-      black 75%,
-      transparent 95%
-    );
+      to bottom, transparent 5%, black 25%, black 75%, transparent 95%);
+    mask-image: linear-gradient(to bottom, transparent 5%, black 25%, black 75%, transparent 95%);
   }
 }
 
