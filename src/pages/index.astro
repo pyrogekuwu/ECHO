@@ -48,7 +48,7 @@ const organization = {
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-          <nav class="navbar navbar-expand-lg echo-navbar" aria-label="Main navigation">
+          <nav class="navbar navbar-expand-xxl echo-navbar" aria-label="Main navigation">
             <div class="container-fluid nav-inner">
               <a class="wordmark wordmark-nav" href="#top" aria-label="ECHO home">ECHO</a>
               <button class="navbar-toggler mobile-menu-toggle" type="button" data-bs-toggle="collapse" 
@@ -58,11 +58,11 @@ const organization = {
               </button>
               <div class="collapse navbar-collapse nav-collapse" id="main-navigation">
                 <ul class="navbar-nav nav-categories">
-                  <li class="nav-item"><a class="nav-link" href="#shop">headphones</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">ear buds</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">speakers</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#shop">accessories</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/headphones">headphones</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/earbuds">ear buds</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/speakers">speakers</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/accessories">accessories</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/magazine">magazine</a></li>
                 </ul>
                 <div class="nav-icons">
                   <button type="button" class="icon-button" id="search-toggle" aria-label="Search ECHO" 
@@ -180,11 +180,13 @@ const organization = {
             {bestsellers.map((product) => (
               <div class="col-12 col-sm-6 col-lg-4">
                 <article class="bestseller" id={product.id}>
+                  <a href="/shop" class="bestseller-link">
                   <div class="bestseller-photo">
-                    <img src={product.image} alt={product.alt} loading="eager" />
+                    <img src={product.image} alt={product.alt} loading="lazy"/>
                   </div>
                   <h3>{product.name}</h3>
                   <p class="price">{product.price}</p>
+                  </a>
                 </article>
               </div>
             ))}

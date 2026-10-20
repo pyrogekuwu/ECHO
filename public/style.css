@@ -57,7 +57,7 @@ img { display: block; }
     0 8px 32px rgba(0, 0, 0, 0.12);
 }
   
-.nav-inner { position: relative; max-width: 94rem; margin: auto; padding: 0 clamp(1.15rem, 4.8vw, 5rem); min-height: 4.5rem; }
+.nav-inner { position: relative; max-width: 110rem; margin: auto; padding: 0 clamp(1.15rem, 4.8vw, 5rem); min-height: 4.5rem; }
 .wordmark { font-family: var(--font-logo); font-weight: 800; line-height: .8; color: #fff; text-decoration: none; letter-spacing: -.025em; }
 .wordmark:hover { color: #fff; }
 .wordmark-nav { font-size: 3.4rem; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -53%); z-index: 2; }

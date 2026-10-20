@@ -1,0 +1,24 @@
+
+---
+import CategoryPage from '../components/CategoryPage.astro';
+
+const products = [
+  {
+    name: 'LUMIA Pro 2 White',
+    price: '€139.99',
+    image: '/images/product-lumia-white.png',
+    alt: 'White Lumia Pro 2 over-ear headphones'
+  },
+  {
+    name: 'VESPER Metallic Silver',
+    price: '€99.99',
+    image: '/images/product-vesper-silver.png',
+    alt: 'Silver and black Vesper headphones'
+  }
+];
+---
+
+<CategoryPage
+  title="headphones"
+  products={products}
+/>
