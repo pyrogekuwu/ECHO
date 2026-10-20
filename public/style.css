@@ -189,7 +189,19 @@ img { display: block; }
 .footer-bottom { border-top: 1px solid #56565c; margin-top: 2.1rem; padding-top: 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font: 400 .73rem/1.5 var(--font-main); color: #b7b7ba; }
 .footer-bottom a { color: #c7c7cb; text-decoration: none; }
 
-/* Tablet (Bootstrap navbar collapses below 992px). */
+
+/* NAVBAR — collapsed below 1400px */
+@media (max-width: 1399.98px) {
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; padding-inline: 1.7rem; }
+  .wordmark-nav { left: 1.7rem; transform: translateY(-52%); }
+  .mobile-menu-toggle { margin-left: auto; }
+  .nav-collapse { position: absolute; top: 4.5rem; left: 0; right: 0; background: #101116; border: 1px solid #383944; padding: 1.2rem; }
+  .nav-categories { gap: 0; }
+  .echo-navbar .nav-categories .nav-link { font-size: .96rem; padding: .75rem .5rem; }
+  .nav-icons { margin: 1rem 0 0; gap: .6rem; justify-content: flex-start; }
+}
+
+/* TABLET AND SMALLER DESKTOP — below 1200px */
 @media (max-width: 1199.98px) {
   .hero-copy { width: min(27rem, 46%); }
   .hero h1 { font-size: clamp(2.6rem,4.5vw,4.5rem); }
@@ -200,13 +212,6 @@ img { display: block; }
 }
 @media (max-width: 991.98px) {
   .hero-stage, .hero-content { min-height: 44rem; }
-  .nav-inner { display: flex; justify-content: space-between; align-items: center; padding-inline: 1.7rem; }
-  .wordmark-nav { left: 1.7rem; transform: translateY(-52%); }
-  .mobile-menu-toggle { margin-left: auto; }
-  .nav-collapse { position: absolute; top: 4.5rem; left: 0; right: 0; background: #101116; border: 1px solid #383944; padding: 1.2rem; }
-  .nav-categories { gap: 0; }
-  .echo-navbar .nav-categories .nav-link { font-size: .96rem; padding: .75rem .5rem; }
-  .nav-icons { margin: 1rem 0 0; gap: .6rem; justify-content: flex-start; }
   .hero-photo { width: 84%; background-size: auto 100%; opacity: .85; }
   .hero-stage::after { background: linear-gradient(90deg, #030305 0%, rgba(3,3,5,.96) 21%, rgba(3,3,5,.55) 56%, rgba(3,3,5,.03) 100%); }
   .hero-copy { width: 52%; }
