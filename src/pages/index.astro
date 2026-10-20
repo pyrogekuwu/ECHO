@@ -21,7 +21,7 @@ const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'ECHO',
-  description: 'A fictional South Korean audio brand, developed as a university design project.',
+  description: 'Fictional South Korean audio brand, developed as a university design project.',
 };
 ---
 <!doctype html>
@@ -74,9 +74,6 @@ const organization = {
                   </a>
                   <a class="icon-button" href="#contact" aria-label="Contact us">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.3" r="3.1"/><path d="M4.8 21v-2.4a7.2 7.2 0 0 1 14.4 0V21z"/></svg>
-                  </a>
-                  <a class="icon-button" href="/wishlist" aria-label="Wishlist — add items to favourites in a later stage">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 3.8 12.6a5.2 5.2 0 0 1 7.4-7.3L12 6l.8-.7a5.2 5.2 0 0 1 7.4 7.3Z"/></svg>
                   </a>
                   <a class="icon-button" href="#shop" aria-label="Browse products — shopping cart coming in a later stage">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1 12h-13z"/><path d="M9 9V6.7a3 3 0 0 1 6 0V9"/></svg>
@@ -185,9 +182,6 @@ const organization = {
                 <article class="bestseller" id={product.id}>
                   <div class="bestseller-photo">
                     <img src={product.image} alt={product.alt} loading="eager" />
-                    <button class="favourite-button" type="button" aria-label={`Add ${product.name} to favourites`} aria-pressed="false">
-                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 3.8 12.6a5.2 5.2 0 0 1 7.4-7.3L12 6l.8-.7a5.2 5.2 0 0 1 7.4 7.3Z"/></svg>
-                    </button>
                   </div>
                   <h3>{product.name}</h3>
                   <p class="price">{product.price}</p>
@@ -283,13 +277,6 @@ const organization = {
       form?.addEventListener('submit', (event) => {
         event.preventDefault();
         if (form.reportValidity() && feedback) feedback.hidden = false;
-      });
-      document.querySelectorAll<HTMLButtonElement>('.favourite-button').forEach((button) => {
-        button.addEventListener('click', () => {
-          const isFavourite = button.getAttribute('aria-pressed') === 'true';
-          button.setAttribute('aria-pressed', String(!isFavourite));
-          button.setAttribute('aria-label', `${isFavourite ? 'Add' : 'Remove'} item ${isFavourite ? 'to' : 'from'} favourites`);
-        });
       });
       const searchToggle = document.querySelector<HTMLButtonElement>('#search-toggle');
       const searchPanel = document.querySelector<HTMLElement>('#site-search');

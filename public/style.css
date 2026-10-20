@@ -156,10 +156,6 @@ img { display: block; }
 .bestseller { scroll-margin-top: 2rem; }
 .bestseller-photo { position: relative; aspect-ratio: 1 / 1.05; overflow: hidden; background: #f7f7fa; }
 .bestseller-photo img { width: 100%; height: 100%; object-fit: cover; }
-.favourite-button { position: absolute; top: .85rem; right: .85rem; width: 3.35rem; height: 3.35rem; display: grid; place-items: center; border: 0; border-radius: .8rem; background: rgba(153,157,168,.45); color: white; transition: background .2s; }
-.favourite-button svg { fill: none; stroke: currentColor; stroke-linejoin: round; stroke-width: 1.6; width: 2rem; height: 2rem; }
-.favourite-button:hover { background: rgba(80,84,96,.85); }
-.favourite-button[aria-pressed="true"] svg { fill: #fff; }
 .bestseller h3 { font: 500 .94rem/1.5 var(--font-main); margin: 1rem 0 .4rem; }
 .bestseller .price { font: 400 .84rem/1.4 var(--font-main); margin: 0; }
 
