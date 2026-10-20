@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 /**
  * ECHO — landing page rebuilt from the user's Figma screenshot, October 2026.
  * Change text and image paths in the two arrays below; layout lives in /public/style.css.
@@ -47,47 +49,7 @@ const organization = {
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-          <nav class="navbar navbar-expand-xxl echo-navbar" aria-label="Main navigation">
-            <div class="container-fluid nav-inner">
-              <a class="wordmark wordmark-nav" href="#top" aria-label="ECHO home">ECHO</a>
-              <button class="navbar-toggler mobile-menu-toggle" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" 
-              aria-label="Toggle navigation">
-                <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
-              </button>
-              <div class="collapse navbar-collapse nav-collapse" id="main-navigation">
-                <ul class="navbar-nav nav-categories">
-                  <li class="nav-item"><a class="nav-link" href="/headphones">headphones</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/earbuds">ear buds</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/speakers">speakers</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/accessories">accessories</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/magazine">magazine</a></li>
-                </ul>
-                <div class="nav-icons">
-                  <button type="button" class="icon-button" id="search-toggle" aria-label="Search ECHO" 
-                  aria-expanded="false" aria-controls="site-search">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 5 5"/></svg>
-                  </button>
-                  <a class="icon-button" href="#contact" aria-label="My account">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="m3 6 9 7 9-7M3 18l7-6M21 18l-7-6"/></svg>
-                  </a>
-                  <a class="icon-button" href="#contact" aria-label="Contact us">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.3" r="3.1"/><path d="M4.8 21v-2.4a7.2 7.2 0 0 1 14.4 0V21z"/></svg>
-                  </a>
-                  <a class="icon-button" href="#shop" aria-label="Browse products — shopping cart coming in a later stage">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1 12h-13z"/><path d="M9 9V6.7a3 3 0 0 1 6 0V9"/></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </nav>
-          <div class="search-panel" id="site-search" hidden>
-            <label for="search-input">Search the collection</label>
-            <input id="search-input" type="search" placeholder="Try ‘headphones’ or ‘earbuds’" autocomplete="off" />
-            <p id="search-feedback" aria-live="polite">Choose a category or search for a product.</p>
-          </div>
-        </header>
+    <Navbar />
 
     <main id="main">
     <!-- HERO: dark image begins directly below the fixed navigation -->
