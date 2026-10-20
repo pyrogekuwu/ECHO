@@ -8,7 +8,7 @@
 :root {
   --echo-black: #050506;
   --echo-ink: #101114;
-  --echo-cloud: #eef0ff;
+  --echo-cloud: #eef1fd;
   --echo-white: #f8f9ff;
   --echo-silver: #c0c3cd;
   --echo-line: rgba(255,255,255,.22);
@@ -96,7 +96,7 @@ img { display: block; }
   position: relative;
   isolation: isolate;
 
-  background-color: #eef1ff;
+  background-color: var(--echo-cloud);
   background-image: url('/images/violet-background.png');
   background-position: center top;
   background-size: cover;

@@ -20,7 +20,7 @@ W docelowej wersji serwisu: przejście na kartę produktu i zakup. W obecnym eta
 | Funkcja | Kolor | HEX |
 |---|---|---|
 | Primary — ciemne tło, nawigacja, sekcja marki | Głęboka czerń | `#050506` |
-| Secondary — tło katalogu i kolekcji | Jasny lawendowy | `#EEF0FF` |
+| Secondary — tło katalogu i kolekcji | Jasny lawendowy | `#EEF1FD` |
 | Accent / CTA — jasne przyciski na ciemnym tle | Lodowa biel | `#EFF2FF` |
 | Text — tekst na jasnych tłach | Grafitowa czerń | `#101114` |
 | Text inverse — tekst na ciemnych tłach | Chłodna biel | `#F8F9FF` |
