@@ -92,7 +92,13 @@ img { display: block; }
 
 /* SHOP SECTIONS: lavender-grey surface with an editorial grid. */
 
-.catalog-background {
+/* CATEGORY PAGES */
+.category-main {
+  background-color: var(--echo-cloud);
+  color: var(--echo-ink);
+}
+
+.homepage-catalog-background {
   position: relative;
   isolation: isolate;
 
@@ -103,12 +109,6 @@ img { display: block; }
   background-repeat: no-repeat;
 }
 
-/* Remove the old CSS-generated violet gradients */
-.catalog-background::before {
-  display: none;
-}
-
-.catalog-background::before { content: ''; position: absolute; inset: 0 0 0 auto; width: 50%; pointer-events: none; z-index: -1; background: radial-gradient(ellipse 35% 12% at 65% 18%, rgba(119,112,227,.19), transparent 95%), radial-gradient(ellipse 40% 35% at 63% 44%, rgba(147,147,255,.23), transparent 90%); filter: blur(13px); }
 .shop-categories { padding-top: clamp(3.2rem, 6vw, 5rem); padding-bottom: 4rem; }
 .editorial-heading { font: 500 clamp(2rem, 2.7vw, 3.3rem)/1 var(--font-serif); letter-spacing: -.022em; display: flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; margin: 0 0 3rem; color: #0b0b0c; }
 .heading-line { width: clamp(2rem, 4.2vw, 5.4rem); height: 1px; background: #111; flex-shrink: 0; margin-left: .1rem; }
