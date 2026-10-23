@@ -1,15 +1,13 @@
 ---
 import Navbar from '../components/Navbar.astro';
 
-/**
- * ECHO landing page
- */
+/* ECHO landing page */
 const year = new Date().getFullYear();
 const categories = [
-  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '#product-lumia-white' },
-  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
-  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
-  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
+  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '/headphones' },
+  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '/earbuds' },
+  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '/speakers' },
+  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '/accessories' },
 ];
 const bestsellers = [
   { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
@@ -71,6 +69,8 @@ const organization = {
     </section>
 
       <div class="homepage-catalog-background">
+
+
         <!-- SHOP BY CATEGORIES -->
         <section id="shop" class="shop-categories content-section" aria-labelledby="categories-heading">
           <div class="container-fluid echo-container">
