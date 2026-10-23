@@ -1,9 +1,5 @@
-/*
-  ECHO — Figma reconstruction, October 2026
-  Main font: Inter | decorative serif: Cormorant Garamond
-  eyebrow: IBM Plex Mono | hero: DotGothic16 | ECHO logo: Genos
-  All artwork: replace the image with the same path in /public/images.
-  Responsive: mobile first; key checkpoints 390 / 768 / 1200px.
+/* ECHO CSS
+
 */
 :root {
   --echo-black: #050506;
@@ -90,7 +86,7 @@ img { display: block; }
 .button-dark:hover { background: #373951; color: #fff; }
 .hero-discover { margin-left: clamp(3rem, 12vw, 17rem); }
 
-/* SHOP SECTIONS: lavender-grey surface with an editorial grid. */
+/* SHOP SECTIONS */
 
 /* CATEGORY PAGES */
 .category-main {
@@ -121,7 +117,7 @@ img { display: block; }
 .category-label { margin-top: .45rem; padding: .5rem .8rem; min-height: 3.6rem; display: flex; justify-content: space-between; align-items: center; gap: .6rem; background: #030304; color: #fff; font-size: .97rem; font-weight: 400; }
 .category-label svg { fill: none; stroke: currentColor; stroke-width: 1.8; width: 1.5rem; height: 1.5rem; flex-shrink: 0; }
 
-/* AEROSPACE: asymmetrical editorial image overlap. */
+/* AEROSPACE two image layout */
 .collections-section { padding-top: 3.8rem; padding-bottom: 6rem; }
 .collection-topline { display: flex; align-items: baseline; gap: clamp(1rem, 6vw, 7rem); }
 .collection-topline .editorial-heading { margin-bottom: 2.6rem; }
@@ -139,7 +135,7 @@ img { display: block; }
 
 
 
-/* ABOUT: spare, black, symmetrical stars */
+/* ABOUT */
 .about-section { color: #fff; background: radial-gradient(ellipse 28% 44% at 50% 51%, #17181d 0, #060606 90%); padding: clamp(5rem, 7vw, 8rem) 0; }
 .about-inner { position: relative; display: flex; align-items: center; justify-content: center; min-height: 19rem; }
 .about-copy { width: min(49rem, 66%); text-align: center; z-index: 1; }
@@ -150,7 +146,7 @@ img { display: block; }
 .about-star-left { left: 0; }
 .about-star-right { right: 0; }
 
-/* BESTSELLERS: reference photos can be replaced individually. */
+/* BESTSELLERS */
 .bestsellers-section { background: var(--echo-cloud); padding-top: clamp(4rem, 6vw, 6.4rem); padding-bottom: clamp(7rem, 12vw, 12rem); }
 .bestseller-row { --bs-gutter-y: 2rem; }
 .bestseller { scroll-margin-top: 2rem; }
@@ -159,7 +155,7 @@ img { display: block; }
 .bestseller h3 { font: 500 .94rem/1.5 var(--font-main); margin: 1rem 0 .4rem; }
 .bestseller .price { font: 400 .84rem/1.4 var(--font-main); margin: 0; }
 
-/* CONTACT: close to the supplied dark-grey Figma panel. */
+/* CONTACT */
 .contact-section { color: #f2f3f7; background: linear-gradient(108deg, #353949 0%, #15151d 50%, #0a0a0f 100%); padding: clamp(5rem, 7vw, 8.5rem) 0; }
 .contact-info h2 { font: 800 clamp(2.3rem, 3.6vw, 4.1rem)/1.06 var(--font-main); letter-spacing: -.025em; margin: 0 0 1.6rem; }
 .contact-intro { font: 400 .9rem/1.5 var(--font-main); color: #d7d9df; max-width: 22rem; margin-bottom: 2.5rem; }
@@ -176,7 +172,7 @@ img { display: block; }
 .contact-form button { margin-top: .65rem; }
 .form-feedback { margin: 1rem 0 0; font: 400 .85rem/1.5 var(--font-main); color: #f2f4fc; }
 
-/* FOOTER: large Genos wordmark, quiet links, single lower rule. */
+/* FOOTER */
 .site-footer { background: #000; color: #fff; padding: clamp(3.5rem, 5.7vw, 6rem) 0 2.3rem; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
 .wordmark-footer { font-size: clamp(6rem, 11vw, 10.5rem); display: inline-block; }
@@ -229,7 +225,7 @@ img { display: block; }
   .about-star-right { right: 0; }
 }
 
-/* TABLET HERO FIX — iPad Mini, Air, Pro + blurred hero background */
+/* TABLET HERO — ipad mini, air, pro + blurred hero background */
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .hero-photo { width: 100%; overflow: hidden; isolation: isolate; background-image: none;
     -webkit-mask-image: none; mask-image: none;}
@@ -245,7 +241,7 @@ img { display: block; }
     filter: blur(30px) brightness(0.65);
     transform: scale(1.08);
   }
-  /* sharp foreground layer */
+  /* sharp front layer */
   .hero-photo::after {
     z-index: 1;
     background-image: url('/images/hero-lumia.png');
@@ -328,6 +324,8 @@ img { display: block; }
   .wordmark-footer { font-size: 6.5rem; }
   .footer-bottom { align-items: flex-start; }
 }
+
+/* SCROLL */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
