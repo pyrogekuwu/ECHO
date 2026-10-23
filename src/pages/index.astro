@@ -1,20 +1,20 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 /* ECHO landing page */
-const year = new Date().getFullYear();
 const categories = [
-  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: '/headphones' },
-  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '/earbuds' },
-  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '/speakers' },
-  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '/accessories' },
+  { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: `${base}/headphones/` },
+  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
+  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
+  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
 ];
 const bestsellers = [
-  { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones' },
-  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes' },
-  { id: 'product-vesper-silver', name: 'VESPER Metallic Silver', price: '€99.99', image: '/images/product-vesper-silver.png', alt: 'Silver and black over-ear headphones shown on a white background' },
+  { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones', href: `${base}/headphones/#product-lumia-white` },
+  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes', href: '#collections' },
+  { id: 'product-vesper-silver', name: 'VESPER Metallic Silver', price: '€99.99', image: '/images/product-vesper-silver.png', alt: 'Silver and black over-ear headphones shown on a white background', href: `${base}/headphones/#product-vesper-silver` },
 ];
 const organization = {
   '@context': 'https://schema.org',
@@ -35,16 +35,16 @@ const organization = {
     <meta property="og:description" content="Headphones, earbuds, speakers and accessories. ECHO audio brand concept." />
     <meta property="og:image" content={`${base}/images/hero-lumia.png`} />
     <title>ECHO</title>
-    <link rel="preconnect" href={`${base}/fonts.googleapis.com`} />
-    <link rel="preconnect" href={`${base}/fonts.gstatic.com`} crossorigin />
-    <link href={`${base}/fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DotGothic16&family=Genos:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap`} rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DotGothic16&family=Genos:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!-- Bootstrap 5 -->
-    <link href={`${base}/cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css`} rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href={`${base}/style.css`} rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
   </head>
   <body id="top">
-    <a class="skip-link" href={`${base}#main`}>Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
 
 
@@ -79,9 +79,9 @@ const organization = {
             <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
             <div class="row g-3 g-xl-4 category-row">
               {categories.map((category) => (
-                <div class="col-6 col-lg-3">
+                <div class="col-6 col-lg-3" id={`category-${category.name}`}>
                   <a class="category-tile" href={category.href} aria-label={`Explore ${category.name}`}>
-                    <div class="category-image"><img src={category.image} alt={category.alt} loading="lazy" /></div>
+                    <div class="category-image"><img src={`${base}${category.image}`} alt={category.alt} loading="lazy" /></div>
                     <span class="category-label">{category.name}
                       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
                     </span>
@@ -145,9 +145,9 @@ const organization = {
             {bestsellers.map((product) => (
               <div class="col-12 col-sm-6 col-lg-4">
                 <article class="bestseller" id={product.id}>
-                  <a href={`${base}/shop`} class="bestseller-link">
+                  <a href={product.href} class="bestseller-link">
                   <div class="bestseller-photo">
-                    <img src={product.image} alt={product.alt} loading="lazy"/>
+                    <img src={`${base}${product.image}`} alt={product.alt} loading="lazy"/>
                   </div>
                   <h3>{product.name}</h3>
                   <p class="price">{product.price}</p>
@@ -162,7 +162,7 @@ const organization = {
       <!-- CONTACT -->
       <section id="contact" class="contact-section" aria-labelledby="contact-heading">
         <div class="container-fluid echo-container">
-          <div class="row gx-5 gy-5 align-items-start">
+          <div class="row gx-4 gx-lg-5 gy-5 align-items-start">
             <div class="col-12 col-lg-5 contact-info">
               <h2 id="contact-heading">GET IN CONTACT</h2>
               <p class="contact-intro">Questions about the collection or the ECHO concept? Send us a note.</p>
@@ -209,7 +209,9 @@ const organization = {
       </section>
     </main>
 
-    <script is:inline src={`${base}/cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js`} defer></script>
+    <Footer />
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
 
 
@@ -220,46 +222,6 @@ const organization = {
         event.preventDefault();
         if (form.reportValidity() && feedback) feedback.hidden = false;
       });
-      const searchToggle = document.querySelector<HTMLButtonElement>('#search-toggle');
-      const searchPanel = document.querySelector<HTMLElement>('#site-search');
-      const searchInput = document.querySelector<HTMLInputElement>('#search-input');
-      const searchFeedback = document.querySelector<HTMLElement>('#search-feedback');
-      searchToggle?.addEventListener('click', () => {
-        if (!searchPanel) return;
-        searchPanel.hidden = !searchPanel.hidden;
-        searchToggle.setAttribute('aria-expanded', String(!searchPanel.hidden));
-        if (!searchPanel.hidden) searchInput?.focus();
-      });
-      searchInput?.addEventListener('input', () => {
-        if (!searchFeedback) return;
-        const q = searchInput.value.trim().toLowerCase();
-        if (!q) { searchFeedback.textContent = 'Choose a category or search for a product.'; return; }
-        const match = [...document.querySelectorAll<HTMLElement>('.bestseller')].find(el => el.textContent?.toLowerCase().includes(q));
-        const category = ['headphones', 'earbuds', 'ear buds', 'speakers', 'accessories'].find(c => c.includes(q) || q.includes(c));
-        searchFeedback.textContent = match ? 'Matching item in Our bestsellers below.' : category ? 'Explore this category in Shop by categories.' : 'No results in this concept preview.';
-      });
-
-      // hide navbar when scroll downward, show when scroll upward or near top of page
-      // keep it visible when the search or mobile navigation is open
-      const header = document.querySelector<HTMLElement>('.site-header');
-      const mobileNavigation = document.querySelector<HTMLElement>('#main-navigation');
-      let previousScrollY = Math.max(0, window.scrollY);
-      const scrollThreshold = 8;
-
-      window.addEventListener('scroll', () => {
-        const currentScrollY = Math.max(0, window.scrollY);
-        const delta = currentScrollY - previousScrollY;
-        if (Math.abs(delta) < scrollThreshold) return;
-
-        const mobileMenuOpen = mobileNavigation?.classList.contains('show') || mobileNavigation?.classList.contains('collapsing');
-        const searchOpen = searchPanel ? !searchPanel.hidden : false;
-        const shouldShow = currentScrollY < 80 || delta < 0 || mobileMenuOpen || searchOpen;
-        header?.classList.toggle('is-hidden', !shouldShow);
-        previousScrollY = currentScrollY;
-      }, { passive: true });
-
-      header?.addEventListener('focusin', () => header.classList.remove('is-hidden'));
-      mobileNavigation?.addEventListener('show.bs.collapse', () => header?.classList.remove('is-hidden'));
 
     </script>
   </body>

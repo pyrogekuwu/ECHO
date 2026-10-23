@@ -59,6 +59,25 @@ Aktualny **One-Page Hub** zawiera następujące bloki, ułożone od góry strony
 
 ## TECHNOLOGIA
 
+### Uruchamianie i publikacja
+
+Wymagany jest Node.js co najmniej 22.22.0. W katalogu projektu uruchom:
+
+```sh
+npm ci
+npm run dev -- --background
+```
+
+Lokalnie strona działa pod `/`, a katalog słuchawek pod `/headphones/`.
+Serwerem w tle zarządzają polecenia `npm run astro -- dev status`,
+`npm run astro -- dev logs` i `npm run astro -- dev stop`.
+Lokalny build i podgląd: `npm run build`, następnie `npm run preview`.
+
+Workflow `.github/workflows/deploy.yml` ustawia `ECHO_BASE_PATH=/ECHO` wyłącznie
+na czas budowania witryny dla GitHub Pages. Dzięki temu ta sama aplikacja działa
+pod `https://pyrogekuwu.github.io/ECHO/`, bez ręcznego zmieniania linków.
+W ustawieniach repozytorium **Settings → Pages → Source** wybierz **GitHub Actions**.
+
 **Środowisko:** Astro (szablony `.astro` generujące semantyczny HTML5), CSS3, Bootstrap 5 udostępniany przez CDN, niewielkie skrypty JavaScript i GitHub Codespaces. Główny widok znajduje się w `src/pages/index.astro`, niestandardowe style w `public/style.css`, grafiki w `public/images/`.
 
 **Elementy już obecne w wersji roboczej:** znaczniki `header`, `nav`, `main`, `section` i `footer`, jeden nagłówek `h1`, teksty alternatywne dla merytorycznych obrazów, etykiety pól formularza, `meta viewport`, `title`, `description`, Open Graph oraz JSON-LD typu `Organization`. Zastosowano siatkę i komponenty Bootstrapa z własnymi nadpisaniami CSS, w tym menu mobilne oraz formularz.
