@@ -30,27 +30,16 @@ img { display: block; }
 .echo-container, .container-fluid.echo-container { max-width: 88rem; padding-inline: clamp(1.25rem, 5.2vw, 5.7rem); margin-inline: auto; }
 .content-section { scroll-margin-top: 1rem; }
 
-/* HERO: dark photographic stage floating under the cloud strip. */
+/* HERO */
 .hero { background: var(--echo-black); color: #fff; }
 .hero-stage { position: relative; min-height: clamp(39rem, 54vw, 50rem); background: #050508; isolation: isolate; }
 .hero-photo { position: absolute; inset: 0 0 0 auto; z-index: -2; width: 78%; background: url('/images/hero-lumia.png') left center / auto 100% no-repeat; }
 .hero-stage::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #030305 0%, #030305 12%, rgba(3,3,5,.96) 28%, rgba(3,3,5,.52) 47%, rgba(3,3,5,0) 70%); }
 .site-header { position: fixed; z-index: 1000; top: 0; left: 0; right: 0; width: 100%; transition: transform .25s ease; }
 .site-header.is-hidden { transform: translateY(-100%); }
-.echo-navbar {
-  min-height: 4.5rem;
-  padding: 0;
-
-  background: rgba(12, 14, 22, 0.62);
-
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-
-  border: 1px solid rgba(255, 255, 255, 0.14);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    0 8px 32px rgba(0, 0, 0, 0.12);
+.echo-navbar { min-height: 4.5rem; padding: 0; background: rgba(12, 14, 22, 0.62);
+  backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 8px 32px rgba(0, 0, 0, 0.12);
 }
   
 .nav-inner { position: relative; max-width: 110rem; margin: auto; padding: 0 clamp(1.15rem, 4.8vw, 5rem); min-height: 4.5rem; }
@@ -186,7 +175,7 @@ img { display: block; }
 .footer-bottom a { color: #c7c7cb; text-decoration: none; }
 
 
-/* NAVBAR — collapsed below 1400px */
+/* NAVBAR - collapsed below 1400px */
 @media (max-width: 1399.98px) {
   .nav-inner { display: flex; justify-content: space-between; align-items: center; padding-inline: 1.7rem; }
   .wordmark-nav { left: 1.7rem; transform: translateY(-52%); }
