@@ -12,16 +12,16 @@ on:
 permissions:
     contents: read
     pages: write
-id-token: write
+    id-token: write
 
 jobs:
     build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout your repository using git
-    uses: actions/checkout@v7
-     - name: Install, build, and upload your site
-    uses: withastro/action@v6
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout your repository using git
+        uses: actions/checkout@v7
+            - name: Install, build, and upload your site
+        uses: withastro/action@v6
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 24. (optional)
@@ -31,12 +31,12 @@ jobs:
         # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
 
     deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-        - name: Deploy to GitHub Pages
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
