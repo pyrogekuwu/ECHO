@@ -34,26 +34,31 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <main id="main" class="category-main py-5">
             <div class="container">
+                
             <h1>magazine</h1>
-            {posts.map((post) => (
-                <article>
 
-                    <img src={`${base}${post.data.image}`}
-                    alt={post.data.imageAlt}
-                    class="magazine-image mb-3"
-                    loading="lazy"
-                    />
-                    
-                    <p class="small text-uppercase">{post.data.category}</p>
-                    
-                    <time class="d-block small mb-2" datetime={post.data.pubDate.toISOString()}> 
-                    {post.data.pubDate.toLocaleDateString('en-GB', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' })}
-                    </time>
-
-                    <h2>{post.data.title}</h2>
-                    <p>{post.data.description}</p>
-                </article>
-            ))}
+            <div class="row g-4">
+                
+                {posts.map((post) => (
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article>
+                        <img
+                        src={`${base}${post.data.image}`} 
+                        alt={post.data.imageAlt} 
+                        class="magazine-image mb-3" 
+                        loading="lazy"
+                        />
+                        <p class="small text-uppercase mb-2">{post.data.category}</p>
+                        <time class="d-block small mb-2" datetime={post.data.pubDate.toISOString()}>
+                            {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
+                            </time>
+                            
+                            <h2 class="h4">{post.data.title}</h2>
+                            <p>{post.data.description}</p>
+                    </article>
+                </div>
+                ))}
+            </div>
             </div>
         </main>
 
