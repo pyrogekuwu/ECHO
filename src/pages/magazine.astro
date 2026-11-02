@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('magazine');
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="ECHO magazine - the story behind our products" />
+        <title>ECHO magazine</title>
+    </head>
+
+    <body>
+        <main>
+            <h1>magazine</h1>
+
+            {posts.map((post) => (
+                <article>
+                    <p>{post.data.category}</p>
+                    <h2>{post.data.title}</h2>
+                    <p>{post.data.description}</p>
+                </article>
+            ))}
+        </main>
+    </body>
+</html>
