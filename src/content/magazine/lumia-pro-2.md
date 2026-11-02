@@ -9,9 +9,11 @@ imageAlt: "white LUMIA Pro 2 headphones"
 tags: ["design", "headphones", "lumia", "lumia pro 2"]
 ---
 
+# LUMIA Pro 2: Behind The Design
+
 The LUMIA Pro 2 takes a restrained approach to headphone design. With its clean silhouette, light finish and carefully balanced proportions, the model reflects ECHO's interest in combining audio technology with contemporary product aesthetics.
 
-## Shape and identity
+### Shape and identity
 
 The silhouette is one of the most recognizable aspects of any pair of headphones. The curvature of the headband, the proportions of the earcups and the way individual components connect all contribute to a product's visual identity.
 
@@ -19,7 +21,7 @@ For LUMIA Pro 2, the focus is on smooth geometry and a streamlined appearance. R
 
 The result is a silhouette that feels modern without depending on an overly complicated form.
 
-## The importance of color and finish
+### The importance of color and finish
 
 Color has a significant influence on how technology is perceived. Black remains a familiar choice in audio equipment, but lighter finishes can reveal details that darker materials often conceal.
 
@@ -27,7 +29,7 @@ The white finish of LUMIA Pro 2 emphasizes the product's contours and creates a 
 
 This approach also allows the headphones to fit naturally into different visual contexts, from minimal product photography to more experimental fashion editorials.
 
-## How proportions affect comfort
+### How proportions affect comfort
 
 The dimensions of a pair of headphones influence more than their appearance. Earcup size, headband curvature and weight distribution all contribute to how headphones fit and feel during extended listening sessions.
 
@@ -35,7 +37,7 @@ These details may be less noticeable in product photography, but they play an im
 
 For LUMIA Pro 2, the streamlined silhouette provides a starting point for this balance between form and functionality.
 
-## A recognizable visual language
+### A recognizable visual language
 
 LUMIA Pro 2 represents a design direction built around simplicity, proportion and attention to detail. Its appearance is deliberately understated, allowing the shape of the product to remain the main focus.
 
