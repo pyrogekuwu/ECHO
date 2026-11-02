@@ -10,7 +10,6 @@ const categories = [
   { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
   { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
   { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
-  { name: 'magazine', image: '/images/category-magazine.png', alt: 'ECHO magazine cover with a model wearing the Aerospace earbuds', href: `${base}/magazine/` },
 ];
 const bestsellers = [
   { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones', href: `${base}/headphones/#product-lumia-white` },
@@ -226,7 +225,7 @@ const organization = {
     <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     
     <script>
-      
+
       const form = document.querySelector<HTMLFormElement>('#contact-form');
       const feedback = document.querySelector<HTMLElement>('#contact-feedback');
       form?.addEventListener('submit', (event) => {
