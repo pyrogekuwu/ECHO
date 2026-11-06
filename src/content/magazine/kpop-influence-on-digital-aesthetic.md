@@ -21,6 +21,12 @@ Concept photographs introduce the visual direction, while music videos expand it
 
 This consistency makes individual releases recognizable even when their visual direction changes significantly between projects.
 
+<figure>
+
+![Four korean women from group 'Aespa' standing next to each other.](./images/aespa-standing-dark.jpeg)
+
+</figure>
+
 ## The influence of cyber aesthetics
 
 Futuristic imagery has become particularly prominent in K-pop visual production. Chrome surfaces, synthetic textures, digital interfaces and unconventional typography frequently appear alongside fashion inspired by science fiction and early-2000s technology.
@@ -40,6 +46,15 @@ The video incorporates professional filming equipment as part of its visual comp
 Fashion plays a central role in establishing the concept. The members wear outfits combining runway-inspired silhouettes with technical and military influences. Restrained makeup, sleek hairstyles and carefully selected accessories reinforce the video's polished appearance.
 
 Whiplash demonstrates how a futuristic aesthetic can be achieved through composition, styling and camera work without relying heavily on elaborate CGI. Its combination of minimal sets, experimental cinematography and high-fashion influences creates a visual identity that feels closely connected to contemporary technology and editorial design.
+
+<div class="ratio ratio-16x9">
+  <iframe
+    src="https://www.youtube.com/watch?v=GjCNoZF9HxQ"
+    title="aespa 에스파 'Whiplash' MV Teaser"
+    loading="lazy"
+    allowfullscreen referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+</div>
 
 ## From music concepts to digital design
 

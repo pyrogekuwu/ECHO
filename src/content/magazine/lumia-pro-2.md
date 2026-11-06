@@ -21,7 +21,7 @@ The result is a silhouette that feels modern without depending on an overly comp
 
 <figure>
 
-![idk yet](./images/lumia-detail-dark.jpeg)
+![A pair of white Lumia Pro 2 overear headphones with dark shadows.](./images/lumia-detail-dark.jpeg)
 
 </figure>
 
@@ -40,6 +40,12 @@ The dimensions of a pair of headphones influence more than their appearance. Ear
 These details may be less noticeable in product photography, but they play an important role in everyday use. A well-considered design needs to balance its visual proportions with practical requirements, including adjustability and comfort.
 
 For LUMIA Pro 2, the streamlined silhouette provides a starting point for this balance between form and functionality.
+
+<figure>
+
+![A woman with black, short hair wearing white Lumia Pro 2 overear headphones.](./images/lumia-detail-woman.jpeg)
+
+</figure>
 
 ## A recognizable visual language
 
