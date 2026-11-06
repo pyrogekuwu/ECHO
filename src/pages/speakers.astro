@@ -1,0 +1,18 @@
+---
+import CategoryPage from '../components/CategoryPage.astro';
+
+const products = [
+  {
+    id: 'speaker',
+    name: 'speaker',
+    price: '€79.99',
+    image: '/images/product-speaker.png',
+    alt: 'speaker'
+  }
+];
+---
+
+<CategoryPage
+  title="speakers"
+  products={products}
+/>
