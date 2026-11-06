@@ -54,9 +54,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
                         <h1>{post.data.title}</h1>
 
-                        <div class="article-meta text-uppercase">
+                        <div class="article-meta article-by-line text-reset text-uppercase">
                             <p class="article-category">{post.data.category}</p>
-                            <div class="article-byline">
                                 
                                 <span>by {post.data.author}</span>
                                 
@@ -66,8 +65,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                                     {post.data.pubDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC', })}
                                 </time>
                             </div>
-                        </div>
-                        s
+                        
 
                         <Content />
 
