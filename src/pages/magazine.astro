@@ -43,12 +43,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <div class="col-12 col-md-6 col-lg-4">
                     
                     <article>
-
-                        <img
-                        src={`${base}${post.data.image}`} 
-                        alt={post.data.imageAlt} 
-                        class="magazine-image mb-3" 
-                        loading="lazy"/>
+                        <a href={`${base}/magazine/${post.id}/`} class="d-block">
+                            <img
+                            src={`${base}${post.data.image}`} 
+                            alt={post.data.imageAlt} 
+                            class="magazine-image mb-3" 
+                            loading="lazy"/>
+                        </a>
 
                         <p class="small text-uppercase mb-2">{post.data.category}</p>
 
@@ -56,13 +57,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                             {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
                             </time>
                             
-                            <h2 class="h4">{post.data.title}</h2>
+                            <h2 class="h4">
+                                <a href={`${base}/magazine/${post.id}/`} class="text-decoration-none">
+                                    {post.data.title}
+                                </a>
+                            </h2>
+
                             <p>{post.data.description}</p>
 
                             <a href={`${base}/magazine/${post.id}/`} class="rectangle-button button-dark">
                                 Read more
                             </a>
-                            
+
                     </article>
                 </div>
                 ))}
