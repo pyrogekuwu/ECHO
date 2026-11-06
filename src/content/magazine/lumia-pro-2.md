@@ -1,6 +1,6 @@
 ---
 title: "LUMIA Pro 2: Behind The Design"
-description: "A closer look at the creation of LUMIA Pro 2."
+description: "A closer look at the creation of LUMIA Pro 2. What's behind the newest ECHO design and why should you care."
 pubDate: 2026-11-02
 category: "Design"
 author: "Julia Gonkiewicz"

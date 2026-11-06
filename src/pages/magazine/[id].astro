@@ -48,6 +48,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     loading="lazy" />
                 
                     <div class="article-content">
+                            <a class="small text-uppercase mb-2" href="../magazine/"><span aria-hidden="true">❮</span>go back to magazine</a>
                             <p class="small text-uppercase mb-2">{post.data.category}</p>
                             <time class="d-block small mb-4" datetime={post.data.pubDate.toISOString()}>
                             {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
