@@ -35,6 +35,12 @@ Metallic textures are commonly incorporated into accessories, lettering and digi
 
 High-contrast visuals often combine dark backgrounds with reflective surfaces, while cyber-inspired fashion incorporates technical fabrics, sculptural silhouettes and industrial details. Together, these elements create a visual language that draws from both nostalgic and futuristic references.
 
+<figure>
+
+![Winter Aespa woman posing in a cold room with metallic objects, wearing leather jacket and silver sunglasses.](./images/aespa-winter-sunglasses.jpeg)
+
+</figure>
+
 ## Aespa's Whiplash: A case study on chrome futurism
 
 A notable example of this visual direction is the music video for Whiplash, released by South Korean girl group aespa in October 2024.
