@@ -21,6 +21,12 @@ In contemporary pop performances, cyber-inspired clothing and metallic finishes 
 
 Lighting, camera angles and digital effects all contribute to the final appearance, making performance styling closely connected to graphic and digital design.
 
+<figure>
+
+![Winter Aespa woman posing in a cold room with metallic objects, wearing leather jacket and silver sunglasses.](./images/aespa-winter-sunglasses.jpeg)
+
+</figure>
+
 ## Translating fashion into objects
 
 The relationship between fashion and product design is especially visible in wearable technology. Headphones, earbuds and other portable accessories occupy a space between electronic devices and personal styling. 
@@ -36,6 +42,12 @@ A stage outfit can prioritize visual impact over practicality. Consumer products
 A pair of headphones must remain comfortable, durable and functional regardless of its appearance. This means that experimental ideas often need to be simplified before they can translate into a physical product.
 
 The most successful applications preserve the original visual character while adapting it to everyday use.
+
+<figure>
+
+![Japanese woman posing in cyberpunk, black and white jacket and boots, in a white room.](./images/costume.jpg)
+
+</figure>
 
 ## A shared creative direction
 

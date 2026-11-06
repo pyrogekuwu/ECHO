@@ -25,11 +25,23 @@ Clean tech visuals frequently rely on controlled studio photography.
 Products are positioned against simple backgrounds, with lighting used to emphasize their form and surface details. Reflective materials such as aluminum, polished plastic and chrome introduce contrast through highlights and shadows.
 A pair of silver headphones photographed against a light gray background may appear visually simple, but the final image depends heavily on the placement of reflections and the balance between light and dark surfaces.
 
+<figure>
+
+![Silver metallic heaphones in a white room](./images/metalic-steampunk-heaphones.jpg)
+
+</figure>
+
 This approach allows the product itself to become the central visual element.
 
 ## Typography and composition
 
 Typography plays an equally important role in minimalist digital design. Large headings, consistent spacing and well-defined alignment can create a strong identity without elaborate graphical decoration.
+
+<figure>
+
+![A collage of two sets of typography.](./images/typography.png)
+
+</figure>
 
 ### Common techniques include:
 - Restrained color palettes built around black, white and neutral tones.
@@ -40,9 +52,34 @@ Typography plays an equally important role in minimalist digital design. Large h
 
 The challenge is maintaining clarity across different screen sizes. A layout that looks balanced on a desktop monitor may need significant adjustments for a mobile display.
 
+<figure>
+
+![Landing page of the Nothing. website featuring black headphones on a black, starry background](./images/nothing-website-landing-page.png)
+
+</figure>
+
+<figure>
+
+![Page with phones on the Nothing. website](./images/nothing-website-phones.png)
+
+</figure>
+
+
 ## Where minimalism falls short
 
 Minimalism can become ineffective when visual simplicity takes priority over usability. Extremely small text, insufficient contrast and hidden navigation may create a clean appearance but make interfaces difficult to understand. Similarly, removing too much product information can leave users without the details they need to make a purchasing decision. Good minimalist design maintains a balance between aesthetic restraint and practical communication.
+
+<figure>
+
+![Clothes viewing in a brutalist, black and white e-commerce web design with pixel font](./images/brutalist-pixel-web-design-1.png)
+
+</figure>
+
+<figure>
+
+![Landing page of a brutalist, black and white e-commerce web design with pixel font.](./images/brutalist-pixel-web-design-2.png)
+
+</figure>
 
 ## The direction of modern tech branding
 
