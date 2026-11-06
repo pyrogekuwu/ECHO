@@ -1,0 +1,18 @@
+---
+import CategoryPage from '../components/CategoryPage.astro';
+
+const products = [
+  {
+    id: 'product-aerospace-black',
+    name: 'AEROSPACE Earbuds Black',
+    price: '€79.99',
+    image: '/images/product-aerospace-black.png',
+    alt: 'Black AEROSPACE Earbuds'
+  }
+];
+---
+
+<CategoryPage
+  title="earbuds"
+  products={products}
+/>
