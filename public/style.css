@@ -330,3 +330,10 @@ img { display: block; }
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+.article-read-more {
+  min-width: 8rem;
+  min-height: 2.5rem;
+  justify-content: space-between;
+  font-size: .79rem;
+  padding: .5rem 1rem;
+}
