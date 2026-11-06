@@ -94,6 +94,9 @@ img { display: block; }
   background-size: cover;
   background-repeat: no-repeat;
 }
+.category-title-main {
+
+}
 
 .shop-categories { padding-top: clamp(3.2rem, 6vw, 5rem); padding-bottom: 4rem; }
 .editorial-heading { font: 500 clamp(2rem, 2.7vw, 3.3rem)/1 var(--font-serif); letter-spacing: -.022em; display: flex; align-items: center; gap: .7rem; width: max-content; max-width: 100%; margin: 0 0 3rem; color: #0b0b0c; }
@@ -336,4 +339,18 @@ img { display: block; }
   justify-content: space-between;
   font-size: .79rem;
   padding: .5rem 1rem;
+}
+.article-main {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.article-main .hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  max-height: 60svh;
+  object-fit: cover;
+  object-position: center;
 }
