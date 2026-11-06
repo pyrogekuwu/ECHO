@@ -49,10 +49,11 @@ Whiplash demonstrates how a futuristic aesthetic can be achieved through composi
 
 <div class="ratio ratio-16x9">
   <iframe
-    src="https://www.youtube.com/watch?v=GjCNoZF9HxQ"
+    src="https://www.youtube.com/embed/GjCNoZF9HxQ?si=d9XygJruL2hDe5Dz"
     title="aespa 에스파 'Whiplash' MV Teaser"
     loading="lazy"
-    allowfullscreen referrerpolicy="strict-origin-when-cross-origin">
+    allowfullscreen 
+    referrerpolicy="strict-origin-when-cross-origin">
     </iframe>
 </div>
 
