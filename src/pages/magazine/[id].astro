@@ -50,7 +50,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="article-content">
                         <div class="d-flex align-items-center gap-2 small mb-4">
                             <p class="small text-uppercase mb-2">{post.data.category}</p>
-                            <span aria-hidden="true">·</span>
+                            <span aria-hidden="true">|</span>
                             <time class="d-block small mb-4" datetime={post.data.pubDate.toISOString()}>
                             {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
                         </time>
