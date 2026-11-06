@@ -7,13 +7,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 /* ECHO landing page */
 const categories = [
   { name: 'headphones', image: '/images/category-headphones.png', alt: 'Metallic over-ear ECHO headphones on a black background', href: `${base}/headphones/` },
-  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: '#product-aerospace-black' },
-  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: '#contact' },
-  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: '#contact' },
+  { name: 'earbuds', image: '/images/category-earbuds.png', alt: 'Chrome star-shaped Aerospace wireless earbuds', href: `${base}/earbuds/` },
+  { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: `${base}/speakers/` },
+  { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: `${base}/accessories/` },
 ];
 const bestsellers = [
   { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones', href: `${base}/headphones/#product-lumia-white` },
-  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes', href: '#collections' },
+  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes', href: `${base}/earbuds/#product-aerospace-black` },
   { id: 'product-vesper-silver', name: 'VESPER Metallic Silver', price: '€99.99', image: '/images/product-vesper-silver.png', alt: 'Silver and black over-ear headphones shown on a white background', href: `${base}/headphones/#product-vesper-silver` },
 ];
 const organization = {
@@ -84,7 +84,10 @@ const organization = {
         <!-- SHOP BY CATEGORIES -->
         <section id="shop" class="shop-categories content-section" aria-labelledby="categories-heading">
           <div class="container-fluid echo-container">
-            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
+            <h2 id="categories-heading" class="editorial-heading">shop by categories <span class="heading-line" aria-hidden="true">
+              </span><span class="diamond" aria-hidden="true"></span>
+            </h2>
+
             <div class="row g-3 g-xl-4 category-row">
               {categories.map((category) => (
                 <div class="col-6 col-lg-3" id={`category-${category.name}`}>
