@@ -19,6 +19,12 @@ For LUMIA Pro 2, the focus is on smooth geometry and a streamlined appearance. R
 
 The result is a silhouette that feels modern without depending on an overly complicated form.
 
+<figure>
+
+![idk yet](./images/lumia-detail.jpeg)
+
+</figure>
+
 ## The importance of color and finish
 
 Color has a significant influence on how technology is perceived. Black remains a familiar choice in audio equipment, but lighter finishes can reveal details that darker materials often conceal.

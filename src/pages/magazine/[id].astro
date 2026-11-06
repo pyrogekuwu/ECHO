@@ -48,13 +48,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     loading="lazy" />
                 
                     <div class="article-content">
-                            <a class="d-block small mb-4 text-decoration-none" href="../magazine/"><span aria-hidden="true">❮</span>go back to magazine</a>
-                            <p class="small text-uppercase mb-2">{post.data.category}</p>
-                            <time class="d-block small mb-4" datetime={post.data.pubDate.toISOString()}>
-                            {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
-                        </time>
+
+                            <a class="d-block small mb-4 text-decoration-none" href={`${base}/magazine/`}>
+                                <span aria-hidden="true">❮</span>go back to magazine</a>
 
                         <h1>{post.data.title}</h1>
+
+                        <div class="article-body">
+                            <p class="small text-uppercase mb-2">{post.data.category}</p>
+
+                            <time class="small text-uppercase mb-2" datetime={post.data.pubDate.toISOString()}>
+                            {post.data.pubDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',})}
+                            </time>
+
+                            <p class="small text-uppercase mb-2">by {post.data.author}</p>
+
+                        </div>
+
                         
 
                         <Content />
