@@ -369,3 +369,20 @@ img { display: block; }
 .article-content figure p { margin: 0; }
 .article-content img { max-width: 100%; height: auto; }
 .article-content figcaption { margin-top: .75rem; font-size: .875rem; line-height: 1.5; }
+.article-meta { text-align: center; margin-bottom: 2rem; }
+.article-meta .article-category { margin: 0 0 .75rem; font-size: .75rem; text-transform: uppercase; }
+.article-byline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+
+  font-family: var(--font-tech);
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #626979;
+}
