@@ -364,3 +364,8 @@ img { display: block; }
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
+
+.article-content figure { margin: 2rem 0; }
+.article-content figure p { margin: 0; }
+.article-content img { max-width: 100%; height: auto; }
+.article-content figcaption { margin-top: .75rem; font-size: .875rem; line-height: 1.5; }

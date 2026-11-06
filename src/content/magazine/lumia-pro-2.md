@@ -21,7 +21,7 @@ The result is a silhouette that feels modern without depending on an overly comp
 
 <figure>
 
-![idk yet](./images/lumia-detail.jpeg)
+![idk yet](./images/lumia-detail-dark.jpeg)
 
 </figure>
 
