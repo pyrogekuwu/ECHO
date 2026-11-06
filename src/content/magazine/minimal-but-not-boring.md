@@ -71,7 +71,7 @@ Minimalism can become ineffective when visual simplicity takes priority over usa
 
 <figure>
 
-![Clothes viewing in a brutalist, black and white e-commerce web design with pixel font](./images/brutalist-pixel-web-design-1.png)
+![Minimalistic gray website with grid.](./images/minimal-gray-website.webp)
 
 </figure>
 
