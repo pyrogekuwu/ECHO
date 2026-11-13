@@ -1,0 +1,41 @@
+{
+    "id": "product-aerospace-white",
+    "name": "AEROSPACE Earbuds White",
+    "category": "earbuds",
+    "price": 89.99,
+    "image": "/images/product-aerospace-white.png",
+    "alt": "White AEROSPACE earbuds",
+    "inStock": true,
+    "gallery": [
+      {
+        "src": "/images/product-aerospace-white.png",
+        "alt": "White AEROSPACE earbuds"
+      },
+      {
+        "src": "/images/product-aerospace-white-detail-1.png",
+        "alt": "White AEROSPACE earbuds, detail view 1"
+      },
+      {
+        "src": "/images/product-aerospace-white-detail-2.png",
+        "alt": "White AEROSPACE earbuds, detail view 2"
+      },
+      {
+        "src": "/images/product-aerospace-white-detail-3.jpg",
+        "alt": "White AEROSPACE earbuds, detail view 3"
+      }
+    ],
+    "variants": [
+      {
+        "label": "Black",
+        "productId": "product-aerospace-black"
+      },
+      {
+        "label": "Silver",
+        "productId": "product-aerospace-silver"
+      },
+      {
+        "label": "White",
+        "productId": "product-aerospace-white"
+      }
+    ]
+  }

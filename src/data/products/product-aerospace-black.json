@@ -1,0 +1,45 @@
+{
+    "id": "product-aerospace-black",
+    "name": "AEROSPACE Earbuds Black",
+    "category": "earbuds",
+    "price": 79.99,
+    "image": "/images/product-aerospace-black.png",
+    "alt": "Black AEROSPACE earbuds",
+    "inStock": true,
+    "gallery": [
+      {
+        "src": "/images/product-aerospace-black.png",
+        "alt": "Black AEROSPACE earbuds"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-1.png",
+        "alt": "Black AEROSPACE earbuds, detail view 1"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-2.png",
+        "alt": "Black AEROSPACE earbuds, detail view 2"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-3.jpg",
+        "alt": "Black AEROSPACE earbuds, detail view 3"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-4.jpg",
+        "alt": "Black AEROSPACE earbuds, detail view 4"
+      }
+    ],
+    "variants": [
+      {
+        "label": "Black",
+        "productId": "product-aerospace-black"
+      },
+      {
+        "label": "Silver",
+        "productId": "product-aerospace-silver"
+      },
+      {
+        "label": "White",
+        "productId": "product-aerospace-white"
+      }
+    ]
+  }

@@ -1,0 +1,9 @@
+{
+    "id": "product-sphere-black",
+    "name": "SPHERE Black Speaker",
+    "category": "speakers",
+    "price": 249.99,
+    "image": "/images/product-sphere-black.jpg",
+    "alt": "Black SPHERE speaker",
+    "inStock": true
+  }

@@ -1,0 +1,9 @@
+{
+    "id": "product-tamagotchi-keychain-silver",
+    "name": "TAMAGOTCHI Keychain Silver",
+    "category": "accessories",
+    "price": 29.99,
+    "image": "/images/product-tamagotchi-keychain-silver.jpg",
+    "alt": "Silver TAMAGOTCHI keychain",
+    "inStock": true
+  }

@@ -1,0 +1,9 @@
+{
+    "id": "product-starlight-silver",
+    "name": "STARLIGHT Earbuds Silver",
+    "category": "earbuds",
+    "price": 99.99,
+    "image": "/images/product-starlight-silver.png",
+    "alt": "Silver STARLIGHT earbuds",
+    "inStock": true
+  }

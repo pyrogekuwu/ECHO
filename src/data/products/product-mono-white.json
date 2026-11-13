@@ -1,0 +1,9 @@
+{
+    "id": "product-mono-white",
+    "name": "MONO White Speaker",
+    "category": "speakers",
+    "price": 239.99,
+    "image": "/images/product-mono-white.jpg",
+    "alt": "White MONO speaker",
+    "inStock": true
+  }
