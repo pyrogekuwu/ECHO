@@ -1,15 +1,12 @@
 ---
 import CategoryPage from '../components/CategoryPage.astro';
+import { products } from '../data/products';
 
-const products = [
-  {
-    id: 'product-aerospace-black',
-    name: 'AEROSPACE Earbuds Black',
-    price: '€79.99',
-    image: '/images/product-aerospace-black.png',
-    alt: 'Black AEROSPACE Earbuds'
-  }
-];
+const category = 'headphones';
+
+const categoryProducts = products.filter(
+  (product) => product.category === category
+);
 ---
 
-<CategoryPage title="earbuds" products={products} />
+<CategoryPage title={category} products={categoryProducts} />
