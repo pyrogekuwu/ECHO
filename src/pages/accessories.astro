@@ -1,15 +1,12 @@
 ---
 import CategoryPage from '../components/CategoryPage.astro';
+import { products } from '../data/products';
 
-const products = [
-  {
-    id: 'accessory',
-    name: 'accessory',
-    price: '€79.99',
-    image: '/images/category-accessories.png',
-    alt: 'accessory'
-  }
-];
+const category = 'accessories';
+
+const categoryProducts = products.filter(
+  (product) => product.category === category
+);
 ---
 
-<CategoryPage title="accessories" products={products} />
+<CategoryPage title={category} products={categoryProducts} />

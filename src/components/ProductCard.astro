@@ -1,0 +1,28 @@
+---
+import type { Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const price = new Intl.NumberFormat('en-IE', {
+  style: 'currency',
+  currency: 'EUR',
+}).format(product.price);
+---
+
+<article class="product-card" id={product.id}>
+  <img
+    src={`${base}${product.image}`}
+    alt={product.alt}
+    class="product-card-image"
+    loading="lazy"
+  />
+
+  <h3>{product.name}</h3>
+  <p class="product-card-price">{price}</p>
+</article>

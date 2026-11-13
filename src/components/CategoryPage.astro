@@ -1,16 +1,10 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import SiteHead from '../components/SiteHead.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import SiteHead from './SiteHead.astro';
+import ProductCard from './ProductCard.astro';
+import type { Product } from '../data/products';
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-interface Product {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-  alt: string;
-}
 interface Props {
   title: string;
   products: Product[];
@@ -18,7 +12,6 @@ interface Props {
 
 const { title, products } = Astro.props;
 ---
-
 
 
 <!doctype html>
@@ -40,20 +33,13 @@ const { title, products } = Astro.props;
 
         <div class="row g-4 mt-5 justify-content-center">
           {products.map((product) => (
-            <div class="col-12 col-sm-6 col-lg-4">
-              <article class="text-center" id={product.id}>
-
-                <img src={`${base}${product.image}`} alt={product.alt} class="img-fluid" loading="lazy" />
-
-                <h2 class="fs-6 mt-3">{product.name}</h2>
-                <p>{product.price}</p>
-
-              </article>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <ProductCard product={product} />
             </div>
-          ))}
-        </div>
-      </section>
-    </main>
+            ))}
+            </div>
+          </section>
+        </main>
 
     <Footer />
 

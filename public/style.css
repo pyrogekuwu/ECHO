@@ -76,7 +76,7 @@ img { display: block; }
 .button-dark:hover { background: #373951; color: #fff; }
 .hero-discover { margin-left: clamp(3rem, 12vw, 17rem); }
 
-/* ECOMMERCE */
+/* MODUŁ ECOMMERCE */
 .icon-button .bi { font-size: 1rem; line-height: 1; }
 .cart-count {
   position: absolute;
@@ -94,6 +94,19 @@ img { display: block; }
   font-size: 0.65rem;
   font-weight: 600;
   line-height: 1;
+}
+.product-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #f7f7fa;
+}
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+}
+.product-card-price {
+  margin: 0;
 }
 
 /* SHOP SECTIONS */

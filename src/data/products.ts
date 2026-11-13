@@ -97,3 +97,5 @@ export const products = [
   },
 
 ];
+
+export type Product = (typeof products)[number];
