@@ -3,36 +3,36 @@
     "name": "VENUS Silver",
     "category": "headphones",
     "price": 119.99,
-    "image": "/images/product-venus-silver.jpg",
+    "image": "/images/product-venus-silver.png",
     "alt": "Silver Venus headphones",
     "inStock": true,
     "gallery": [
     {
-      "src": "/images/product-venus-silver.jpg",
+      "src": "/images/product-venus-silver.png",
       "alt": "Silver Venus headphones"
     },
     {
-      "src": "/images/product-venus-silver-detail-1.jpg",
+      "src": "/images/product-venus-silver-detail-1.png",
       "alt": "Silver Venus headphones, detail view 1"
     },
     {
-      "src": "/images/product-venus-silver-detail-2.jpg",
+      "src": "/images/product-venus-silver-detail-2.png",
       "alt": "Silver Venus headphones, detail view 2"
     },
     {
-      "src": "/images/product-venus-silver-detail-3.jpg",
+      "src": "/images/product-venus-silver-detail-3.png",
       "alt": "Silver Venus headphones, detail view 3"
     },
     {
-      "src": "/images/product-venus-silver-detail-4.jpg",
+      "src": "/images/product-venus-silver-detail-4.png",
       "alt": "Silver Venus headphones, detail view 4"
     },
     {
-      "src": "/images/product-venus-silver-detail-5.jpg",
+      "src": "/images/product-venus-silver-detail-5.png",
       "alt": "Silver Venus headphones, detail view 5"
     },
     {
-      "src": "/images/product-venus-silver-detail-6.jpg",
+      "src": "/images/product-venus-silver-detail-6.png",
       "alt": "Silver Venus headphones, detail view 6"
     }
   ]
