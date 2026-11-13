@@ -20,7 +20,7 @@ export const products = [
     name: 'VENUS Silver',
     category: 'headphones',
     price: 119.99,
-    image: '/images/product-venus-silver.png',
+    image: '/images/product-venus-silver.jpg',
     alt: 'Silver Venus headphones',
   },
 
@@ -47,7 +47,7 @@ export const products = [
     name: 'AEROSPACE Earbuds White',
     category: 'earbuds',
     price: 89.99,
-    image: '/images/product-aerospace-white.png',
+    image: '/images/product-aerospace-white-detail-1.jpg',
     alt: 'White AEROSPACE earbuds',
   },
   {
@@ -65,7 +65,7 @@ export const products = [
     name: 'MONO White Speaker',
     category: 'speakers',
     price: 239.99,
-    image: '/images/product-mono-white.png',
+    image: '/images/product-mono-white.jpg',
     alt: 'White MONO speaker',
   },
   {
@@ -73,7 +73,7 @@ export const products = [
     name: 'SPHERE Black Speaker',
     category: 'speakers',
     price: 249.99,
-    image: '/images/product-sphere-black.png',
+    image: '/images/product-sphere-black.jpg',
     alt: 'Black SPHERE speaker',
   },
 
@@ -84,7 +84,7 @@ export const products = [
     name: 'TAMAGOTCHI Keychain Silver',
     category: 'accessories',
     price: 29.99,
-    image: '/images/product-tamagotchi-keychain-silver.png',
+    image: '/images/product-tamagotchi-keychain-silver.jpg',
     alt: 'Silver TAMAGOTCHI keychain',
   },
   {
@@ -92,7 +92,7 @@ export const products = [
     name: 'CHARMS Silver',
     category: 'accessories',
     price: 19.99,
-    image: '/images/product-charms-silver.png',
+    image: '/images/product-charms-silver.jpg',
     alt: 'Silver CHARMS accessory',
   },
 
