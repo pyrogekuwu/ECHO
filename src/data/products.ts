@@ -21,6 +21,11 @@ export interface Product {
 }
 
 export const products: Product[] = [
+  
+  
+  
+  /* HEADPHONES */
+  
   {
     "id": "product-lumia-white",
     "name": "LUMIA Pro 2 White",
@@ -48,6 +53,11 @@ export const products: Product[] = [
     "alt": "Silver Venus headphones",
     "inStock": true
   },
+
+
+
+  /* EARBUDS */
+
   {
     "id": "product-aerospace-black",
     "name": "AEROSPACE Earbuds Black",
@@ -61,12 +71,20 @@ export const products: Product[] = [
         "alt": "Black AEROSPACE earbuds"
       },
       {
-        "src": "/images/product-aerospace-black-detail-1.jpg",
+        "src": "/images/product-aerospace-black-detail-1.png",
         "alt": "Black AEROSPACE earbuds, detail view 1"
       },
       {
-        "src": "/images/product-aerospace-black-detail-2.jpg",
+        "src": "/images/product-aerospace-black-detail-2.png",
         "alt": "Black AEROSPACE earbuds, detail view 2"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-3.jpg",
+        "alt": "Black AEROSPACE earbuds, detail view 3"
+      },
+      {
+        "src": "/images/product-aerospace-black-detail-4.jpg",
+        "alt": "Black AEROSPACE earbuds, detail view 4"
       }
     ],
     "variants": [
@@ -102,12 +120,16 @@ export const products: Product[] = [
         "alt": "Silver AEROSPACE earbuds, detail view 1"
       },
       {
-        "src": "/images/product-aerospace-silver-detail-2.webp",
+        "src": "/images/product-aerospace-silver-detail-2.png",
         "alt": "Silver AEROSPACE earbuds, detail view 2"
       },
       {
-        "src": "/images/product-aerospace-silver-detail-3.jpg",
+        "src": "/images/product-aerospace-silver-detail-3.webp",
         "alt": "Silver AEROSPACE earbuds, detail view 3"
+      },
+      {
+        "src": "/images/product-aerospace-silver-detail-4.jpg",
+        "alt": "Silver AEROSPACE earbuds, detail view 4"
       }
     ],
     "variants": [
@@ -172,12 +194,16 @@ export const products: Product[] = [
         "alt": "White AEROSPACE earbuds"
       },
       {
-        "src": "/images/product-aerospace-white-detail-2.jpg",
+        "src": "/images/product-aerospace-white-detail-1.jpg",
         "alt": "White AEROSPACE earbuds, detail view 1"
       },
       {
         "src": "/images/product-aerospace-white-detail-2.png",
         "alt": "White AEROSPACE earbuds, detail view 2"
+      },
+      {
+        "src": "/images/product-aerospace-white-detail-3.jpg",
+        "alt": "White AEROSPACE earbuds, detail view 3"
       }
     ],
     "variants": [
@@ -214,6 +240,11 @@ export const products: Product[] = [
     "alt": "White MONO speaker",
     "inStock": true
   },
+
+
+
+  /* SPEAKERS */
+
   {
     "id": "product-sphere-black",
     "name": "SPHERE Black Speaker",

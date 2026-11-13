@@ -165,7 +165,7 @@ const price = new Intl.NumberFormat('en-IE', {
             </a>
 
 
-            <div class="accordion-item">
+            <div class="accordion accordion-flush product-accordion" id="product-details">
                 <h2 class="accordion-header">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#product-description" aria-expanded="true" aria-controls="product-description">
@@ -227,3 +227,11 @@ const price = new Intl.NumberFormat('en-IE', {
     <Footer />
     <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
+  const variant = document.querySelector<HTMLSelectElement>('#product-variant');
+
+  variant?.addEventListener('change', () => {
+    if (variant.value) window.location.assign(variant.value);
+  });
+</script>
+</body>
+</html>
