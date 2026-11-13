@@ -47,7 +47,7 @@ export const products = [
     name: 'AEROSPACE Earbuds White',
     category: 'earbuds',
     price: 89.99,
-    image: '/images/product-aerospace-white-detail-1.jpg',
+    image: '/images/product-aerospace-white.png',
     alt: 'White AEROSPACE earbuds',
   },
   {
