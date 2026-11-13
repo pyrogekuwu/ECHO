@@ -25,7 +25,7 @@ export const products: Product[] = [
   
   
   /* HEADPHONES */
-  
+
   {
     "id": "product-lumia-white",
     "name": "LUMIA Pro 2 White",
@@ -33,7 +33,29 @@ export const products: Product[] = [
     "price": 139.99,
     "image": "/images/product-lumia-white.png",
     "alt": "White Lumia Pro 2 over-ear headphones",
-    "inStock": true
+    "inStock": true,
+    "gallery": [
+      {
+        "src": "/images/product-lumia-white.png",
+        "alt": "White Lumia Pro 2 over-ear headphones"
+      },
+      {
+        "src": "/images/product-lumia-white-detail-1.png",
+        "alt": "White Lumia Pro 2 over-ear headphones, detail view 1"
+      },
+      {
+        "src": "/images/product-lumia-white-detail-2.png",
+        "alt": "White Lumia Pro 2 over-ear headphones, detail view 2"
+      },
+      {
+        "src": "/images/product-lumia-white-detail-3.png",
+        "alt": "White Lumia Pro 2 over-ear headphones, detail view 3"
+      },
+      {
+        "src": "/images/product-lumia-white-detail-4.png",
+        "alt": "White Lumia Pro 2 over-ear headphones, detail view 4"
+      }
+    ]
   },
   {
     "id": "product-vesper-silver",
@@ -194,7 +216,7 @@ export const products: Product[] = [
         "alt": "White AEROSPACE earbuds"
       },
       {
-        "src": "/images/product-aerospace-white-detail-1.jpg",
+        "src": "/images/product-aerospace-white-detail-1.png",
         "alt": "White AEROSPACE earbuds, detail view 1"
       },
       {
