@@ -8,26 +8,106 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <!doctype html>
 <html lang="en">
-
   <head>
     <SiteHead />
-    <title>cart | ECHO</title>
+    <title>Your cart | ECHO</title>
+    <meta name="description" content="Review your ECHO products and order total." />
   </head>
-
   <body id="top" class="cart-page">
-
+    <a class="skip-link" href="#main">Skip to content</a>
     <Navbar />
 
-    <main id="main" class="min-vh-100 py-5">
-      <section class="container">
-        <h1>cart</h1>
-      </section>
+    <main id="main" class="cart-main" data-cart-page>
+      <div class="container-fluid echo-container">
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item"><a href={`${base}/`}>Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+          </ol>
+        </nav>
+        <div class="cart-heading">
+          <h1>Your cart</h1>
+          <a href={`${base}/#shop`}>Continue shopping <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <p class="cart-feedback" data-cart-feedback role="status" hidden></p>
+        <p data-cart-loading role="status">Loading your cart…</p>
+        <noscript><p>Enable JavaScript to manage your cart.</p></noscript>
+
+
+        <div class="cart-layout" data-cart-content hidden>
+          <section aria-label="Products in your cart">
+            <div class="table-responsive">
+              <table class="table align-middle cart-table">
+                <caption class="visually-hidden">Your products, quantities and prices</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"><span class="visually-hidden">Remove</span></th>
+                  </tr>
+                </thead>
+                <tbody data-cart-items></tbody>
+              </table>
+            </div>
+
+            <form id="cart-coupon-form" class="cart-coupon">
+              <label class="form-label" for="cart-coupon">Discount code</label>
+              <div class="cart-coupon-controls">
+                <input class="form-control" id="cart-coupon" name="coupon" type="text"
+                  placeholder="Enter code" autocomplete="off" aria-describedby="cart-coupon-help" required />
+                <button class="rectangle-button button-dark" type="submit">Apply</button>
+              </div>
+              <p id="cart-coupon-help">Try ECHO10 for 10% off products.</p>
+              <button type="button" class="cart-text-button" data-cart-remove-coupon hidden>Remove code</button>
+            </form>
+          </section>
+
+
+          <aside class="cart-summary" aria-labelledby="cart-summary-heading">
+            <h2 id="cart-summary-heading">Order summary</h2>
+            <p class="cart-summary-count" data-cart-item-count></p>
+            <dl class="cart-totals">
+              <div><dt>Subtotal</dt><dd data-cart-subtotal></dd></div>
+              <div data-cart-discount-row hidden><dt>Discount · ECHO10</dt><dd data-cart-discount></dd></div>
+              <div><dt>Estimated delivery</dt><dd data-cart-delivery></dd></div>
+              <div class="cart-grand-total"><dt>Total</dt><dd data-cart-total></dd></div>
+            </dl>
+            <a class="rectangle-button button-dark cart-checkout" href={`${base}/checkout/`}>
+              Checkout <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+            <p class="cart-summary-note">Prices include VAT. Delivery is estimated at €5.00.</p>
+          </aside>
+        </div>
+
+        <section class="cart-empty" data-cart-empty hidden aria-labelledby="cart-empty-heading">
+          <i class="bi bi-bag" aria-hidden="true"></i>
+          <h2 id="cart-empty-heading">Your cart is empty</h2>
+          <p>Find something to make your everyday listening different.</p>
+          <a class="rectangle-button button-dark" href={`${base}/#shop`}>Explore the collection</a>
+          <button type="button" class="cart-text-button" data-cart-restore>Try two example products</button>
+        </section>
+
+        <template id="cart-row-template">
+          <tr>
+            <td>
+              <a class="cart-product" data-cart-product-link>
+                <img class="cart-product-image" width="88" height="88" alt="" />
+                <span><strong data-cart-name></strong><small data-cart-variant></small></span>
+              </a>
+            </td>
+            <td class="cart-money" data-cart-unit-price></td>
+            <td><input class="form-control cart-quantity" type="number" min="1" max="99" step="1" required data-cart-quantity /></td>
+            <td class="cart-money" data-cart-line-total></td>
+            <td><button class="cart-remove" type="button" data-cart-remove><i class="bi bi-trash" aria-hidden="true"></i></button></td>
+          </tr>
+        </template>
+      </div>
     </main>
 
+
     <Footer />
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   </body>
 </html>

@@ -31,20 +31,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                         <a class="icon-button" href={`${base}/#contact`} aria-label="Contact us">
                             <i class="bi bi-envelope" aria-hidden="true"></i>
                         </a>
-                        <a class="icon-button" href={`${base}/cart/`} aria-label="Cart">
+                        <a class="icon-button position-relative" href={`${base}/cart/`} aria-label="Cart" data-cart-link >
                             <i class="bi bi-cart" aria-hidden="true"></i>
-                        </a>
+                            <span class="badge rounded-pill cart-count" data-cart-count aria-hidden="true">2</span></a>
+                        </div>
                     </div>
                 </div>
+            </nav>
+            <div class="search-panel" id="site-search" hidden>
+                <label for="search-input">Search the collection</label>
+                <input id="search-input" type="search" placeholder="Try ‘headphones’" autocomplete="off" aria-describedby="search-feedback" />
+                <p id="search-feedback" role="status">Choose a category or search for a product.</p>
             </div>
-        </nav>
-        <div class="search-panel" id="site-search" hidden>
-            <label for="search-input">Search the collection</label>
-            <input id="search-input" type="search" placeholder="Try ‘headphones’" autocomplete="off" aria-describedby="search-feedback" />
-            <p id="search-feedback" role="status">Choose a category or search for a product.</p>
-        </div>
-    </header>
+        </header>
+
+
 <script>
+    import { initCart } from '../scripts/cart';
+    initCart();
+
       const searchToggle = document.querySelector<HTMLButtonElement>('#search-toggle');
       const searchPanel = document.querySelector<HTMLElement>('#site-search');
       const searchInput = document.querySelector<HTMLInputElement>('#search-input');
@@ -55,6 +60,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         searchToggle.setAttribute('aria-expanded', String(!searchPanel.hidden));
         if (!searchPanel.hidden) searchInput?.focus();
       });
+      
       searchInput?.addEventListener('input', () => {
         if (!searchFeedback) return;
         const q = searchInput.value.trim().toLowerCase();
