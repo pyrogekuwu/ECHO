@@ -5,5 +5,7 @@
     "price": 19.99,
     "image": "/images/product-charms-silver.jpg",
     "alt": "Silver CHARMS accessory",
-    "inStock": true
+    "inStock": true,
+    "collection": "CHARMS",
+    "color": "Silver"
   }

@@ -6,6 +6,8 @@
     "image": "/images/product-aerospace-silver.png",
     "alt": "Silver AEROSPACE earbuds",
     "inStock": true,
+    "collection": "AEROSPACE",
+    "color": "Silver",
     "gallery": [
       {
         "src": "/images/product-aerospace-silver.png",

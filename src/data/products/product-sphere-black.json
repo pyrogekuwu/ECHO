@@ -5,5 +5,7 @@
     "price": 249.99,
     "image": "/images/product-sphere-black.png",
     "alt": "Black SPHERE speaker",
-    "inStock": true
+    "inStock": true,
+    "collection": "SPHERE",
+    "color": "Black"
   }

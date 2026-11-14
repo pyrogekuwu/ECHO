@@ -6,6 +6,8 @@
     "image": "/images/product-aerospace-white.png",
     "alt": "White AEROSPACE earbuds",
     "inStock": true,
+    "collection": "AEROSPACE",
+    "color": "White",
     "gallery": [
       {
         "src": "/images/product-aerospace-white.png",

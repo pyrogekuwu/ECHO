@@ -6,6 +6,9 @@
     "image": "/images/product-vesper-silver.png",
     "alt": "Silver and black Vesper headphones",
     "inStock": true,
+    "collection": "VESPER",
+    "color": "Silver",
+
     "gallery": [
     {
       "src": "/images/product-vesper-silver.png",

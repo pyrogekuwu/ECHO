@@ -5,5 +5,7 @@
     "price": 239.99,
     "image": "/images/product-mono-white.png",
     "alt": "White MONO speaker",
-    "inStock": true
+    "inStock": true,
+    "collection": "MONO",
+    "color": "White"
   }

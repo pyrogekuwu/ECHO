@@ -6,6 +6,9 @@
     "image": "/images/product-venus-silver.png",
     "alt": "Silver Venus headphones",
     "inStock": true,
+    "collection": "VENUS",
+    "color": "Silver",
+
     "gallery": [
     {
       "src": "/images/product-venus-silver.png",

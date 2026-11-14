@@ -11,15 +11,48 @@ interface Props {
 }
 
 const { title, products } = Astro.props;
----
 
+const collections = [
+  ...new Set(products.map((product) => product.collection))
+].sort();
+
+const colors = [
+  ...new Set(products.map((product) => product.color))
+].sort();
+
+const inStockCount = products.filter(
+  (product) => product.inStock !== false
+).length;
+
+const outOfStockCount = products.length - inStockCount;
+
+const lowerPrice = products.length
+  ? Math.floor(Math.min(...products.map((product) => product.price)))
+  : 0;
+
+const upperPrice = products.length
+  ? Math.max(
+      lowerPrice + 1,
+      Math.ceil(Math.max(...products.map((product) => product.price)))
+    )
+  : 1;
+
+const swatches: Record<string, string> = {
+  Black: '#111111',
+  White: '#ffffff',
+  Silver: '#bcc0c7',
+};
+---
 
 <!doctype html>
 <html lang="en">
-
   <head>
     <SiteHead />
     <title>{title} | ECHO</title>
+    <meta
+      name="description"
+      content={`Explore the ECHO ${title} collection.`}
+    />
   </head>
 
   <body id="top">
@@ -27,23 +60,285 @@ const { title, products } = Astro.props;
 
     <Navbar />
 
-    <main id="main" class="category-main min-vh-100 py-5">
-      <section class="container">
-        <h1 class="editorial-heading">{title}
+    <main id="main" class="category-main category-page-main">
+      <section
+        class="container-fluid echo-container category-catalog"
+        data-category-catalog
+      >
+        <h1 class="editorial-heading category-page-title">
+          {title}
           <span class="heading-line" aria-hidden="true"></span>
           <span class="diamond" aria-hidden="true"></span>
         </h1>
 
+        <div class="category-layout">
+          <aside
+            class="offcanvas-lg offcanvas-start category-filters"
+            id="category-filters"
+            tabindex="-1"
+            aria-labelledby="category-filter-heading"
+          >
+            <div class="category-filter-header">
+              <h2 id="category-filter-heading">Filters</h2>
 
-        <div class="row g-4 mt-5 justify-content-center">
-          {products.map((product) => (
-          <div class="col-12 col-sm-6 col-lg-4">
-            <ProductCard product={product} />
+              <button
+                class="filter-clear"
+                type="button"
+                data-clear-filters
+                disabled
+              >
+                Clear all
+              </button>
+
+              <button
+                class="btn-close category-filter-close"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#category-filters"
+                aria-label="Close filters"
+              ></button>
             </div>
-            ))}
+
+            <form
+              class="category-filter-form"
+              data-filter-form
+              data-price-lower={lowerPrice}
+              data-price-upper={upperPrice}
+            >
+              <details class="filter-group">
+                <summary>
+                  Availability
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </summary>
+
+                <fieldset class="filter-options">
+                  <legend class="visually-hidden">Availability</legend>
+
+                  <label class="filter-option">
+                    <input
+                      type="checkbox"
+                      name="availability"
+                      value="in"
+                      disabled={inStockCount === 0}
+                    />
+                    <span>In stock ({inStockCount})</span>
+                  </label>
+
+                  <label class="filter-option">
+                    <input
+                      type="checkbox"
+                      name="availability"
+                      value="out"
+                      disabled={outOfStockCount === 0}
+                    />
+                    <span>Out of stock ({outOfStockCount})</span>
+                  </label>
+                </fieldset>
+              </details>
+
+              <details class="filter-group">
+                <summary>
+                  Collection
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </summary>
+
+                <fieldset class="filter-options">
+                  <legend class="visually-hidden">Collection</legend>
+
+                  {collections.map((collection) => (
+                    <label class="filter-option">
+                      <input
+                        type="checkbox"
+                        name="collection"
+                        value={collection}
+                      />
+                      <span>{collection}</span>
+                    </label>
+                  ))}
+                </fieldset>
+              </details>
+
+              <details class="filter-group">
+                <summary>
+                  Price
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </summary>
+
+                <div class="filter-price-controls">
+                  <div class="filter-range" data-price-track>
+                    <div
+                      class="filter-range-line"
+                      aria-hidden="true"
+                    ></div>
+
+                    <input
+                      type="range"
+                      min={lowerPrice}
+                      max={upperPrice}
+                      step="0.01"
+                      value={lowerPrice}
+                      aria-label="Minimum price"
+                      data-min-range
+                    />
+
+                    <input
+                      type="range"
+                      min={lowerPrice}
+                      max={upperPrice}
+                      step="0.01"
+                      value={upperPrice}
+                      aria-label="Maximum price"
+                      data-max-range
+                    />
+                  </div>
+
+                  <div class="filter-price-inputs">
+                    <label>
+                      <span>Min (€)</span>
+                      <input
+                        type="number"
+                        class="form-control"
+                        min={lowerPrice}
+                        max={upperPrice}
+                        step="0.01"
+                        value={lowerPrice}
+                        data-min-price
+                      />
+                    </label>
+
+                    <span aria-hidden="true">–</span>
+
+                    <label>
+                      <span>Max (€)</span>
+                      <input
+                        type="number"
+                        class="form-control"
+                        min={lowerPrice}
+                        max={upperPrice}
+                        step="0.01"
+                        value={upperPrice}
+                        data-max-price
+                      />
+                    </label>
+                  </div>
+                </div>
+              </details>
+
+              <details class="filter-group">
+                <summary>
+                  Color
+                  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </summary>
+
+                <fieldset class="filter-colors">
+                  <legend class="visually-hidden">Color</legend>
+
+                  {colors.map((color) => (
+                    <label class="filter-color-option">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value={color}
+                      />
+
+                      <span
+                        class="filter-swatch"
+                        style={`--swatch-color: ${swatches[color] ?? '#888888'}`}
+                        aria-hidden="true"
+                      ></span>
+
+                      <span>{color}</span>
+                    </label>
+                  ))}
+                </fieldset>
+              </details>
+            </form>
+
+            <div class="category-filter-footer">
+              <button
+                class="rectangle-button button-dark"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#category-filters"
+                data-show-results
+              >
+                Show {products.length} products
+              </button>
             </div>
-          </section>
-        </main>
+          </aside>
+
+          <div class="category-results">
+            <div class="category-toolbar">
+              <button
+                class="category-filter-toggle"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#category-filters"
+                aria-controls="category-filters"
+              >
+                <i class="bi bi-sliders" aria-hidden="true"></i>
+                Filters
+                <span data-active-filter-count hidden></span>
+              </button>
+
+              <p
+                class="category-result-count"
+                data-result-count
+                role="status"
+                aria-atomic="true"
+              >
+                {products.length}
+                {products.length === 1 ? 'product' : 'products'}
+              </p>
+
+              <div class="category-sort">
+                <label for="category-sort">Sort by</label>
+
+                <select
+                  id="category-sort"
+                  class="form-select"
+                  aria-label="Sort products"
+                  data-sort-products
+                >
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: low to high</option>
+                  <option value="price-desc">Price: high to low</option>
+                  <option value="name">Name: A–Z</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="category-product-grid" data-product-grid>
+              {products.map((product, index) => (
+                <div
+                  data-filter-item
+                  data-name={product.name}
+                  data-price={product.price}
+                  data-color={product.color}
+                  data-collection={product.collection}
+                  data-in-stock={String(product.inStock !== false)}
+                  data-order={index}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+
+            <div class="category-no-results" data-no-results hidden>
+              <p>No products match these filters.</p>
+
+              <button
+                class="filter-clear"
+                type="button"
+                data-clear-filters
+              >
+                Clear all filters
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <Footer />
 
@@ -52,5 +347,10 @@ const { title, products } = Astro.props;
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+
+    <script>
+      import { initCategoryFilters } from '../scripts/category-filters';
+      initCategoryFilters();
+    </script>
   </body>
 </html>

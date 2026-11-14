@@ -6,6 +6,9 @@
     "image": "/images/product-aerospace-black.png",
     "alt": "Black AEROSPACE earbuds",
     "inStock": true,
+    "collection": "AEROSPACE",
+    "color": "Black",
+
     "gallery": [
       {
         "src": "/images/product-aerospace-black.png",

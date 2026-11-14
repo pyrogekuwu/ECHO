@@ -19,6 +19,8 @@ export interface Product {
   id: string;
   name: string;
   category: string;
+  collection: string;
+  color: string;
   price: number;
   image: string;
   alt: string;

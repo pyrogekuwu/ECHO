@@ -5,5 +5,7 @@
     "price": 99.99,
     "image": "/images/product-starlight-silver.png",
     "alt": "Silver STARLIGHT earbuds",
-    "inStock": true
+    "inStock": true,
+    "collection": "STARLIGHT",
+    "color": "Silver"
   }

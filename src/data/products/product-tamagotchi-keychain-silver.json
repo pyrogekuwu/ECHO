@@ -5,5 +5,7 @@
     "price": 29.99,
     "image": "/images/product-tamagotchi-keychain-silver.jpg",
     "alt": "Silver TAMAGOTCHI keychain",
-    "inStock": true
+    "inStock": true,
+    "collection": "TAMAGOTCHI",
+    "color": "Silver"
   }
