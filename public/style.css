@@ -1079,3 +1079,9 @@ img { display: block; }
     max-width: 12rem;
   }
 }
+
+@media (max-width: 991.98px) {
+  .category-filter-toggle {
+    color: var(--echo-ink);
+  }
+}
