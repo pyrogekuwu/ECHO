@@ -254,45 +254,180 @@ img { display: block; }
 .editorial-copy p { margin: 0 0 1.1rem; }
 
 
-/* KOREAN LABEL MOBILE FIX */
-@media (max-width: 767.98px) {
-  .collection-topline {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    row-gap: 1rem;
-    column-gap: 1rem;
-    margin-bottom: 1.4rem;
-  }
-  .collection-topline .editorial-heading { margin-bottom: 0; }
-  .collection-more { min-width: 12.5rem; }
-  .aerospace-editorial { min-height: 0; display: grid; grid-template-columns: 1fr 1fr;
-    grid-template-areas: "title title" "label label" "detail portrait" "copy copy";
-    column-gap: 1rem; row-gap: 0.9rem; align-items: start; }
-  .aerospace-editorial h3 { position: static; grid-area: title; margin: 0; font-size: clamp(3rem, 10vw, 5rem); line-height: 0.92;}
-  .editorial-detail, .editorial-portrait {
-    position: static; width: 100%; height: auto; aspect-ratio: 0.72 / 1; overflow: hidden; background: #dfe4f4; }
+/* COLLECTIONS — układ zdjęć */
 
-  .editorial-detail { grid-area: detail;}
-  .editorial-portrait { grid-area: portrait;}
-  .editorial-detail img,
-  .editorial-portrait img { width: 100%; height: 100%; object-fit: cover;}
-  .korean-label { position: static; grid-area: label; writing-mode: horizontal-tb; text-orientation: mixed; display: block;
-    white-space: nowrap; font-size: 1rem; letter-spacing: 0.28em; line-height: 1; margin: 0 0 0.2rem 0;}
-  .editorial-copy { position: static; grid-area: copy; width: 100%; padding: 1.25rem 1.1rem; margin-top: 0.4rem;
-    font-size: 0.92rem; line-height: 1.4; background: rgba(236, 238, 248, 0.95);}
-  .editorial-copy p:last-child { margin-bottom: 0;}
+.collections-section .editorial-detail > a,
+.collections-section .editorial-portrait > a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-@media (max-width: 575.98px) {
-  .collection-topline { row-gap: 1rem; margin-bottom: 1.2rem;}
-  .editorial-heading { gap: 0.5rem; font-size: 1.8rem;}
-  .collection-more { min-width: 11.5rem; font-size: 0.78rem; padding: 0.55rem 0.95rem;}
-  .aerospace-editorial { column-gap: 0.75rem; row-gap: 0.75rem;}
-  .aerospace-editorial h3 { font-size: clamp(2.7rem, 11vw, 4.2rem); }
-  .korean-label { font-size: 0.92rem; letter-spacing: 0.22em; }
-  .editorial-copy { padding: 1rem 0.95rem; font-size: 0.84rem; }
+/* COLLECTIONS — mobile */
+
+@media (max-width: 767.98px) {
+  .collections-section {
+    padding-block: 2rem 4rem;
+  }
+
+  .collections-section > .echo-container {
+    container-type: inline-size;
+  }
+
+  /* Nagłówek i przycisk w jednym rzędzie */
+
+  .collections-section .collection-topline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2.5cqw;
+    margin-bottom: 0.6rem;
+  }
+
+  .collections-section .collection-topline .editorial-heading {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    gap: 0.2em;
+    font-size: 6.2cqw;
+    white-space: nowrap;
+  }
+
+  .collections-section .collection-topline .heading-line {
+    width: 6cqw;
+    margin-left: 0;
+  }
+
+  .collections-section .collection-topline .diamond {
+    width: 4cqw;
+    height: 4cqw;
+    margin: 0;
+  }
+
+  .collections-section .collection-topline .diamond::before {
+    font-size: 7.6cqw;
+  }
+
+  .collections-section .collection-more {
+    width: 30cqw;
+    min-width: 0;
+    min-height: 0;
+    padding: 0.65em 0.75em;
+    gap: 0.6em;
+    font-size: clamp(0.55rem, 2.7cqw, 1rem);
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  /* Tytuł, dwa zdjęcia, następnie tekst */
+
+  .collections-section .aerospace-editorial {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    grid-template-areas:
+      "title title"
+      "detail portrait"
+      "copy copy";
+    gap: 3.5cqw;
+    min-height: 0;
+  }
+
+  .collections-section .aerospace-editorial h3 {
+    position: static;
+    grid-area: title;
+    min-width: 0;
+    margin: 0;
+    font-size: 17.5cqw;
+    line-height: 0.96;
+  }
+
+  .collections-section .aerospace-editorial h3 a {
+    white-space: nowrap;
+  }
+
+  /* Portret po prawej zaczyna się wyżej */
+
+  .collections-section .editorial-detail,
+  .collections-section .editorial-portrait {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    background: transparent;
+    align-self: start;
+  }
+
+  .collections-section .editorial-detail {
+    grid-area: detail;
+    padding-top: 9cqw;
+  }
+
+  .collections-section .editorial-portrait {
+    grid-area: portrait;
+  }
+
+  .collections-section .editorial-detail > a,
+  .collections-section .editorial-portrait > a {
+    position: relative;
+    height: auto;
+    aspect-ratio: 0.72;
+  }
+
+  .collections-section .editorial-detail img,
+  .collections-section .editorial-portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Zwykły, poziomy koreański napis nad lewym zdjęciem */
+
+  .collections-section .korean-label {
+    position: absolute;
+    inset: 0 auto auto 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 9cqw;
+    margin: 0;
+    padding: 0;
+
+    font-size: 7.2cqw;
+    line-height: 1;
+    letter-spacing: 0.08em;
+
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
+    white-space: nowrap;
+
+    background: transparent;
+    border: 0;
+  }
+
+  /* Opis pod obydwoma zdjęciami */
+
+  .collections-section .editorial-copy {
+    position: static;
+    grid-area: copy;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-size: clamp(0.8rem, 3.65cqw, 1rem);
+    line-height: 1.4;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .collections-section .editorial-copy p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
