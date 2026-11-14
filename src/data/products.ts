@@ -20,7 +20,7 @@ export interface Product {
   name: string;
   category: string;
   collection: string;
-  color: string;
+  color: string | string[];
   price: number;
   image: string;
   alt: string;

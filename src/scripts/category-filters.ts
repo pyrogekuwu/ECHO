@@ -51,7 +51,7 @@ export function initCategoryFilters() {
     element,
     name: element.dataset.name ?? '',
     price: Math.round(Number(element.dataset.price) * 100),
-    color: element.dataset.color ?? '',
+    colors: (element.dataset.color ?? '').split('|').filter(Boolean),
     collection: element.dataset.collection ?? '',
     inStock: element.dataset.inStock === 'true',
     order: Number(element.dataset.order),
@@ -84,7 +84,7 @@ export function initCategoryFilters() {
         ) &&
         (
           !colors.length ||
-          colors.includes(card.color)
+          card.colors.some((color) => colors.includes(color))
         ) &&
         card.price >= Math.round(minimum * 100) &&
         card.price <= Math.round(maximum * 100);

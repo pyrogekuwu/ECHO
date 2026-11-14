@@ -17,7 +17,13 @@ const collections = [
 ].sort();
 
 const colors = [
-  ...new Set(products.map((product) => product.color))
+  ...new Set(
+    products.flatMap((product) =>
+      Array.isArray(product.color)
+        ? product.color
+        : [product.color]
+    )
+  )
 ].sort();
 
 const inStockCount = products.filter(
@@ -26,21 +32,20 @@ const inStockCount = products.filter(
 
 const outOfStockCount = products.length - inStockCount;
 
-const lowerPrice = products.length
-  ? Math.floor(Math.min(...products.map((product) => product.price)))
-  : 0;
+const lowerPrice = 0;
 
-const upperPrice = products.length
-  ? Math.max(
-      lowerPrice + 1,
-      Math.ceil(Math.max(...products.map((product) => product.price)))
-    )
-  : 1;
+const upperPrice = Math.max(
+  1000,
+  Math.ceil(
+    Math.max(0, ...products.map((product) => product.price)) / 100
+  ) * 100
+);
 
 const swatches: Record<string, string> = {
   Black: '#111111',
   White: '#ffffff',
   Silver: '#bcc0c7',
+  Pink: '#efb5c5',
 };
 ---
 
@@ -314,7 +319,13 @@ const swatches: Record<string, string> = {
                   data-filter-item
                   data-name={product.name}
                   data-price={product.price}
-                  data-color={product.color}
+                  data-color={
+                    (
+                      Array.isArray(product.color)
+                      ? product.color
+                      : [product.color]
+                    ).join('|')
+                  }
                   data-collection={product.collection}
                   data-in-stock={String(product.inStock !== false)}
                   data-order={index}
