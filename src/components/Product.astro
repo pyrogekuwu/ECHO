@@ -39,11 +39,14 @@ const price = new Intl.NumberFormat('en-IE', {
 
 <!doctype html>
 <html lang="en">
+
   <head>
     <SiteHead />
     <title>{product.name} | ECHO</title>
     <meta name="description" content={description} />
   </head>
+
+
   <body id="top" class="product-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <Navbar />
@@ -118,7 +121,6 @@ const price = new Intl.NumberFormat('en-IE', {
           </section>
 
           <section class="product-info" aria-labelledby="product-title">
-            <p class="product-eyebrow">{product.category} / {product.sku ?? product.id}</p>
             <h1 id="product-title">{product.name}</h1>
 
             <div class="product-rating">
