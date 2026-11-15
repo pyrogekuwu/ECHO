@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
+import { products } from '../data/products';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -12,11 +13,25 @@ const categories = [
   { name: 'speakers', image: '/images/category-speakers.png', alt: 'Dark grey compact speaker with sculptural driver', href: `${base}/speakers/` },
   { name: 'accessories', image: '/images/category-accessories.png', alt: 'Metallic silver audio accessories and charms', href: `${base}/accessories/` },
 ];
-const bestsellers = [
-  { id: 'product-lumia-white', name: 'LUMIA Pro 2 White', price: '€139.99', image: '/images/product-lumia-white.png', alt: 'White sculptural Lumia Pro 2 wireless headphones', href: `${base}/headphones/#product-lumia-white` },
-  { id: 'product-aerospace-black', name: 'AEROSPACE Earbuds Black', price: '€79.99', image: '/images/product-aerospace-black.png', alt: 'Pair of black Aerospace earbuds with metallic silver star shapes', href: `${base}/earbuds/#product-aerospace-black` },
-  { id: 'product-vesper-silver', name: 'VESPER Metallic Silver', price: '€99.99', image: '/images/product-vesper-silver.png', alt: 'Silver and black over-ear headphones shown on a white background', href: `${base}/headphones/#product-vesper-silver` },
+const bestsellerIds = [
+  'product-lumia-white',
+  'product-aerospace-black',
+  'product-vesper-silver',
 ];
+
+const bestsellers = bestsellerIds.map((id) => {
+  const product = products.find((item) => item.id === id);
+  if (!product) {
+    throw new Error(`Nie znaleziono produktu bestsellera: ${id}`);
+  }
+  return product;
+});
+
+const priceFormatter = new Intl.NumberFormat('en-IE', {
+  style: 'currency',
+  currency: 'EUR',
+});
+
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -56,7 +71,7 @@ const organization = {
             <h1 id="hero-heading">LUMIA PRO 2</h1>
             <p class="hero-description">Over-ear headphones with a sculptural silhouette and a sharp, metallic finish. Lumia Pro 2 takes a familiar form and shifts it into something more distinctive.</p>
             <p class="hero-description hero-material">ON ANOTHER FREQUENCY.</p>
-            <a class="rectangle-button button-light hero-discover" href={`${base}/product/product-lumia-white/`}>discover</a>
+            <a class="rectangle-button button-light hero-discover" href={`${base}/magazine/lumia-pro-2/`}>discover</a>
           </div>
         </div>
       </div>
@@ -163,26 +178,48 @@ const organization = {
 
 
       <!-- BESTSELLERS -->
-      <section id="bestsellers" class="bestsellers-section content-section" aria-labelledby="bestsellers-heading">
-        <div class="container-fluid echo-container">
-          <h2 id="bestsellers-heading" class="editorial-heading">our bestsellers <span class="heading-line" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span></h2>
-          <div class="row g-3 g-xl-5 bestseller-row">
-            {bestsellers.map((product) => (
-              <div class="col-12 col-sm-6 col-lg-4">
-                <article class="bestseller" id={product.id}>
-                  <a href={product.href} class="bestseller-link">
-                  <div class="bestseller-photo">
-                    <img src={`${base}${product.image}`} alt={product.alt} loading="lazy"/>
-                  </div>
-                  <h3>{product.name}</h3>
-                  <p class="price">{product.price}</p>
-                  </a>
-                </article>
+       <section
+       id="bestsellers"
+       class="bestsellers-section content-section"
+       aria-labelledby="bestsellers-heading"
+       >
+  
+       <div class="container-fluid echo-container">
+        <h2 id="bestsellers-heading" class="editorial-heading">
+          our bestsellers
+          <span class="heading-line" aria-hidden="true"></span>
+          <span class="diamond" aria-hidden="true"></span>
+        </h2>
+
+    
+        <div class="row g-3 g-xl-5 bestseller-row">
+      {bestsellers.map((product) => (
+        <div class="col-12 col-sm-6 col-lg-4">
+          <article class="bestseller" id={product.id}>
+            <a
+              href={`${base}/product/${product.id}/`}
+              class="bestseller-link"
+            >
+              <div class="bestseller-photo">
+                <img
+                  src={`${base}${product.image}`}
+                  alt={product.alt}
+                  loading="lazy"
+                />
               </div>
-            ))}
-          </div>
+
+              <h3>{product.name}</h3>
+
+              <p class="price">
+                {priceFormatter.format(product.price)}
+              </p>
+            </a>
+          </article>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
 
       <!-- CONTACT -->
