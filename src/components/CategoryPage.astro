@@ -12,6 +12,9 @@ interface Props {
 
 const { title, products } = Astro.props;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const breadcrumbTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
 const collections = [
   ...new Set(products.map((product) => product.collection))
 ].sort();
@@ -69,8 +72,20 @@ const swatches: Record<string, string> = {
       
       <section
         class="container-fluid echo-container category-catalog"
-        data-category-catalog
-      >
+        data-category-catalog>
+
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item">
+              <a href={`${base}/`}>Home</a>
+            </li>
+            
+            <li class="breadcrumb-item active" aria-current="page">
+              {breadcrumbTitle}
+            </li>
+          </ol>
+        </nav>
+
         <h1 class="editorial-heading category-page-title">
           {title}
           <span class="heading-line" aria-hidden="true"></span>
