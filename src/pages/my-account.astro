@@ -4,6 +4,13 @@ import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const sections = [
+  { id: 'dashboard', label: 'Dashboard', icon: 'bi-grid' },
+  { id: 'orders', label: 'My orders', icon: 'bi-bag' },
+  { id: 'addresses', label: 'Delivery address', icon: 'bi-geo-alt' },
+  { id: 'settings', label: 'Account settings', icon: 'bi-person' },
+];
 ---
 
 <!doctype html>
@@ -11,15 +18,38 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <head>
     <SiteHead />
     <title>My account | ECHO</title>
+    <meta
+      name="description"
+      content="Your ECHO orders, delivery address and account details."
+    />
   </head>
 
   <body id="top" class="my-account-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <Navbar />
 
-    <main id="main" class="account-main">
-      <section class="container-fluid echo-container">
-        <h1>My account</h1>
+    <main id="main" class="account-main" data-account-page>
+      <div class="container-fluid echo-container">
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item">
+              <a href={`${base}/`}>Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              My account
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="editorial-heading">
+          my account
+          <span class="heading-line" aria-hidden="true"></span>
+          <span class="diamond" aria-hidden="true"></span>
+        </h1>
+
+        <noscript>
+          <p>Enable JavaScript to view and manage this demo account.</p>
+        </noscript>
 
         <p
           class="order-confirmation"
@@ -28,13 +58,444 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           hidden
         ></p>
 
-        <a
-          class="rectangle-button button-dark mt-4"
-          href={`${base}/`}
+        <p
+          class="cart-feedback"
+          data-account-feedback
+          role="status"
+          tabindex="-1"
+          hidden
+        ></p>
+
+        <section
+          class="account-signed-out"
+          data-account-signed-out
+          hidden
         >
-          Continue shopping
-        </a>
-      </section>
+          <h2>You have left the demo account</h2>
+          <p>
+            Your saved orders and cart are still available in this browser.
+          </p>
+
+          <button
+            class="rectangle-button button-dark"
+            type="button"
+            data-account-login
+          >
+            Return to demo account
+          </button>
+
+          <a href={`${base}/`}>Back to ECHO</a>
+        </section>
+
+        <div class="account-layout" data-account-content hidden>
+          <nav
+            class="list-group account-navigation"
+            aria-label="Account sections"
+          >
+            {sections.map((section) => (
+              <a
+                class="list-group-item list-group-item-action"
+                href={`#account-${section.id}`}
+                data-account-nav={section.id}
+                aria-controls={`account-${section.id}`}
+              >
+                <i
+                  class:list={['bi', section.icon]}
+                  aria-hidden="true"
+                ></i>
+                {section.label}
+              </a>
+            ))}
+
+            <button
+              class="list-group-item list-group-item-action"
+              type="button"
+              data-account-logout
+            >
+              <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+              Log out
+            </button>
+          </nav>
+
+          <div class="account-panels">
+            <!-- DASHBOARD -->
+            <section
+              id="account-dashboard"
+              data-account-panel="dashboard"
+              hidden
+            >
+              <h2 tabindex="-1" data-panel-heading>
+                Hello, <span data-account-name>there</span>.
+              </h2>
+
+              <p class="account-intro">
+                View your orders and keep your delivery details up to date.
+              </p>
+
+              <div class="account-stats">
+                <div>
+                  <span>Orders</span>
+                  <strong data-account-order-count>0</strong>
+                </div>
+                <div>
+                  <span>Processing</span>
+                  <strong data-account-processing-count>0</strong>
+                </div>
+                <div>
+                  <span>Order total</span>
+                  <strong data-account-spent>€0.00</strong>
+                </div>
+              </div>
+
+              <p class="account-note" data-example-note hidden>
+                Example orders are shown until you place your first demo order.
+              </p>
+
+              <div class="account-overview">
+                <section class="account-card">
+                  <h3>Latest order</h3>
+                  <p data-account-latest></p>
+
+                  <button
+                    class="account-text-button"
+                    type="button"
+                    data-open-latest
+                    data-bs-toggle="modal"
+                    data-bs-target="#account-order-modal"
+                  >
+                    View order details
+                  </button>
+                </section>
+
+                <section class="account-card">
+                  <h3>Delivery address</h3>
+                  <address data-address-summary></address>
+
+                  <button
+                    class="account-text-button"
+                    type="button"
+                    data-go-address
+                  >
+                    Manage address
+                  </button>
+                </section>
+              </div>
+            </section>
+
+            <!-- ORDERS -->
+            <section
+              id="account-orders"
+              data-account-panel="orders"
+              hidden
+            >
+              <h2 tabindex="-1" data-panel-heading>My orders</h2>
+
+              <p class="account-note" data-example-note hidden>
+                These are example orders. Orders placed through checkout
+                will appear here.
+              </p>
+
+              <div class="table-responsive">
+                <table class="table align-middle account-orders-table">
+                  <caption class="visually-hidden">Order history</caption>
+
+                  <thead>
+                    <tr>
+                      <th scope="col">Order</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Total</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">
+                        <span class="visually-hidden">Details</span>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody data-account-orders></tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- ADDRESS -->
+            <section
+              id="account-addresses"
+              data-account-panel="addresses"
+              hidden
+            >
+              <h2 tabindex="-1" data-panel-heading>Delivery address</h2>
+
+              <p class="account-intro">
+                Save a default address for your next checkout.
+              </p>
+
+              <div class="account-card" data-address-display>
+                <h3>Default address</h3>
+                <address data-address-summary></address>
+
+                <button
+                  class="account-text-button"
+                  type="button"
+                  data-edit-address
+                >
+                  Edit address
+                </button>
+              </div>
+
+              <form
+                class="account-form"
+                id="account-address-form"
+                hidden
+              >
+                <div>
+                  <label class="form-label" for="account-street">
+                    Street & house / apartment number *
+                  </label>
+                  <input
+                    class="form-control"
+                    id="account-street"
+                    name="street"
+                    autocomplete="street-address"
+                    maxlength="200"
+                    required
+                  />
+                </div>
+
+                <div class="account-form-grid">
+                  <div>
+                    <label class="form-label" for="account-postal-code">
+                      Postal code *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="account-postal-code"
+                      name="postalCode"
+                      autocomplete="postal-code"
+                      maxlength="20"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="account-city">
+                      City *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="account-city"
+                      name="city"
+                      autocomplete="address-level2"
+                      maxlength="100"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="account-form-actions">
+                  <button
+                    class="rectangle-button button-dark"
+                    type="submit"
+                  >
+                    Save address
+                  </button>
+
+                  <button
+                    class="account-text-button"
+                    type="button"
+                    data-cancel-address
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <!-- SETTINGS -->
+            <section
+              id="account-settings"
+              data-account-panel="settings"
+              hidden
+            >
+              <h2 tabindex="-1" data-panel-heading>Account settings</h2>
+
+              <p class="account-intro">
+                Update your contact details for future orders.
+              </p>
+
+              <form class="account-form" id="account-profile-form">
+                <div class="account-form-grid">
+                  <div>
+                    <label class="form-label" for="account-first-name">
+                      First name *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="account-first-name"
+                      name="firstName"
+                      autocomplete="given-name"
+                      maxlength="80"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="account-last-name">
+                      Last name *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="account-last-name"
+                      name="lastName"
+                      autocomplete="family-name"
+                      maxlength="80"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label" for="account-email">
+                    Email *
+                  </label>
+                  <input
+                    class="form-control"
+                    id="account-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    maxlength="160"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="form-label" for="account-phone">
+                    Phone *
+                  </label>
+                  <input
+                    class="form-control"
+                    id="account-phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+
+                <button
+                  class="rectangle-button button-dark"
+                  type="submit"
+                >
+                  Save changes
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+
+        <!-- ORDER TABLE ROW -->
+        <template id="account-order-row">
+          <tr>
+            <td data-order-number></td>
+            <td data-order-date></td>
+            <td data-order-total></td>
+            <td>
+              <span class="account-order-status" data-order-status></span>
+            </td>
+            <td>
+              <button
+                class="account-text-button"
+                type="button"
+                data-order-id
+                data-bs-toggle="modal"
+                data-bs-target="#account-order-modal"
+              >
+                Details
+              </button>
+            </td>
+          </tr>
+        </template>
+
+        <!-- ORDER DETAILS MODAL -->
+        <div
+          class="modal fade"
+          id="account-order-modal"
+          tabindex="-1"
+          aria-labelledby="account-order-title"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content account-modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title" id="account-order-title"></h2>
+
+                <button
+                  class="btn-close"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close order details"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <p class="account-note" data-order-detail-meta></p>
+                <ul class="account-order-items" data-order-detail-items></ul>
+
+                <dl class="cart-totals">
+                  <div>
+                    <dt>Subtotal</dt>
+                    <dd data-detail-subtotal></dd>
+                  </div>
+                  <div data-detail-discount-row hidden>
+                    <dt>Discount</dt>
+                    <dd data-detail-discount></dd>
+                  </div>
+                  <div>
+                    <dt>Delivery</dt>
+                    <dd data-detail-delivery></dd>
+                  </div>
+                  <div class="cart-grand-total">
+                    <dt>Total</dt>
+                    <dd data-detail-total></dd>
+                  </div>
+                </dl>
+
+                <div class="account-overview">
+                  <section>
+                    <h3>Delivery address</h3>
+                    <address data-order-detail-address></address>
+                  </section>
+
+                  <section>
+                    <h3>Delivery & payment</h3>
+                    <p
+                      class="account-detail-lines"
+                      data-order-detail-payment
+                    ></p>
+                  </section>
+                </div>
+
+                <p
+                  class="account-detail-lines account-note"
+                  data-order-detail-invoice
+                  hidden
+                ></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORDER DETAIL ITEM -->
+        <template id="account-order-item">
+          <li class="account-order-item">
+            <div>
+              <a data-detail-product></a>
+              <span data-detail-quantity></span>
+            </div>
+            <span data-detail-line-total></span>
+          </li>
+        </template>
+      </div>
     </main>
 
     <Footer />
@@ -46,45 +507,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     ></script>
 
     <script>
-      const confirmation = document.querySelector<HTMLElement>(
-        '[data-order-confirmation]'
-      );
-
-      const orderId = new URLSearchParams(
-        window.location.search
-      ).get('order');
-
-      if (confirmation && orderId) {
-        try {
-          const orders: unknown = JSON.parse(
-            localStorage.getItem('echo:orders:v1') ?? '[]'
-          );
-
-          const order = Array.isArray(orders)
-            ? orders.find(
-                (item) =>
-                  item
-                  && item.id === orderId
-                  && Number.isInteger(item.total)
-              )
-            : undefined;
-
-          if (order) {
-            const total = new Intl.NumberFormat('en-IE', {
-              style: 'currency',
-              currency: 'EUR',
-            }).format(order.total / 100);
-
-            confirmation.textContent =
-              `Thank you! Demo order ${order.id} has been placed. `
-              + `Total: ${total}. No payment has been taken.`;
-
-            confirmation.hidden = false;
-          }
-        } catch {
-          // Konto pozostaje dostępne, gdy historia jest niedostępna.
-        }
-      }
+      import { initAccount } from '../scripts/account';
+      initAccount();
     </script>
   </body>
 </html>

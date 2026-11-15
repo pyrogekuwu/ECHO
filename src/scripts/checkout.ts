@@ -334,11 +334,44 @@ export function initCheckout() {
 
   window.addEventListener('storage', () => render());
 
-  window.addEventListener('pageshow', () => {
+    window.addEventListener('pageshow', () => {
     submitting = false;
     toggleInvoice();
     render();
   });
+
+  // Uzupełnij puste pola danymi zapisanymi na koncie.
+  for (const [key, names] of [
+    ['echo:profile:v1', ['firstName', 'lastName', 'email', 'phone']],
+    ['echo:address:v1', ['street', 'postalCode', 'city']],
+  ] as const) {
+    try {
+      const saved: unknown = JSON.parse(
+        localStorage.getItem(key) ?? 'null'
+      );
+
+      if (
+        !saved
+        || typeof saved !== 'object'
+        || Array.isArray(saved)
+      ) continue;
+
+      for (const name of names) {
+        const input = form.elements.namedItem(name);
+        const value = (saved as Record<string, unknown>)[name];
+
+        if (
+          input instanceof HTMLInputElement
+          && !input.value
+          && typeof value === 'string'
+        ) {
+          input.value = value;
+        }
+      }
+    } catch {
+      // Formularz nadal można wypełnić ręcznie.
+    }
+  }
 
   toggleInvoice();
   render();
