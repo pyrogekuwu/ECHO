@@ -1,0 +1,379 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SiteHead from '../components/SiteHead.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const contact = {
+  name: 'ECHO — concept audio brand',
+  email: 'contact@echo.example',
+  phone: '+82 2 0000 0000',
+  phoneHref: '+82200000000',
+  hours: 'Monday–Friday, 09:00–17:00 KST (Seoul)',
+  address: [
+    'COEX, 513 Yeongdong-daero',
+    'Gangnam-gu, Seoul 06164',
+    'South Korea',
+  ],
+  registration: 'Not applicable — fictional university project',
+  mapUrl:
+    'https://www.google.com/maps?q=COEX%2C%20Seoul&output=embed',
+  directionsUrl:
+    'https://www.google.com/maps/search/?api=1&query=COEX%2C%20Seoul',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead />
+    <title>Contact | ECHO</title>
+    <meta
+      name="description"
+      content="Contact the ECHO concept brand about products, collaborations and support."
+    />
+  </head>
+
+  <body id="top" class="contact-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Navbar />
+
+    <main id="main" class="contact-page-main">
+      <div class="container-fluid echo-container">
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item">
+              <a href={`${base}/`}>Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Contact
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="editorial-heading contact-page-title">
+          contact
+          <span class="heading-line" aria-hidden="true"></span>
+          <span class="diamond" aria-hidden="true"></span>
+        </h1>
+
+        <p class="contact-page-lead">
+          Questions about a product, an order or a collaboration?
+          Get in touch. Our customer-care hours are {contact.hours}.
+        </p>
+
+        <div class="contact-page-layout">
+          <div class="contact-page-content">
+
+            <!-- CONTACT DETAILS -->
+            <section
+              class="contact-page-details"
+              aria-labelledby="contact-details-heading"
+            >
+              <h2 id="contact-details-heading">Contact details</h2>
+
+              <p class="contact-page-note">
+                Demonstration details for a fictional brand.
+                The location below is an example, not an ECHO office.
+              </p>
+
+              <dl class="contact-page-data">
+                <div>
+                  <dt>Brand</dt>
+                  <dd>{contact.name}</dd>
+                </div>
+
+                <div>
+                  <dt>Email</dt>
+                  <dd>
+                    <a href={`mailto:${contact.email}`}>
+                      {contact.email}
+                    </a>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Phone</dt>
+                  <dd>
+                    <a href={`tel:${contact.phoneHref}`}>
+                      {contact.phone}
+                    </a>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Example address</dt>
+                  <dd>
+                    <address>
+                      {contact.address.map((line) => (
+                        <span>{line}</span>
+                      ))}
+                    </address>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Tax / registration ID</dt>
+                  <dd>{contact.registration}</dd>
+                </div>
+              </dl>
+            </section>
+
+            <!-- CONTACT FORM -->
+            <section aria-labelledby="contact-form-heading">
+              <h2 id="contact-form-heading">Send a message</h2>
+
+              <p class="contact-page-note">
+                Fields marked with * are required.
+              </p>
+
+              <form id="contact-page-form" class="contact-page-form">
+                <div class="contact-page-inputs">
+                  <div>
+                    <label class="form-label" for="contact-full-name">
+                      Full name *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="contact-full-name"
+                      name="fullName"
+                      autocomplete="name"
+                      minlength="3"
+                      maxlength="120"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="contact-page-email">
+                      Email *
+                    </label>
+                    <input
+                      class="form-control"
+                      id="contact-page-email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      maxlength="160"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="contact-page-phone">
+                      Phone (optional)
+                    </label>
+                    <input
+                      class="form-control"
+                      id="contact-page-phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      maxlength="30"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="form-label" for="contact-department">
+                      Department *
+                    </label>
+                    <select
+                      class="form-select"
+                      id="contact-department"
+                      name="department"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select a department
+                      </option>
+                      <option value="support">Customer support</option>
+                      <option value="collaboration">Collaborations</option>
+                      <option value="returns">Returns & complaints</option>
+                      <option value="press">Press & media</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label" for="contact-page-message">
+                    Message *
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="contact-page-message"
+                    name="message"
+                    rows="6"
+                    minlength="10"
+                    maxlength="4000"
+                    required
+                  ></textarea>
+                </div>
+
+                <label class="contact-page-consent">
+                  <input
+                    class="form-check-input"
+                    name="consent"
+                    type="checkbox"
+                    required
+                  />
+                  <span>
+                    I agree to the processing of my details to handle
+                    this enquiry, as described in the
+                    
+                    <a
+                    href={`${base}/privacy-policy/`} 
+                    target="_blank" rel="noopener noreferrer">
+                    privacy policy
+                    <span class="visually-hidden"> (opens in a new tab)</span>
+                    </a> *
+
+                  </span>
+                </label>
+
+                <div class="contact-page-actions">
+                  <button
+                    class="rectangle-button button-dark"
+                    type="submit"
+                    disabled
+                  >
+                    Send message
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                  </button>
+
+                  <p class="contact-page-note">
+                    University demo — messages are not sent.
+                  </p>
+                </div>
+
+                <p
+                  class="contact-page-feedback"
+                  id="contact-page-feedback"
+                  role="status"
+                  tabindex="-1"
+                  hidden
+                ></p>
+              </form>
+
+              <noscript>
+                <p class="contact-page-note">
+                  This form is a demo. Enable JavaScript to check
+                  the form and display its confirmation.
+                </p>
+              </noscript>
+            </section>
+          </div>
+
+          <!-- MAP AND DIRECTIONS -->
+          <aside
+            class="contact-page-location"
+            aria-labelledby="contact-location-heading"
+          >
+            <h2 id="contact-location-heading">Location</h2>
+
+            <p class="contact-page-note">
+              Example meeting location: COEX, Seoul.
+            </p>
+
+            <div class="ratio ratio-4x3 contact-page-map">
+              <iframe
+                src={contact.mapUrl}
+                title="Map of COEX in Seoul — example contact location"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <a
+              class="contact-page-directions"
+              href={contact.directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open in Google Maps
+              <i
+                class="bi bi-box-arrow-up-right"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <section
+              class="contact-page-travel"
+              aria-labelledby="contact-travel-heading"
+            >
+              <h3 id="contact-travel-heading">Getting here</h3>
+
+              <p>
+                <i class="bi bi-train-front" aria-hidden="true"></i>
+                <span>
+                  <strong>Subway</strong>
+                  Bongeunsa station (Line 9) or Samseong station (Line 2).
+                </span>
+              </p>
+
+              <p>
+                <i class="bi bi-p-square" aria-hidden="true"></i>
+                <span>
+                  <strong>Parking</strong>
+                  Paid parking is available at COEX.
+                  Follow the on-site signs.
+                </span>
+              </p>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <script>
+      const form = document.querySelector<HTMLFormElement>(
+        '#contact-page-form'
+      );
+
+      const feedback = document.querySelector<HTMLElement>(
+        '#contact-page-feedback'
+      );
+
+      if (form && feedback) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          form.querySelectorAll<
+            HTMLInputElement | HTMLTextAreaElement
+          >(
+            'input:not([type="checkbox"]), textarea'
+          ).forEach((field) => {
+            field.value = field.value.trim();
+          });
+
+          if (!form.reportValidity()) return;
+
+          feedback.textContent =
+            'Form validated. This is a university demo; '
+            + 'your message has not been sent or saved.';
+
+          feedback.hidden = false;
+          feedback.focus();
+        });
+
+        form.addEventListener('input', () => {
+          feedback.hidden = true;
+        });
+
+        form.querySelector<HTMLButtonElement>(
+          '[type="submit"]'
+        )!.disabled = false;
+      }
+      
+    </script>
+  </body>
+</html>

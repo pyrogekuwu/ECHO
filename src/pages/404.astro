@@ -1,0 +1,349 @@
+---
+import { getCollection } from 'astro:content';
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SiteHead from '../components/SiteHead.astro';
+
+import { products } from '../data/products';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const posts = await getCollection('magazine');
+
+const categories = [
+  'headphones',
+  'earbuds',
+  'speakers',
+  'accessories',
+];
+
+const searchItems = [
+  ...products.map((product) => ({
+    title: product.name,
+    label: 'Product',
+    href: `${base}/product/${product.id}/`,
+    keywords: [
+      product.category,
+      product.collection,
+      product.sku ?? '',
+      ...(Array.isArray(product.color)
+        ? product.color
+        : [product.color]),
+    ].join(' '),
+  })),
+
+  ...categories.map((category) => ({
+    title: category,
+    label: 'Category',
+    href: `${base}/${category}/`,
+    keywords: 'shop audio collection',
+  })),
+
+  ...posts.map((post) => ({
+    title: post.data.title,
+    label: 'Magazine',
+    href: `${base}/magazine/${post.id}/`,
+    keywords: `${post.data.category} ${post.data.description}`,
+  })),
+
+  {
+    title: 'Contact',
+    label: 'Page',
+    href: `${base}/contact/`,
+    keywords: 'support help email phone',
+  },
+  {
+    title: 'My account',
+    label: 'Page',
+    href: `${base}/my-account/`,
+    keywords: 'orders address profile',
+  },
+  {
+    title: 'Your cart',
+    label: 'Page',
+    href: `${base}/cart/`,
+    keywords: 'basket shopping checkout',
+  },
+  {
+    title: 'Magazine',
+    label: 'Page',
+    href: `${base}/magazine/`,
+    keywords: 'articles stories blog',
+  },
+  {
+    title: 'Privacy policy',
+    label: 'Page',
+    href: `${base}/privacy-policy/`,
+    keywords: 'cookies data privacy',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead />
+
+    <title>Page not found | ECHO</title>
+
+    <meta name="robots" content="noindex, follow" />
+
+    <meta
+      name="description"
+      content="This page could not be found. Search ECHO or return to the collection."
+    />
+  </head>
+
+  <body id="top" class="error-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <Navbar />
+
+    <main
+      id="main"
+      class="error-main d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="container-fluid echo-container">
+        <div class="error-content">
+          <p class="error-eyebrow">ECHO / SIGNAL LOST</p>
+
+          <p class="error-code" aria-hidden="true">404</p>
+
+          <h1 class="editorial-heading error-title">
+            <span class="visually-hidden">Error 404: </span>
+            page not found
+            <span class="heading-line" aria-hidden="true"></span>
+            <span class="diamond" aria-hidden="true"></span>
+          </h1>
+
+          <p class="error-description">
+            This page may have moved, or the address might be incorrect.
+            Let’s get you back on the right frequency.
+          </p>
+
+          <!-- SEARCH -->
+          <div class="error-search" data-error-search hidden>
+            <form
+              id="error-search-form"
+              class="error-search-form"
+              role="search"
+            >
+              <label
+                class="visually-hidden"
+                for="error-search-input"
+              >
+                Search ECHO
+              </label>
+
+              <input
+                id="error-search-input"
+                type="search"
+                placeholder="Search ECHO"
+                autocomplete="off"
+                minlength="2"
+                maxlength="100"
+                aria-describedby="error-search-status"
+                aria-controls="error-search-results"
+                required
+              />
+
+              <button
+                class="rectangle-button button-dark"
+                type="submit"
+                aria-label="Search ECHO"
+              >
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <span>Search</span>
+              </button>
+            </form>
+
+            <p
+              id="error-search-status"
+              class="error-search-status"
+              role="status"
+            >
+              Search products, categories or magazine articles.
+            </p>
+
+            <section
+              id="error-search-results"
+              class="error-search-results"
+              aria-labelledby="error-results-heading"
+              hidden
+            >
+              <h2
+                id="error-results-heading"
+                class="visually-hidden"
+              >
+                Search results
+              </h2>
+
+              <ul class="error-search-list">
+                {searchItems.map((item) => (
+                  <li
+                    data-error-item
+                    data-search-text={`${item.title} ${item.keywords}`}
+                    hidden
+                  >
+                    <a
+                      class="error-search-link"
+                      href={item.href}
+                    >
+                      <span>
+                        <small>{item.label}</small>
+                        <strong>{item.title}</strong>
+                      </span>
+
+                      <i
+                        class="bi bi-arrow-up-right"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <p
+                class="error-search-empty"
+                data-error-empty
+                hidden
+              >
+                No results. Try “LUMIA”, “earbuds” or “design”.
+              </p>
+            </section>
+          </div>
+
+          <noscript>
+            <p class="error-search-status">
+              Use the links below to continue browsing.
+              Search is available with JavaScript enabled.
+            </p>
+          </noscript>
+
+          <!-- RECOVERY LINKS -->
+          <nav class="error-actions" aria-label="Helpful links">
+            <a
+              class="rectangle-button button-dark"
+              href={`${base}/`}
+            >
+              Back to home
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="rectangle-button error-outline-button"
+              href={`${base}/#shop`}
+            >
+              Browse categories
+            </a>
+
+            <a
+              class="rectangle-button error-outline-button"
+              href={`${base}/contact/`}
+            >
+              Contact us
+            </a>
+          </nav>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <script>
+      const search = document.querySelector<HTMLElement>(
+        '[data-error-search]'
+      );
+
+      const form = document.querySelector<HTMLFormElement>(
+        '#error-search-form'
+      );
+
+      const input = document.querySelector<HTMLInputElement>(
+        '#error-search-input'
+      );
+
+      const results = document.querySelector<HTMLElement>(
+        '#error-search-results'
+      );
+
+      const status = document.querySelector<HTMLElement>(
+        '#error-search-status'
+      );
+
+      const empty = document.querySelector<HTMLElement>(
+        '[data-error-empty]'
+      );
+
+      const normalize = (value: string) =>
+        value
+          .normalize('NFKD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase();
+
+      if (search && form && input && results && status && empty) {
+        const items = [
+          ...search.querySelectorAll<HTMLElement>(
+            '[data-error-item]'
+          ),
+        ].map((element) => ({
+          element,
+          text: normalize(element.dataset.searchText ?? ''),
+        }));
+
+        const limit = 8;
+
+        function renderSearch() {
+          const query = normalize(input!.value.trim());
+
+          items.forEach((item) => {
+            item.element.hidden = true;
+          });
+
+          if (query.length < 2) {
+            results!.hidden = true;
+
+            status!.textContent = query
+              ? 'Type at least 2 characters to search.'
+              : 'Search products, categories or magazine articles.';
+
+            return;
+          }
+
+          const words = query.split(/\s+/);
+
+          const matches = items.filter((item) =>
+            words.every((word) => item.text.includes(word))
+          );
+
+          matches.slice(0, limit).forEach((item) => {
+            item.element.hidden = false;
+          });
+
+          results!.hidden = false;
+          empty!.hidden = matches.length !== 0;
+
+          status!.textContent = matches.length > limit
+            ? `Showing ${limit} of ${matches.length} matches. Try a more specific search.`
+            : `${matches.length} ${matches.length === 1 ? 'result' : 'results'} found.`;
+        }
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          renderSearch();
+        });
+
+        input.addEventListener('input', renderSearch);
+
+        search.hidden = false;
+      }
+    </script>
+  </body>
+</html>

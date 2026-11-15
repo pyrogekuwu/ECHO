@@ -1,0 +1,336 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SiteHead from '../components/SiteHead.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const lastUpdated = '2026-11-15';
+
+const updatedLabel = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${lastUpdated}T00:00:00Z`));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SiteHead />
+    <title>Privacy policy | ECHO</title>
+    <meta
+      name="description"
+      content="How the ECHO university prototype handles browser storage, demo orders, contact forms and third-party services."
+    />
+  </head>
+
+  <body id="top" class="privacy-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Navbar />
+
+    <main id="main" class="privacy-main">
+      <div class="container-fluid echo-container">
+        <div class="privacy-document">
+          <nav aria-label="Breadcrumb" class="mb-4">
+            <ol class="breadcrumb cart-breadcrumb">
+              <li class="breadcrumb-item">
+                <a href={`${base}/`}>Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Privacy policy
+              </li>
+            </ol>
+          </nav>
+
+          <article
+            class="privacy-article"
+            aria-labelledby="privacy-heading"
+          >
+            <header>
+              <h1
+                id="privacy-heading"
+                class="editorial-heading privacy-title"
+              >
+                privacy policy
+                <span class="heading-line" aria-hidden="true"></span>
+                <span class="diamond" aria-hidden="true"></span>
+              </h1>
+
+              <p class="privacy-updated">
+                Last updated:
+                <time datetime={lastUpdated}>{updatedLabel}</time>
+              </p>
+
+              <p class="privacy-intro">
+                This policy describes the ECHO university prototype,
+                its browser-based features and the external services
+                used to display its content.
+              </p>
+            </header>
+
+            <section aria-labelledby="privacy-controller">
+              <h2 id="privacy-controller">
+                § 1. Personal data controller
+              </h2>
+
+              <p>
+                ECHO is a fictional audio brand created for an academic
+                project. The brand, business details and contact
+                information shown on the site are demonstrative.
+              </p>
+
+              <p>
+                The project author maintains this prototype. Information
+                about the project and its demonstration contact details
+                is available on the
+                <a href={`${base}/contact/`}> Contact page</a>.
+                The displayed address and registration information
+                do not identify a registered ECHO business.
+              </p>
+            </section>
+
+            <section aria-labelledby="privacy-purposes">
+              <h2 id="privacy-purposes">
+                § 2. Purposes and legal bases
+              </h2>
+
+              <p>
+                The prototype uses information for the following
+                demonstration features:
+              </p>
+
+              <ul>
+                <li>
+                  <strong>Contact form: </strong>
+                  your name, email, optional phone number, selected
+                  department and message are checked in your browser.
+                  This form does not send or save your message.
+                </li>
+
+                <li>
+                  <strong>Cart and demo checkout: </strong>
+                  products, quantities, discounts and demo orders are
+                  saved in this browser. An order can contain contact
+                  details, a delivery address, delivery and payment
+                  choices, and company invoice details if entered.
+                </li>
+
+                <li>
+                  <strong>Demo account: </strong>
+                  saved contact details and the default address support
+                  the account display and prefill future checkout forms.
+                </li>
+              </ul>
+
+              <p>
+                The contact checkbox demonstrates consent under
+                Article 6(1)(a) GDPR. The shopping flow demonstrates
+                user-requested steps that, in a real store, may rely on
+                Article 6(1)(b). This prototype does not conclude a real
+                sales contract or process payments.
+              </p>
+
+              <p>
+                The ECHO application has no backend that receives these
+                form submissions. Hosting, fonts, libraries and embedded
+                media can still involve connections to external
+                providers, as described below.
+              </p>
+            </section>
+
+            <section aria-labelledby="privacy-rights">
+              <h2 id="privacy-rights">
+                § 3. Your rights under GDPR
+              </h2>
+
+              <p>
+                Where GDPR applies, and subject to the conditions for
+                each right, you may request access, correction, erasure,
+                restriction of processing or data portability. You may
+                also object to processing and withdraw consent where
+                consent is the legal basis. Withdrawal does not affect
+                the lawfulness of earlier processing.
+              </p>
+
+              <p>
+                You may lodge a complaint with the competent data
+                protection supervisory authority. Questions about this
+                academic project should be directed to its author
+                through the contact channel supplied with the coursework.
+              </p>
+
+              <p>
+                For the locally saved demo data, you can edit your
+                profile and address on the
+                <a href={`${base}/my-account/`}>My account page</a>.
+                Your browser's site-data settings let you remove stored
+                carts, order history and account details. Clearing that
+                data also removes the saved demo history from that browser.
+              </p>
+            </section>
+
+            <section aria-labelledby="privacy-cookies">
+              <h2 id="privacy-cookies">
+                § 4. Cookies and browser storage
+              </h2>
+
+              <p>
+                Cookies and browser storage are different technologies.
+                ECHO saves its cart and account information using browser
+                storage; the application itself does not set cookies for
+                these features.
+              </p>
+
+              <div
+                class="table-responsive privacy-table-container"
+                role="region"
+                aria-label="Cookie categories"
+                tabindex="0"
+              >
+                <table class="table privacy-table">
+                  <caption>
+                    Cookie categories and external services
+                  </caption>
+
+                  <thead>
+                    <tr>
+                      <th scope="col">Category</th>
+                      <th scope="col">Use in this prototype</th>
+                      <th scope="col">Provider</th>
+                      <th scope="col">Duration</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <th scope="row">Essential</th>
+                      <td>
+                        No first-party cookies are set by the ECHO
+                        application itself.
+                      </td>
+                      <td>ECHO application</td>
+                      <td>Not applicable</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Analytics</th>
+                      <td>
+                        No first-party analytics cookies are configured.
+                      </td>
+                      <td>ECHO application</td>
+                      <td>Not applicable</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Advertising</th>
+                      <td>
+                        No first-party advertising cookies are configured.
+                      </td>
+                      <td>ECHO application</td>
+                      <td>Not applicable</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Third-party</th>
+                      <td>
+                        Embedded maps or videos may use cookies or similar
+                        technologies, depending on the service and browser
+                        settings.
+                      </td>
+                      <td>Google Maps / YouTube</td>
+                      <td>Set by the provider</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3>Data kept in this browser</h3>
+
+              <ul>
+                <li>
+                  <strong>Cart: </strong>
+                  products, quantities and the discount code are stored
+                  in localStorage. A sample cart may be created on your
+                  first visit.
+                </li>
+
+                <li>
+                  <strong>Demo orders: </strong>
+                  the order history and information entered at checkout
+                  are stored in localStorage.
+                </li>
+
+                <li>
+                  <strong>Account: </strong>
+                  saved profile and address details are stored in
+                  localStorage.
+                </li>
+
+                <li>
+                  <strong>Demo session: </strong>
+                  the signed-out state is stored in sessionStorage for
+                  the current tab session.
+                </li>
+              </ul>
+
+              <p>
+                These localStorage records have no automatic expiry in
+                this prototype. They remain until you change or clear
+                them, or the browser removes site data. Logging out of
+                the demo account preserves the cart, profile and order
+                history.
+              </p>
+
+              <h3>External services</h3>
+
+              <p>
+                The site is hosted on GitHub Pages. Google Fonts supplies
+                fonts, and jsDelivr supplies Bootstrap and Bootstrap Icons.
+                The contact page embeds Google Maps, and some magazine
+                content embeds YouTube. These providers may process
+                connection information, such as an IP address, when their
+                resources are loaded.
+              </p>
+
+              <p>
+                You can manage cookies and site storage through your
+                browser settings. Blocking external resources may affect
+                maps, videos, fonts or other interface elements.
+              </p>
+
+              <p>
+                Provider information: 
+                <a
+                  href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > GitHub privacy statement</a>,
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > Google privacy policy </a>
+                and
+                <a
+                  href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > Delivery privacy policy</a>.
+              </p>
+            </section>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+  </body>
+</html>

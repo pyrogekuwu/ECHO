@@ -26,6 +26,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <main id="main" class="category-main py-5">
             <div class="container">
 
+                <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item">
+              <a href={`${base}/`}>Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Magazine
+            </li>
+          </ol>
+        </nav>
+
             <h1 class="editorial-heading">magazine
                 <span class="heading-line" aria-hidden="true"></span>
                 <span class="diamond" aria-hidden="true"></span>
