@@ -58,7 +58,7 @@ export function readCart(): CartState {
 }
 
 
-function saveCart(state: CartState): boolean {
+export function saveCart(state: CartState): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     return true;

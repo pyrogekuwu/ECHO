@@ -8,25 +8,83 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <!doctype html>
 <html lang="en">
-    
   <head>
     <SiteHead />
-    <title>my account | ECHO</title>
+    <title>My account | ECHO</title>
   </head>
 
-    <body id="top" class="my-account-page">
-    
-        <Navbar />
-    
-        <main id="main" class="min-vh-100 py-5">
-        <section class="container">
-            <h1>my account</h1>
-        </section>
-        </main>
-    
-        <Footer />
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <body id="top" class="my-account-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Navbar />
 
-    </body>
+    <main id="main" class="account-main">
+      <section class="container-fluid echo-container">
+        <h1>My account</h1>
+
+        <p
+          class="order-confirmation"
+          data-order-confirmation
+          role="status"
+          hidden
+        ></p>
+
+        <a
+          class="rectangle-button button-dark mt-4"
+          href={`${base}/`}
+        >
+          Continue shopping
+        </a>
+      </section>
+    </main>
+
+    <Footer />
+
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <script>
+      const confirmation = document.querySelector<HTMLElement>(
+        '[data-order-confirmation]'
+      );
+
+      const orderId = new URLSearchParams(
+        window.location.search
+      ).get('order');
+
+      if (confirmation && orderId) {
+        try {
+          const orders: unknown = JSON.parse(
+            localStorage.getItem('echo:orders:v1') ?? '[]'
+          );
+
+          const order = Array.isArray(orders)
+            ? orders.find(
+                (item) =>
+                  item
+                  && item.id === orderId
+                  && Number.isInteger(item.total)
+              )
+            : undefined;
+
+          if (order) {
+            const total = new Intl.NumberFormat('en-IE', {
+              style: 'currency',
+              currency: 'EUR',
+            }).format(order.total / 100);
+
+            confirmation.textContent =
+              `Thank you! Demo order ${order.id} has been placed. `
+              + `Total: ${total}. No payment has been taken.`;
+
+            confirmation.hidden = false;
+          }
+        } catch {
+          // Konto pozostaje dostępne, gdy historia jest niedostępna.
+        }
+      }
+    </script>
+  </body>
 </html>

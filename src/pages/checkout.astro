@@ -1,0 +1,509 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SiteHead from '../components/SiteHead.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        
+        <SiteHead />
+        <title>Checkout | ECHO</title>
+        <meta name="description" content="Complete your ECHO order."/>
+
+    </head>
+
+    <body id="top" class="checkout-page">
+    
+        <a class="skip-link" href="#main">Skip to content</a>
+    
+        <Navbar />
+
+    
+        <main id="main" class="checkout-main" data-checkout-page>
+
+            <div class="container-fluid echo-container">
+                <nav aria-label="Breadcrumb" class="mb-4">
+                    <ol class="breadcrumb cart-breadcrumb">
+                        
+                        <li class="breadcrumb-item">
+                            <a href={`${base}/`}>Home</a>
+                        </li>
+            
+                        <li class="breadcrumb-item">
+                            <a href={`${base}/cart/`}>Cart</a>
+                        </li>
+            
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Checkout
+                        </li>
+          
+                    </ol>
+                </nav>
+
+        
+                <div class="cart-heading">
+          
+                    <h1>Checkout</h1>
+          
+                    <a href={`${base}/cart/`}>
+                        <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        Back to cart
+                    </a>
+        
+                </div>
+
+        
+                <p data-checkout-loading role="status">
+                    Loading your order…
+                </p>
+
+        
+                <noscript>
+                    <p>Enable JavaScript to complete this checkout.</p>
+                </noscript>
+
+        
+                <p
+                class="cart-feedback"
+                data-checkout-feedback
+                role="alert"
+                tabindex="-1"
+                hidden
+                ></p>
+
+        
+                <section class="cart-empty" data-checkout-empty hidden>
+          
+                    <i class="bi bi-bag" aria-hidden="true"></i>
+          
+                    <h2>Your cart is empty</h2>
+          
+                    <p>Add a product before continuing to checkout.</p>
+
+          
+                    <a class="rectangle-button button-dark" href={`${base}/#shop`}>
+                    Explore the collection
+                    </a>
+        
+                </section>
+
+        
+                
+                <form id="checkout-form" class="checkout-layout" hidden>
+                <div class="checkout-fields">
+                    <fieldset class="checkout-section">
+                        
+                        <legend>Contact & delivery address</legend>
+
+                        <div class="checkout-inputs">
+                            <div>
+                                <label class="form-label" for="checkout-first-name">
+                                    First name *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-first-name"
+                                name="firstName"
+                                autocomplete="given-name"
+                                maxlength="80"
+                                required
+                                />
+
+                            </div>
+
+                
+                            <div>
+                  
+                                <label class="form-label" for="checkout-last-name">
+                                    Last name *
+                                </label>
+
+                                <input
+                                class="form-control"
+                                id="checkout-last-name"
+                                name="lastName"
+                                autocomplete="family-name"
+                                maxlength="80"
+                                required
+                                />
+                
+                            </div>
+
+                
+                            <div>
+                                <label class="form-label" for="checkout-email">
+                                    Email *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                maxlength="160"
+                                required
+                                />
+                
+                            </div>
+
+                
+                            <div>
+                                <label class="form-label" for="checkout-phone">
+                                    Phone *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-phone"
+                                name="phone"
+                                type="tel"
+                                autocomplete="tel"
+                                maxlength="30"
+                                required
+                                />
+                
+                            </div>
+
+                
+                            <div class="checkout-full-width">
+                  
+                                <label class="form-label" for="checkout-street">
+                                    Street & house / apartment number *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-street"
+                                name="street"
+                                autocomplete="street-address"
+                                maxlength="200"
+                                required
+                                />
+                
+                            </div>
+
+                
+                            <div>
+                  
+                                <label class="form-label" for="checkout-postal-code">
+                                    Postal code *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-postal-code"
+                                name="postalCode"
+                                autocomplete="postal-code"
+                                maxlength="20"
+                                required
+                                />
+
+                            </div>
+
+                
+                            <div>
+                  
+                                <label class="form-label" for="checkout-city">
+                                    City *
+                                </label>
+                  
+                                <input
+                                class="form-control"
+                                id="checkout-city"
+                                name="city"
+                                autocomplete="address-level2"
+                                maxlength="100"
+                                required
+                                />
+                
+                            </div>
+                        </div>
+                    </fieldset>
+
+            
+                    <fieldset class="checkout-section">
+              
+                        <legend>Delivery</legend>
+
+                        <label class="checkout-option">
+                
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="delivery"
+                            value="courier"
+                            checked
+                            required
+                            />
+                
+                            <span>Courier</span>
+                
+                            <span data-delivery-price="courier"></span>
+              
+                        </label>
+
+              
+                        <label class="checkout-option">
+                
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="delivery"
+                            value="locker"
+                            required
+                            />
+                
+                            <span>Parcel locker</span>
+                
+                            <span data-delivery-price="locker"></span>
+              
+                        </label>
+
+              
+                        <label class="checkout-option">
+                
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="delivery"
+                            value="pickup"
+                            required
+                            />
+                
+                            <span>Personal pickup</span>
+                
+                            <span data-delivery-price="pickup"></span>
+              
+                        </label>
+            
+                    </fieldset>
+
+            
+                    <fieldset class="checkout-section">
+              
+                        <legend>Payment</legend>
+
+              
+                        <label class="checkout-option">
+                
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="payment"
+                            value="blik"
+                            checked
+                            required
+                            />
+                
+                            <span>BLIK</span>
+              
+                        </label>
+
+              
+                        <label class="checkout-option">
+                
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="payment"
+                            value="card"
+                            required
+                            />
+                
+                            <span>Payment card</span>
+              
+                        </label>
+
+              
+                        <label class="checkout-option">
+                
+                            <input 
+                            class="form-check-input"
+                            type="radio"
+                            name="payment"
+                            value="transfer"
+                            required
+                            />
+                
+                            <span>Instant bank transfer</span>
+              
+                        </label>
+                    </fieldset>
+
+            
+                    <fieldset class="checkout-section">
+              
+                        <legend>Invoice</legend>
+
+              
+                        <label class="checkout-check">
+                
+                            <input
+                            class="form-check-input"
+                            id="checkout-invoice"
+                            name="invoice"
+                            type="checkbox"
+                            aria-controls="checkout-invoice-fields"
+                            aria-expanded="false"
+                            />
+                
+                            <span>I need a company invoice</span>
+              
+                        </label>
+
+              
+                        <div id="checkout-invoice-fields" class="checkout-inputs checkout-invoice-fields" hidden>
+                
+                        <div>
+                            <label class="form-label" for="checkout-company">
+                                Company name *
+                            </label>
+                  
+                            <input
+                            class="form-control"
+                            id="checkout-company"
+                            name="company"
+                            autocomplete="organization"
+                            maxlength="160"
+                            disabled
+                            />
+                
+                        </div>
+
+                
+                        <div>
+                            <label class="form-label" for="checkout-nip">
+                                NIP *
+                            </label>
+                  
+                            <input
+                            class="form-control"
+                            id="checkout-nip"
+                            name="nip"
+                            inputmode="numeric"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            title="Enter 10 digits without spaces or hyphens"
+                            disabled
+                            />
+                
+                        </div>
+                    </div>
+                </fieldset>
+
+            
+                <label class="checkout-check">
+              
+                    <input
+                    class="form-check-input"
+                    name="terms"
+                    type="checkbox"
+                    required
+                    />
+              
+                    <span>
+                        I accept the store terms for this  order. *
+                    </span>
+            
+                </label>
+            </div>
+
+          
+            
+            <aside class="cart-summary checkout-summary" aria-labelledby="checkout-summary-heading">
+
+                <h2 id="checkout-summary-heading">Your order</h2>
+
+                <p class="cart-summary-count" data-checkout-count></p>
+
+            
+                <ul class="checkout-items" data-checkout-items></ul>
+
+            
+                <dl class="cart-totals">
+              
+                    <div>
+                        <dt>Subtotal</dt>
+                        <dd data-checkout-subtotal></dd>
+                    </div>
+
+                    <div data-checkout-discount-row hidden>
+                        <dt>Discount · ECHO10</dt>
+                        <dd data-checkout-discount></dd>
+                    </div>
+
+                    <div>
+                        <dt>Delivery</dt>
+                        <dd data-checkout-delivery></dd>
+                    </div>
+              
+                    <div class="cart-grand-total">
+                
+                        <dt>Total</dt>
+                
+                        <dd 
+                        data-checkout-total
+                        aria-live="polite"
+                        aria-atomic="true"
+                        ></dd>
+                    </div>
+                </dl>
+
+            
+                <button
+                class="rectangle-button button-dark checkout-submit"
+                type="submit"
+                disabled
+                >
+                Place demo order
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </button>
+
+            
+            <p class="cart-summary-note">
+                Prices include VAT.
+            </p>
+        </aside> 
+    </form>
+
+        
+    <template id="checkout-item-template">
+          
+        <li class="checkout-item">
+            
+            <img width="64" height="64" alt="" />
+            
+            <div>
+                <a data-checkout-product-link></a>
+                <span data-checkout-quantity></span>
+            </div>
+            
+            <span data-checkout-line-total></span>
+          
+        </li>
+    
+    </template>
+
+
+</div>
+
+</main>
+
+    
+    <Footer />
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <script>
+      import { initCheckout } from '../scripts/checkout';
+      initCheckout();
+    </script>
+  </body>
+</html>
