@@ -136,7 +136,6 @@ const socials = [
               placeholder="Your email address"
               autocomplete="email"
               maxlength="160"
-              aria-describedby="footer-newsletter-note"
               required
             />
 
@@ -183,20 +182,10 @@ const socials = [
     <div class="footer-bottom">
       <p>© {year} ECHO. Audio brand.</p>
 
-      <p>
-        University project by
-        <a
-          href={author.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {author.name}
-        </a>
-      </p>
+      <a href="#top">Back to top ↑</a>
 
       <div class="footer-legal-links">
         <a href={`${base}/privacy-policy/`}>Privacy policy</a>
-        <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </div>

@@ -59,8 +59,8 @@ const updatedLabel = new Intl.DateTimeFormat('en-GB', {
               </h1>
 
               <p class="privacy-updated">
-                Last updated:
-                <time datetime={lastUpdated}>{updatedLabel}</time>
+                Last updated: 
+                <time datetime={lastUpdated}> {updatedLabel}</time>
               </p>
 
               <p class="privacy-intro">
@@ -118,6 +118,12 @@ const updatedLabel = new Intl.DateTimeFormat('en-GB', {
                 </li>
 
                 <li>
+                    <strong>Newsletter: </strong>
+                    the email address is checked in your browser to demonstrate
+                    signup. It is not saved or added to a mailing list.
+                </li>
+
+                <li>
                   <strong>Demo account: </strong>
                   saved contact details and the default address support
                   the account display and prefill future checkout forms.
@@ -164,7 +170,7 @@ const updatedLabel = new Intl.DateTimeFormat('en-GB', {
               <p>
                 For the locally saved demo data, you can edit your
                 profile and address on the
-                <a href={`${base}/my-account/`}>My account page</a>.
+                <a href={`${base}/my-account/`}> My account page</a>.
                 Your browser's site-data settings let you remove stored
                 carts, order history and account details. Clearing that
                 data also removes the saved demo history from that browser.
@@ -317,7 +323,7 @@ const updatedLabel = new Intl.DateTimeFormat('en-GB', {
                   href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net"
                   target="_blank"
                   rel="noopener noreferrer"
-                > Delivery privacy policy</a>.
+                > jsDelivr privacy policy</a>.
               </p>
             </section>
           </article>
