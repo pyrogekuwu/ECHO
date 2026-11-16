@@ -220,71 +220,11 @@ const organization = {
     </div>
   </div>
 </section>
-
-
-      <!-- CONTACT -->
-      <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-        <div class="container-fluid echo-container">
-          <div class="row gx-4 gx-lg-5 gy-5 align-items-start">
-            <div class="col-12 col-lg-5 contact-info">
-              <h2 id="contact-heading">GET IN CONTACT</h2>
-              <p class="contact-intro">Questions about the collection or the ECHO concept? Send us a note.</p>
-              <dl class="contact-details">
-                <div><dt>EMAIL</dt><dd>contact@echo.com</dd></div>
-                <div><dt>PHONE</dt><dd>+00 000-0000</dd></div>
-                <div><dt>BASED IN</dt><dd>South Korea, Seoul</dd></div>
-              </dl>
-            </div>
-            <div class="col-12 col-lg-6 offset-lg-1">
-              <form id="contact-form" class="contact-form">
-                <div class="row g-3">
-                  <div class="col-12 col-sm-6">
-                    <label for="contact-name" class="form-label">Name *</label>
-                    <input class="form-control" id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <label for="contact-email" class="form-label">E-mail *</label>
-                    <input class="form-control" id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-                  </div>
-                  <div class="col-12">
-                    <label for="contact-subject" class="form-label">Subject *</label>
-                    <select class="form-select" name="subject" id="contact-subject" required>
-                      <option value="" disabled selected>Select subject</option>
-                      <option value="products">Products / collection</option>
-                      <option value="collaboration">Collaboration</option>
-                      <option value="press">Press / media</option>
-                      <option value="other">Something else</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label for="contact-message" class="form-label">Message *</label>
-                    <textarea class="form-control" name="message" id="contact-message" rows="5" placeholder="Your message" required></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button class="rectangle-button button-light" type="submit">send message</button>
-                    <p id="contact-feedback" class="form-feedback" role="status" hidden>This is a design demo. Your message has not been sent.</p>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+</main>
 
     <Footer />
 
-    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    
-    <script>
-
-      const form = document.querySelector<HTMLFormElement>('#contact-form');
-      const feedback = document.querySelector<HTMLElement>('#contact-feedback');
-      form?.addEventListener('submit', (event) => {
-        event.preventDefault();
-        if (form.reportValidity() && feedback) feedback.hidden = false;
-      });
-
-    </script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script> 
+   
   </body>
 </html>

@@ -2,35 +2,240 @@
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const year = new Date().getFullYear();
 
+const email = 'contact@echo.example';
+const phone = '+82 2 0000 0000';
+const phoneHref = '+82200000000';
+
+const author = {
+  name: 'pyrogekuwu',
+  href: 'https://github.com/pyrogekuwu',
+};
+
+const exploreLinks = [
+  { label: 'headphones', href: `${base}/headphones/` },
+  { label: 'earbuds', href: `${base}/earbuds/` },
+  { label: 'speakers', href: `${base}/speakers/` },
+  { label: 'accessories', href: `${base}/accessories/` },
+  { label: 'magazine', href: `${base}/magazine/` },
+];
+
+const customerLinks = [
+  { label: 'contact', href: `${base}/contact/` },
+  { label: 'cart', href: `${base}/cart/` },
+  { label: 'my account', href: `${base}/my-account/` },
+  { label: 'privacy policy', href: `${base}/privacy-policy/` },
+];
+
+const socials = [
+  {
+    name: 'X',
+    icon: 'bi-twitter-x',
+    href: 'https://x.com/home',
+  },
+  {
+    name: 'Instagram',
+    icon: 'bi-instagram',
+    href: 'https://www.instagram.com/',
+  },
+  {
+    name: 'YouTube',
+    icon: 'bi-youtube',
+    href: 'https://www.youtube.com/',
+  },
+];
 ---
 
-<footer class="site-footer">
-    <div class="container-fluid echo-container">
-        <div class="footer-top">
-        <div class="footer-identity">
-            <a href="#top" class="wordmark wordmark-footer" aria-label="ECHO — back to top">ECHO</a>
-            <div class="social-links" aria-label="social media">
-            <a href="https://www.instagram.com/">instagram</a>
-            <a href="https://x.com/home">twitter</a>
-            <a href="https://www.youtube.com/">youtube</a>
-        </div>
+<footer class="site-footer site-footer-expanded">
+  <div class="container-fluid echo-container">
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <section class="footer-brand" aria-label="About ECHO">
+        <a class="wordmark footer-wordmark" href={`${base}/`} aria-label="ECHO home">ECHO</a>
+
+        <p class="footer-brand-copy">
+          Our audio concepts bring a different look
+          to everyday listening.
+        </p>
+
+        <nav class="footer-socials" aria-label="Social media — demonstration links">
+          {socials.map((social) => (
+            <a href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${social.name} (opens in a new tab)`}>
+
+              <i class:list={['bi', social.icon]} aria-hidden="true"></i>
+            </a>
+          ))}
+        </nav>
+      </section>
+
+      <!-- EXPLORE -->
+      <nav
+        class="footer-column"
+        aria-labelledby="footer-explore-heading"
+      >
+        <h2 class="footer-heading" id="footer-explore-heading">
+          Explore
+        </h2>
+
+        <ul class="footer-nav-list">
+          {exploreLinks.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- CUSTOMER CARE -->
+      <nav
+        class="footer-column"
+        aria-labelledby="footer-customer-heading"
+      >
+        <h2 class="footer-heading" id="footer-customer-heading">
+          Customer care
+        </h2>
+
+        <ul class="footer-nav-list">
+          {customerLinks.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- NEWSLETTER AND CONTACT -->
+      <section
+        class="footer-column"
+        aria-labelledby="footer-newsletter-heading"
+      >
+        <h2 class="footer-heading" id="footer-newsletter-heading">
+          Stay connected
+        </h2>
+
+        <p class="footer-newsletter-copy">
+          New designs, stories and updates from ECHO.
+        </p>
+
+        <form
+          id="footer-newsletter-form"
+          class="footer-newsletter-form"
+        >
+          <label
+            class="visually-hidden"
+            for="footer-newsletter-email"
+          >
+            Email address for the newsletter
+          </label>
+
+          <div class="input-group">
+            <input
+              class="form-control"
+              id="footer-newsletter-email"
+              name="email"
+              type="email"
+              placeholder="Your email address"
+              autocomplete="email"
+              maxlength="160"
+              aria-describedby="footer-newsletter-note"
+              required
+            />
+
+            <button
+              class="footer-newsletter-submit"
+              type="submit"
+              aria-label="Subscribe to the newsletter"
+              disabled
+            >
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <p
+            class="footer-newsletter-feedback"
+            id="footer-newsletter-feedback"
+            role="status"
+            tabindex="-1"
+            hidden
+          ></p>
+        </form>
+
+        <noscript>
+          <p class="footer-note">
+            Enable JavaScript to try the newsletter form.
+          </p>
+        </noscript>
+
+        <address class="footer-contact-details">
+          <a href={`mailto:${email}`}>
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span>{email}</span>
+          </a>
+
+          <a href={`tel:${phoneHref}`}>
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <span>{phone}</span>
+          </a>
+        </address>
+      </section>
     </div>
-    <nav class="footer-links" aria-label="Footer navigation">
-        <a href={`${base}/headphones/`}>headphones</a>
-        <a href={`${base}/#product-aerospace-black`}>ear buds</a>
-        <a href={`${base}/#category-speakers`}>speakers</a>
-        <a href={`${base}/#category-accessories`}>accessories</a>
-        <a href={`${base}/magazine/`}>magazine</a>
-    </nav>
-</div>
 
-<div class="footer-bottom">
-  <small>© {year} ECHO. Audio brand.</small>
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+      <p>© {year} ECHO. Audio brand.</p>
 
-  <div class="footer-legal-links">
-    <a href={`${base}/privacy-policy/`}>Privacy policy</a>
-    <a href="#top">Back to top ↑</a>
+      <p>
+        University project by
+        <a
+          href={author.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {author.name}
+        </a>
+      </p>
+
+      <div class="footer-legal-links">
+        <a href={`${base}/privacy-policy/`}>Privacy policy</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </footer>
+
+<script>
+  const newsletterForm = document.querySelector<HTMLFormElement>(
+    '#footer-newsletter-form'
+  );
+
+  const newsletterEmail = document.querySelector<HTMLInputElement>(
+    '#footer-newsletter-email'
+  );
+
+  const newsletterFeedback = document.querySelector<HTMLElement>(
+    '#footer-newsletter-feedback'
+  );
+
+  if (newsletterForm && newsletterEmail && newsletterFeedback) {
+    newsletterForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      newsletterEmail.value = newsletterEmail.value.trim();
+
+      if (!newsletterForm.reportValidity()) return;
+
+      newsletterFeedback.textContent =
+        'Email checked. This demo does not add your address to a mailing list.';
+
+      newsletterFeedback.hidden = false;
+      newsletterFeedback.focus();
+    });
+
+    newsletterEmail.addEventListener('input', () => {
+      newsletterFeedback.hidden = true;
+    });
+
+    newsletterForm.querySelector<HTMLButtonElement>(
+      '[type="submit"]'
+    )!.disabled = false;
+  }
+</script>
