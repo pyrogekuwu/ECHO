@@ -195,23 +195,25 @@ const sections = [
                 will appear here.
               </p>
 
-              <div class="table-responsive">
-                <table class="table align-middle account-orders-table">
+              <div class="table-responsive account-orders-wrapper">
+                <table class="table align-middle account-orders-table" role="table">
                   <caption class="visually-hidden">Order history</caption>
+                  
+                  <thead role="rowgroup">
+                    <tr role="row">
 
-                  <thead>
-                    <tr>
-                      <th scope="col">Order</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Total</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">
+                      <th scope="col" role="columnheader">Order</th>
+                      <th scope="col" role="columnheader">Date</th>
+                      <th scope="col" role="columnheader">Total</th>
+                      <th scope="col" role="columnheader">Status</th>
+                      <th scope="col" role="columnheader">
+                        
                         <span class="visually-hidden">Details</span>
                       </th>
                     </tr>
                   </thead>
-
-                  <tbody data-account-orders></tbody>
+                  
+                  <tbody data-account-orders role="rowgroup"></tbody>
                 </table>
               </div>
             </section>
@@ -395,26 +397,51 @@ const sections = [
 
         <!-- ORDER TABLE ROW -->
         <template id="account-order-row">
-          <tr>
-            <td data-order-number></td>
-            <td data-order-date></td>
-            <td data-order-total></td>
-            <td>
-              <span class="account-order-status" data-order-status></span>
-            </td>
-            <td>
-              <button
-                class="account-text-button"
-                type="button"
-                data-order-id
-                data-bs-toggle="modal"
-                data-bs-target="#account-order-modal"
-              >
-                Details
-              </button>
-            </td>
-          </tr>
-        </template>
+  <tr role="row">
+    <td role="cell">
+      <span class="account-mobile-label" aria-hidden="true">
+        Order
+      </span>
+      <span data-order-number></span>
+    </td>
+
+    <td role="cell">
+      <span class="account-mobile-label" aria-hidden="true">
+        Date
+      </span>
+      <span data-order-date></span>
+    </td>
+
+    <td role="cell">
+      <span class="account-mobile-label" aria-hidden="true">
+        Total
+      </span>
+      <span data-order-total></span>
+    </td>
+
+    <td role="cell">
+      <span class="account-mobile-label" aria-hidden="true">
+        Status
+      </span>
+      <span
+        class="account-order-status"
+        data-order-status
+      ></span>
+    </td>
+
+    <td class="account-order-actions" role="cell">
+      <button
+        class="account-text-button"
+        type="button"
+        data-order-id
+        data-bs-toggle="modal"
+        data-bs-target="#account-order-modal"
+      >
+        View order details
+      </button>
+    </td>
+  </tr>
+</template>
 
         <!-- ORDER DETAILS MODAL -->
         <div

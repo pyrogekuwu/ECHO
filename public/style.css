@@ -1626,6 +1626,90 @@ img { display: block; }
   }
 }
 
+/* ACCOUNT ORDERS — MOBILE LAYOUT */
+
+.account-mobile-label {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .account-main .account-orders-wrapper {
+    overflow: visible;
+  }
+
+  .account-orders-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  .account-orders-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .account-orders-table tbody {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #dfe0e7;
+  }
+
+  .account-orders-table tbody tr {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dfe0e7;
+  }
+
+  .account-orders-table tbody td {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: start;
+    gap: .75rem;
+    padding: .55rem 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    line-height: 1.7;
+  }
+
+  .account-orders-table td > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .account-orders-table .account-mobile-label {
+    display: block;
+    color: #62646d;
+    font-size: .75rem;
+    font-weight: 500;
+  }
+
+  .account-orders-table .account-order-status {
+    justify-self: start;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .account-orders-table td.account-order-actions {
+    display: block;
+    padding-top: .85rem;
+    text-align: right;
+  }
+}
+
+
+
+
 /* STRONY POMOCNICZE I STOPKA */
 /* CONTACT */
 
@@ -1912,6 +1996,11 @@ img { display: block; }
 }
 
 
+
+
+
+
+
 /* PRIVACY POLICY */
 
 .privacy-main {
@@ -2056,6 +2145,12 @@ img { display: block; }
 }
 
 
+
+
+
+
+
+
 /* STRONY POMOCNICZE I STOPKA */
 /* 404 */
 
@@ -2083,7 +2178,7 @@ img { display: block; }
 }
 
 .error-eyebrow {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0rem;
   font: 400 .7rem/1.6 var(--font-tech);
   letter-spacing: .14em;
   color: #62646d;
