@@ -3,22 +3,94 @@ import type { Product } from '../data/products';
 
 interface Props {
   product: Product;
+  showRating?: boolean;
+  featured?: boolean;
 }
 
-const { product } = Astro.props;
+const { product, showRating = false, featured = false } = Astro.props;
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const productUrl = `${base}/product/${product.id}/`;
-const price = new Intl.NumberFormat('en-IE', {
+
+const currency = new Intl.NumberFormat('en-IE', {
   style: 'currency',
   currency: 'EUR',
-}).format(product.price);
+});
+
+const onSale = typeof product.originalPrice === 'number'
+  && product.originalPrice > product.price;
+
+const badge = product.badge || (onSale ? 'Sale' : '');
+
+const reviews = product.reviews ?? [];
+
+const rating = reviews.length
+  ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
+  : 0;
 ---
 
-<article class="product-card" id={product.id}>
-  <a class="product-card-link" href={productUrl}>
-    <img src={`${base}${product.image}`} alt={product.alt}
-      class="product-card-image" loading="lazy" />
-    <h3>{product.name}</h3>
+<article
+  class:list={['product-card', { 'product-card-featured': featured }]}
+  id={product.id}
+>
+  <a class="product-card-link product-card-photo" href={productUrl}>
+    <img
+      src={`${base}${product.image}`}
+      alt={product.alt}
+      class="product-card-image"
+      loading="lazy"
+    />
+
+    {badge && <span class="badge product-card-badge">{badge}</span>}
   </a>
-  <p class="product-card-price">{price}</p>
+
+  <h3>
+    <a class="product-card-link" href={productUrl}>
+      {product.name}
+    </a>
+  </h3>
+
+  {showRating && (
+    <div class="product-card-rating">
+      <span class="product-card-stars" aria-hidden="true">
+        {Array.from({ length: 5 }, (_, index) => (
+          <i class:list={[
+            'bi',
+            rating >= index + 1
+              ? 'bi-star-fill'
+              : rating >= index + 0.5 ? 'bi-star-half' : 'bi-star',
+          ]}></i>
+        ))}
+      </span>
+
+      <span>
+        {reviews.length
+          ? `${rating.toFixed(1)} / 5 (${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'})`
+          : 'No reviews yet'}
+      </span>
+    </div>
+  )}
+
+  <p class="product-card-price">
+    {onSale && (
+      <del>
+        <span class="visually-hidden">Regular price: </span>
+        {currency.format(product.originalPrice!)}
+      </del>
+    )}
+
+    <span>
+      {onSale && <span class="visually-hidden">Sale price: </span>}
+      {currency.format(product.price)}
+    </span>
+  </p>
+
+  <a
+    class="rectangle-button product-card-cta"
+    href={productUrl}
+    aria-label={`View details: ${product.name}`}
+  >
+    <span>View details</span>
+    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+  </a>
 </article>

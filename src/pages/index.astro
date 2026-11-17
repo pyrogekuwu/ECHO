@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
 import { products } from '../data/products';
+import { ProductCard } from '../components/ProductCard.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -15,8 +16,8 @@ const categories = [
 ];
 const bestsellerIds = [
   'product-lumia-white',
-  'product-aerospace-black',
-  'product-vesper-silver',
+  'product-aerospace-silver',
+  'product-venus-silver',
 ];
 
 const bestsellers = bestsellerIds.map((id) => {
@@ -180,46 +181,26 @@ const organization = {
       <!-- BESTSELLERS -->
        <section
        id="bestsellers"
-       class="bestsellers-section content-section"
-       aria-labelledby="bestsellers-heading"
-       >
-  
-       <div class="container-fluid echo-container">
-        <h2 id="bestsellers-heading" class="editorial-heading">
-          our bestsellers
-          <span class="heading-line" aria-hidden="true"></span>
-          <span class="diamond" aria-hidden="true"></span>
-        </h2>
+      class="bestsellers-section content-section"
+      aria-labelledby="bestsellers-heading"
+      >
+      
+        <div class="container-fluid echo-container">
+          <h2 id="bestsellers-heading" class="editorial-heading">
+            our bestsellers
+            <span class="heading-line" aria-hidden="true"></span>
+            <span class="diamond" aria-hidden="true"></span>
+          </h2>
 
-    
         <div class="row g-3 g-xl-5 bestseller-row">
-      {bestsellers.map((product) => (
-        <div class="col-12 col-sm-6 col-lg-4">
-          <article class="bestseller" id={product.id}>
-            <a
-              href={`${base}/product/${product.id}/`}
-              class="bestseller-link"
-            >
-              <div class="bestseller-photo">
-                <img
-                  src={`${base}${product.image}`}
-                  alt={product.alt}
-                  loading="lazy"
-                />
-              </div>
-
-              <h3>{product.name}</h3>
-
-              <p class="price">
-                {priceFormatter.format(product.price)}
-              </p>
-            </a>
-          </article>
+          {bestsellers.map((product) => (
+            <div class="col-12 col-sm-6 col-lg-4">
+              <ProductCard product={product} showRating featured />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 </main>
 
     <Footer />

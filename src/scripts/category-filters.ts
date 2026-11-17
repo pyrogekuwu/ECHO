@@ -44,6 +44,23 @@ export function initCategoryFilters() {
 
   let minimum = lower;
   let maximum = upper;
+  let currentPage = 1;
+
+  const pageSize = Math.max(1, Number(root.dataset.pageSize) || 6);
+
+  const pagination = root.querySelector<HTMLElement>(
+    '[data-pagination]'
+  )!;
+
+  const pageNumbers = root.querySelector<HTMLElement>(
+    '[data-page-numbers]'
+  )!;
+
+  const resultCount = root.querySelector<HTMLElement>(
+    '[data-result-count]'
+  )!;
+
+  resultCount.tabIndex = -1;
 
   const cards = [
     ...grid.querySelectorAll<HTMLElement>('[data-filter-item]')
@@ -51,6 +68,7 @@ export function initCategoryFilters() {
     element,
     name: element.dataset.name ?? '',
     price: Math.round(Number(element.dataset.price) * 100),
+    popularity: Number(element.dataset.popularity) || 0,
     colors: (element.dataset.color ?? '').split('|').filter(Boolean),
     collection: element.dataset.collection ?? '',
     inStock: element.dataset.inStock === 'true',
@@ -63,6 +81,62 @@ export function initCategoryFilters() {
         `input[name="${name}"]:checked`
       )
     ].map((input) => input.value);
+  }
+
+  function renderPagination(count: number) {
+    const totalPages = Math.max(1, Math.ceil(count / pageSize));
+
+    pagination.hidden = count === 0;
+
+    pagination.querySelector<HTMLButtonElement>(
+      '[data-page-step="-1"]'
+    )!.disabled = currentPage === 1;
+
+    pagination.querySelector<HTMLButtonElement>(
+      '[data-page-step="1"]'
+    )!.disabled = currentPage === totalPages;
+
+    const visiblePages = [...new Set([
+      1,
+      totalPages,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+    ])]
+      .filter((page) => page >= 1 && page <= totalPages)
+      .sort((a, b) => a - b);
+
+    const fragment = document.createDocumentFragment();
+    let previous = 0;
+
+    for (const page of visiblePages) {
+      if (page > previous + 1) {
+        const gap = document.createElement('span');
+        gap.textContent = '…';
+        gap.setAttribute('aria-hidden', 'true');
+        fragment.append(gap);
+      }
+
+      const button = document.createElement('button');
+
+      button.type = 'button';
+      button.dataset.page = String(page);
+      button.textContent = String(page);
+
+      button.setAttribute(
+        'aria-label',
+        `Page ${page} of ${totalPages}`
+      );
+
+      if (page === currentPage) {
+        button.setAttribute('aria-current', 'page');
+      }
+
+      fragment.append(button);
+      previous = page;
+    }
+
+    pageNumbers.replaceChildren(fragment);
   }
 
   function render() {
@@ -103,17 +177,36 @@ export function initCategoryFilters() {
         return b.price - a.price || a.order - b.order;
       }
 
+      if (sort.value === 'popular') {
+        return b.popularity - a.popularity || a.order - b.order;
+      }
+
       if (sort.value === 'name') {
-        return (
-          a.name.localeCompare(b.name, 'en') ||
-          a.order - b.order
-        );
+        return a.name.localeCompare(b.name, 'en')
+          || a.order - b.order;
       }
 
       return a.order - b.order;
     });
 
+    const matching = ordered.filter(
+      (card) => !card.element.hidden
+    );
+
+    const totalPages = Math.max(1, Math.ceil(count / pageSize));
+
+    currentPage = Math.min(currentPage, totalPages);
+
+    const first = (currentPage - 1) * pageSize;
+
+    matching.forEach((card, index) => {
+      card.element.hidden =
+        index < first || index >= first + pageSize;
+    });
+
     grid.append(...ordered.map((card) => card.element));
+
+    renderPagination(count);
 
     grid.hidden = count === 0;
 
@@ -125,9 +218,9 @@ export function initCategoryFilters() {
       count === 1 ? 'product' : 'products'
     }`;
 
-    root.querySelector<HTMLElement>(
-      '[data-result-count]'
-    )!.textContent = label;
+    resultCount.textContent = count > pageSize
+      ? `${label} · Showing ${first + 1}–${Math.min(first + pageSize, count)}`
+      : label;
 
     root.querySelector<HTMLElement>(
       '[data-show-results]'
@@ -188,6 +281,8 @@ export function initCategoryFilters() {
       }
     }
 
+    currentPage = 1;
+
     syncPrice();
     render();
   }
@@ -209,6 +304,7 @@ export function initCategoryFilters() {
     if (input === minInput || input === maxInput) {
       changePrice(input);
     } else if (input.type === 'checkbox') {
+      currentPage = 1;
       render();
     }
   });
@@ -223,7 +319,31 @@ export function initCategoryFilters() {
     );
   });
 
-  sort.addEventListener('change', render);
+  sort.addEventListener('change', () => {
+    currentPage = 1;
+    render();
+  });
+
+  pagination.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const button = event.target.closest<HTMLButtonElement>(
+      'button'
+    );
+
+    if (!button || button.disabled) return;
+
+    const target = button.dataset.page
+      ? Number(button.dataset.page)
+      : currentPage + Number(button.dataset.pageStep);
+
+    if (!Number.isFinite(target) || target === currentPage) return;
+
+    currentPage = target;
+
+    render();
+    resultCount.focus();
+  });
 
   root.querySelectorAll<HTMLButtonElement>(
     '[data-clear-filters]'
@@ -233,6 +353,7 @@ export function initCategoryFilters() {
 
       minimum = lower;
       maximum = upper;
+      currentPage = 1;
 
       syncPrice();
       render();

@@ -3,6 +3,8 @@
     "name": "AEROSPACE Earbuds Black",
     "category": "earbuds",
     "price": 259.99,
+    "badge": "Sale",
+    "popularity": 90,
     "image": "/images/product-aerospace-black.png",
     "alt": "Black AEROSPACE earbuds",
     "inStock": true,

@@ -71,8 +71,7 @@ const swatches: Record<string, string> = {
     <main id="main" class="category-main category-page-main">
       
       <section
-        class="container-fluid echo-container category-catalog"
-        data-category-catalog>
+      class="container-fluid echo-container category-catalog" data-category-catalog data-page-size="6">
 
         <nav aria-label="Breadcrumb" class="mb-4">
           <ol class="breadcrumb cart-breadcrumb">
@@ -322,10 +321,12 @@ const swatches: Record<string, string> = {
                   data-sort-products
                 >
                   <option value="featured">Featured</option>
+                  <option value="popular">Most popular</option>
                   <option value="price-asc">Price: low to high</option>
                   <option value="price-desc">Price: high to low</option>
                   <option value="name">Name: A–Z</option>
                 </select>
+                
               </div>
             </div>
 
@@ -335,6 +336,7 @@ const swatches: Record<string, string> = {
                   data-filter-item
                   data-name={product.name}
                   data-price={product.price}
+                  data-popularity={product.popularity ?? 0}
                   data-color={
                     (
                       Array.isArray(product.color)
@@ -351,7 +353,35 @@ const swatches: Record<string, string> = {
               ))}
             </div>
 
+            <nav
+            class="category-pagination"
+            aria-label="Product pages"
+            data-pagination
+            hidden
+            >
+              <button
+              type="button"
+              data-page-step="-1"
+              aria-label="Previous page"
+              disabled
+              >
+                <i class="bi bi-chevron-left" aria-hidden="true"></i>
+              </button>
+
+              <div class="category-page-numbers" data-page-numbers></div>
+
+              <button
+              type="button"
+              data-page-step="1"
+              aria-label="Next page"
+              disabled
+              >
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+              </button>
+              </nav>
+
             <div class="category-no-results" data-no-results hidden>
+              
               <p>No products match these filters.</p>
 
               <button

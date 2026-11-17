@@ -22,6 +22,9 @@ export interface Product {
   collection: string;
   color: string | string[];
   price: number;
+  originalPrice?: number;
+  badge?: string;
+  popularity?: number;
   image: string;
   alt: string;
   sku?: string;

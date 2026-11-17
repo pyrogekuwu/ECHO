@@ -32,6 +32,15 @@ const related = [
   ...products.filter((item) => item.id !== product.id && item.category === product.category),
   ...products.filter((item) => item.category !== product.category),
 ].slice(0, 3);
+const onSale = typeof product.originalPrice === 'number'
+  && product.originalPrice > product.price;
+
+const originalPrice = onSale
+  ? new Intl.NumberFormat('en-IE', {
+      style: 'currency',
+      currency: 'EUR',
+    }).format(product.originalPrice!)
+  : '';
 const price = new Intl.NumberFormat('en-IE', {
   style: 'currency', currency: 'EUR',
 }).format(product.price);
@@ -132,7 +141,20 @@ const price = new Intl.NumberFormat('en-IE', {
               <span>{reviews.length ? `${rating.toFixed(1)} / 5 (${reviews.length} reviews)` : 'No reviews yet'}</span>
             </div>
 
-            <p class="product-price">{price}</p>
+            <p class="product-price">
+              {onSale && (
+              <del>
+                <span class="visually-hidden">Regular price: </span>
+                {originalPrice}
+                </del>
+                )}
+                
+                <span>
+                  {onSale && <span class="visually-hidden">Sale price: </span>}
+                  {price}
+                </span>
+              </p>
+              
             <p class="product-stock">{inStock ? 'In stock' : 'Out of stock'}</p>
             <p class="product-intro">{description}</p>
 
