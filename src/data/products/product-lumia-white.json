@@ -1,6 +1,16 @@
 {
     "id": "product-lumia-white",
     "name": "LUMIA Pro 2 White",
+    "sku": "ECHO-LUM-WHT",
+    "description": "Soft curves, a white finish and sculpted earcups give LUMIA Pro 2 a distinctive over-ear silhouette.",
+    "fullDescription": "LUMIA Pro 2 approaches headphone design through smooth geometry and carefully balanced proportions. Its curved headband and padded oval earcups form a continuous silhouette, while the white finish draws attention to the contours of the housing. Rounded details keep the design expressive without relying on sharp edges or heavy decoration. LUMIA is the softer, more restrained side of the ECHO collection.",
+    "specifications": [
+        { "label": "Collection", "value": "LUMIA" },
+        { "label": "Product type", "value": "Over-ear headphones" },
+        { "label": "Colour", "value": "White" },
+        { "label": "Design details", "value": "Curved headband, padded oval earcups and sculpted housings" },
+        { "label": "Product code", "value": "ECHO-LUM-WHT" }
+    ],
     "category": "headphones",
     "price": 499.99,
     "badge": "New",

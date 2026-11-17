@@ -1,6 +1,16 @@
 {
     "id": "product-venus-silver",
     "name": "VENUS Silver",
+    "sku": "ECHO-VEN-SLV",
+    "description": "VENUS combines a perforated silver headband, broad circular earcups and black cushioning in a visibly architectural design.",
+    "fullDescription": "VENUS makes the structure of the headphones part of their visual identity. A perforated headband and exposed connecting elements sit above broad, circular earcups with finely lined outer surfaces. Black cushioning adds contrast to the silver exterior and gives the silhouette a clear inner and outer layer. Its open framework and repeated surface details bring a more architectural character to the ECHO headphone collection.",
+    "specifications": [
+      { "label": "Collection", "value": "VENUS" },
+      { "label": "Product type", "value": "Over-ear headphones" },
+      { "label": "Colour", "value": "Silver with black cushioning" },
+      { "label": "Design details", "value": "Perforated headband, exposed supports and circular earcups" },
+      { "label": "Product code", "value": "ECHO-VEN-SLV" }
+    ],
     "category": "headphones",
     "price": 389.99,
     "badge": "Bestseller",

@@ -1,6 +1,15 @@
 {
     "id": "product-aerospace-silver",
     "name": "AEROSPACE Earbuds Silver",
+    "sku": "ECHO-AER-SLV",
+    "description": "Sculptural silver earbuds with star-shaped details. AEROSPACE brings the visual language of jewellery to everyday audio.",
+    "fullDescription": "AEROSPACE explores the relationship between audio and personal style. Its silver finish, sculptural silhouette and star-shaped details make the earbuds a visible part of an outfit. This model belongs to ECHO’s experimental AEROSPACE collection.",
+    "specifications": [
+      { "label": "Collection", "value": "AEROSPACE" },
+      { "label": "Product type", "value": "Earbuds" },
+      { "label": "Colour", "value": "Silver"} ,
+      { "label": "Product code", "value": "ECHO-AER-SLV" }
+    ],
     "category": "earbuds",
     "price": 299.99,
     "badge": "Bestseller",
@@ -44,27 +53,6 @@
       {
         "label": "White",
         "productId": "product-aerospace-white"
-      }
-    ],
-    "sku": "ECHO-AER-SLV",
-    "description": "Sculptural silver earbuds with star-shaped details. AEROSPACE brings the visual language of jewellery to everyday audio.",
-    "fullDescription": "AEROSPACE explores the relationship between audio and personal style. Its silver finish, sculptural silhouette and star-shaped details make the earbuds a visible part of an outfit. This model belongs to ECHO’s experimental AEROSPACE collection.",
-    "specifications": [
-      {
-        "label": "Collection",
-        "value": "AEROSPACE"
-      },
-      {
-        "label": "Product type",
-        "value": "Earbuds"
-      },
-      {
-        "label": "Colour",
-        "value": "Silver"
-      },
-      {
-        "label": "Product code",
-        "value": "ECHO-AER-SLV"
       }
     ],
     "reviews": [

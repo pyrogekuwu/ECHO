@@ -1,6 +1,16 @@
 {
     "id": "product-vesper-silver", 
     "name": "VESPER Metallic Silver",
+    "sku": "ECHO-VES-SLV",
+    "description": "Metallic silver earcups meet a black padded headband in VESPER, an understated take on over-ear headphone design.",
+    "fullDescription": "VESPER pairs rounded silver earcups with dark cushioning and a clean headband profile. The contrast between the light outer housings and black interior gives the headphones a precise, graphic appearance. Exposed connecting arms connect the two elements and introduce a more mechanical detail. The result is a restrained design built around proportion, contrast and a metallic visual finish.",
+    "specifications": [
+      { "label": "Collection", "value": "VESPER" },
+      { "label": "Product type", "value": "Over-ear headphones" },
+      { "label": "Colour", "value": "Metallic silver with black cushioning" },
+      { "label": "Design details", "value": "Rounded earcups, padded headband and slim connecting arms" },
+      { "label": "Product code", "value": "ECHO-VES-SLV" }
+    ],
     "category": "headphones",
     "price": 339.99,
     "image": "/images/product-vesper-silver.png",
