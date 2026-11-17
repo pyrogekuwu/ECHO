@@ -11,6 +11,8 @@ interface Props {
 
 const { product } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const categoryTitle =
+  product.category.charAt(0).toUpperCase() + product.category.slice(1);
 const gallery = product.gallery?.length
   ? product.gallery
   : [{ src: product.image, alt: product.alt }];
@@ -62,12 +64,22 @@ const price = new Intl.NumberFormat('en-IE', {
 
     <main id="main" class="product-main">
       <div class="container-fluid echo-container">
-        <nav class="product-topbar" aria-label="Product navigation">
-          <a href={`${base}/${product.category}/`}>
-            <i class="bi bi-chevron-left" aria-hidden="true"></i>
-            Back to {product.category}
-          </a>
-          <span>Product</span>
+        <nav aria-label="Breadcrumb" class="mb-4">
+          <ol class="breadcrumb cart-breadcrumb">
+            <li class="breadcrumb-item">
+              <a href={`${base}/`}>Home</a>
+            </li>
+            
+            <li class="breadcrumb-item">
+              <a href={`${base}/${product.category}/`}>
+                {categoryTitle}
+              </a>
+            </li>
+            
+            <li class="breadcrumb-item active" aria-current="page">
+              {product.name}
+            </li>
+          </ol>
         </nav>
 
         <div class="product-layout">
