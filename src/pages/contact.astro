@@ -66,60 +66,6 @@ const contact = {
         <div class="contact-page-layout">
           <div class="contact-page-content">
 
-            <!-- CONTACT DETAILS -->
-            <section
-              class="contact-page-details"
-              aria-labelledby="contact-details-heading"
-            >
-              <h2 id="contact-details-heading">Contact details</h2>
-
-              <p class="contact-page-note">
-                Demonstration details for a fictional brand.
-                The location below is an example, not an ECHO office.
-              </p>
-
-              <dl class="contact-page-data">
-                <div>
-                  <dt>Brand</dt>
-                  <dd>{contact.name}</dd>
-                </div>
-
-                <div>
-                  <dt>Email</dt>
-                  <dd>
-                    <a href={`mailto:${contact.email}`}>
-                      {contact.email}
-                    </a>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Phone</dt>
-                  <dd>
-                    <a href={`tel:${contact.phoneHref}`}>
-                      {contact.phone}
-                    </a>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Example address</dt>
-                  <dd>
-                    <address>
-                      {contact.address.map((line) => (
-                        <span>{line}</span>
-                      ))}
-                    </address>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Tax / registration ID</dt>
-                  <dd>{contact.registration}</dd>
-                </div>
-              </dl>
-            </section>
-
             <!-- CONTACT FORM -->
             <section aria-labelledby="contact-form-heading">
               <h2 id="contact-form-heading">Send a message</h2>
@@ -323,6 +269,54 @@ const contact = {
             </section>
           </aside>
         </div>
+        <!-- CONTACT DETAILS -->
+            <section
+              class="contact-page-details"
+              aria-labelledby="contact-details-heading"
+            >
+              <h2 id="contact-details-heading">Contact details</h2>
+
+              <dl class="contact-page-data">
+                <div>
+                  <dt>Brand</dt>
+                  <dd>{contact.name}</dd>
+                </div>
+
+                <div>
+                  <dt>Email</dt>
+                  <dd>
+                    <a href={`mailto:${contact.email}`}>
+                      {contact.email}
+                    </a>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Phone</dt>
+                  <dd>
+                    <a href={`tel:${contact.phoneHref}`}>
+                      {contact.phone}
+                    </a>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Address</dt>
+                  <dd>
+                    <address>
+                      {contact.address.map((line) => (
+                        <span>{line}</span>
+                      ))}
+                    </address>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt>Tax / registration ID</dt>
+                  <dd>{contact.registration}</dd>
+                </div>
+              </dl>
+            </section>
       </div>
     </main>
 
@@ -373,7 +367,7 @@ const contact = {
           '[type="submit"]'
         )!.disabled = false;
       }
-      
+
     </script>
   </body>
 </html>

@@ -12,18 +12,18 @@ const author = {
 };
 
 const exploreLinks = [
-  { label: 'headphones', href: `${base}/headphones/` },
-  { label: 'earbuds', href: `${base}/earbuds/` },
-  { label: 'speakers', href: `${base}/speakers/` },
-  { label: 'accessories', href: `${base}/accessories/` },
-  { label: 'magazine', href: `${base}/magazine/` },
+    { label: 'home', href: `${base}/` },
+    { label: 'categories', href: `${base}/#shop` },
+    { label: 'collections', href: `${base}/#collections` },
+    { label: 'about', href: `${base}/#about` },
+    { label: 'magazine', href: `${base}/magazine/` },
 ];
 
 const customerLinks = [
-  { label: 'contact', href: `${base}/contact/` },
-  { label: 'cart', href: `${base}/cart/` },
-  { label: 'my account', href: `${base}/my-account/` },
-  { label: 'privacy policy', href: `${base}/privacy-policy/` },
+    { label: 'my account', href: `${base}/my-account/` },
+    { label: 'contact', href: `${base}/contact/` },
+    { label: 'cart', href: `${base}/cart/` },
+    { label: 'privacy policy', href: `${base}/privacy-policy/` },
 ];
 
 const socials = [
@@ -180,9 +180,11 @@ const socials = [
 
     <!-- BOTTOM BAR -->
     <div class="footer-bottom">
-      <p>© {year} ECHO. Audio brand.</p>
+      <p>© {year} ECHO · project by {author.name}</p>
 
-      <a href="#top">Back to top ↑</a>
+      <div class="back-to-top-footer">
+        <a href="#top">Back to top ↑</a>
+     </div>
 
       <div class="footer-legal-links">
         <a href={`${base}/privacy-policy/`}>Privacy policy</a>
