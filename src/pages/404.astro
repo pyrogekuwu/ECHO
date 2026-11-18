@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
 
 import { products } from '../data/products';
+import { collections } from '../data/collections';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -19,6 +20,20 @@ const categories = [
 ];
 
 const searchItems = [
+  {
+  title: 'Collection',
+  label: 'Page',
+  href: `${base}/collections/`,
+  keywords: 'collections audio designs',
+},
+
+...collections.map((collection) => ({
+  title: collection.name,
+  label: 'Collection',
+  href: `${base}/collections/${collection.slug}/`,
+  keywords: `${collection.name} audio collection`,
+})),
+
   ...products.map((product) => ({
     title: product.name,
     label: 'Product',

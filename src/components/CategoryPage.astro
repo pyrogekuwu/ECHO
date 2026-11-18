@@ -8,9 +8,13 @@ import type { Product } from '../data/products';
 interface Props {
   title: string;
   products: Product[];
+  parentBreadcrumb?: {
+    label: string;
+    href: string;
+  };
 }
 
-const { title, products } = Astro.props;
+const { title, products, parentBreadcrumb } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const breadcrumbTitle = title.charAt(0).toUpperCase() + title.slice(1);
@@ -79,9 +83,17 @@ const swatches: Record<string, string> = {
               <a href={`${base}/`}>Home</a>
             </li>
             
-            <li class="breadcrumb-item active" aria-current="page">
-              {breadcrumbTitle}
-            </li>
+            {parentBreadcrumb && (
+            <li class="breadcrumb-item">
+              <a href={parentBreadcrumb.href}>
+                {parentBreadcrumb.label}
+                </a>
+                </li>
+                )}
+
+<li class="breadcrumb-item active" aria-current="page">
+  {breadcrumbTitle}
+</li>
           </ol>
         </nav>
 

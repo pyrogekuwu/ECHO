@@ -2824,3 +2824,151 @@ img { display: block; }
     font-size: .7rem;
   }
 }
+
+
+/* COLLECTION AND FONTS */
+
+.collections-page-main {
+  min-height: 75vh;
+  padding-block: 3rem 5rem;
+  background: var(--echo-cloud);
+  color: var(--echo-ink);
+}
+
+.collections-page-title {
+  margin-bottom: 2.75rem;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.collection-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 2.9 / 1;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+  background: #e7e7ec;
+  color: #000;
+  text-decoration: none;
+}
+
+.collection-card-cover {
+  position: absolute;
+  inset: -2rem;
+  width: calc(100% + 4rem);
+  height: calc(100% + 4rem);
+  max-width: none;
+  object-fit: cover;
+  filter: blur(8px);
+  z-index: -2;
+}
+
+.collection-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .45);
+  z-index: -1;
+}
+
+.collection-card-title {
+  margin: 0;
+  max-width: 100%;
+  color: #000;
+  font-size: var(--collection-title-size, 12cqw);
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  line-height: .85;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.collection-font--aerospace {
+  font-family: 'Sekuya', sans-serif;
+  --collection-title-size: 10.5cqw;
+}
+
+.collection-font--lumia {
+  font-family: 'VT323', monospace;
+  --collection-title-size: 30cqw;
+}
+
+.collection-font--starlight {
+  font-family: 'Uncial Antiqua', serif;
+  --collection-title-size: 13cqw;
+}
+
+.collection-font--venus {
+  font-family: 'BBH Bartle', sans-serif;
+  --collection-title-size: 12.8cqw;
+}
+
+.collection-font--vesper {
+  font-family: 'Major Mono Display', monospace;
+  --collection-title-size: 18cqw;
+}
+
+.collection-font--mono {
+  font-family: 'Sixtyfour', monospace;
+  --collection-title-size: 20cqw;
+}
+
+.collection-font--sphere {
+  font-family: 'Plaster', sans-serif;
+  --collection-title-size: 18.5cqw;
+}
+
+.collection-card:focus-visible {
+  outline: 2px solid var(--echo-ink);
+  outline-offset: 5px;
+}
+
+/* Landing-page collection fonts */
+
+.hero h1 {
+  font-family: 'VT323', monospace;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.collections-section .aerospace-editorial {
+  container-type: inline-size;
+}
+
+.collections-section .aerospace-editorial h3 {
+  font-family: 'Sekuya', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  font-size: clamp(3rem, 7.5cqw, 6rem);
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+@media (max-width: 767.98px) {
+  .collections-section .aerospace-editorial h3 {
+    font-size: 12.1cqw;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .collections-page-main {
+    padding-block: 2rem 3rem;
+  }
+
+  .collections-page-title {
+    margin-bottom: 2rem;
+  }
+
+  .collections-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

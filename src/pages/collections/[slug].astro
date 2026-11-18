@@ -1,0 +1,33 @@
+---
+import CategoryPage from '../../components/CategoryPage.astro';
+import { collections, type Collection } from '../../data/collections';
+import { products } from '../../data/products';
+
+export function getStaticPaths() {
+  return collections.map((collection) => ({
+    params: { slug: collection.slug },
+    props: { collection },
+  }));
+}
+
+interface Props {
+  collection: Collection;
+}
+
+const { collection } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const collectionProducts = products.filter(
+  (product) => product.collection === collection.name
+);
+---
+
+<CategoryPage
+  title={collection.name.toLowerCase()}
+  products={collectionProducts}
+  parentBreadcrumb={{
+    label: 'Collection',
+    href: `${base}/collections/`,
+  }}
+/>
