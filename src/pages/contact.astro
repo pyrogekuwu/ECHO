@@ -6,7 +6,7 @@ import SiteHead from '../components/SiteHead.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const contact = {
-  name: 'ECHO — concept audio brand',
+  name: 'ECHO Audio Co., Ltd.',
   email: 'contact@echo.example',
   phone: '+82 2 0000 0000',
   phoneHref: '+82200000000',
@@ -16,7 +16,7 @@ const contact = {
     'Gangnam-gu, Seoul 06164',
     'South Korea',
   ],
-  registration: 'Not applicable — fictional university project',
+  registration: '123-45-67890',
   mapUrl:
     'https://www.google.com/maps?q=COEX%2C%20Seoul&output=embed',
   directionsUrl:
@@ -65,6 +65,72 @@ const contact = {
 
         <div class="contact-page-layout">
           <div class="contact-page-content">
+
+            <!-- CONTACT DETAILS -->
+             <section class="contact-page-details" aria-labelledby="contact-details-heading">
+              
+              <h2 id="contact-details-heading">Contact details</h2>
+              <dl class="contact-page-data">
+    
+                <div>
+                  <dt>Company name</dt>
+                  <dd>{contact.name}</dd>
+                </div>
+                
+                <div>
+
+                  <dt>Email</dt>
+      
+                  <dd>
+        
+                    <a href={`mailto:${contact.email}`}>
+          
+                      {contact.email}
+        
+                    </a>
+      
+                  </dd>
+    
+                </div>
+
+    
+                <div>
+      
+                  <dt>Phone</dt>
+      
+                  <dd>
+        
+                    <a href={`tel:${contact.phoneHref}`}>
+          
+                      {contact.phone}
+        
+                    </a>
+      
+                  </dd>
+    
+                </div>
+
+    
+                <div>
+      
+                  <dt>Address</dt>
+      
+                  <dd>
+        
+                    <address>
+                      {contact.address.map((line) => (
+                      <span>{line}</span>
+                      ))}
+                      </address>
+                    </dd>
+                  </div>
+                  
+                  <div>
+                    <dt>Business registration no.</dt>
+                    <dd>{contact.registration}</dd>
+                  </div>
+                </dl>
+              </section>
 
             <!-- CONTACT FORM -->
             <section aria-labelledby="contact-form-heading">
@@ -269,55 +335,7 @@ const contact = {
             </section>
           </aside>
         </div>
-        <!-- CONTACT DETAILS -->
-            <section
-              class="contact-page-details"
-              aria-labelledby="contact-details-heading"
-            >
-              <h2 id="contact-details-heading">Contact details</h2>
-
-              <dl class="contact-page-data">
-                <div>
-                  <dt>Brand</dt>
-                  <dd>{contact.name}</dd>
-                </div>
-
-                <div>
-                  <dt>Email</dt>
-                  <dd>
-                    <a href={`mailto:${contact.email}`}>
-                      {contact.email}
-                    </a>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Phone</dt>
-                  <dd>
-                    <a href={`tel:${contact.phoneHref}`}>
-                      {contact.phone}
-                    </a>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Address</dt>
-                  <dd>
-                    <address>
-                      {contact.address.map((line) => (
-                        <span>{line}</span>
-                      ))}
-                    </address>
-                  </dd>
-                </div>
-
-                <div>
-                  <dt>Tax / registration ID</dt>
-                  <dd>{contact.registration}</dd>
-                </div>
-              </dl>
-            </section>
-      </div>
+        </div>
     </main>
 
     <Footer />

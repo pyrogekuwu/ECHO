@@ -40,7 +40,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </nav>
             <div class="search-panel" id="site-search" hidden>
                 <label for="search-input">Search the collection</label>
-                <input id="search-input" type="search" placeholder="Try ‘headphones’" autocomplete="off" aria-describedby="search-feedback" />
+                <input id="search-input" type="search" autocomplete="off" aria-describedby="search-feedback" />
                 <p id="search-feedback" role="status">Choose a category or search for a product.</p>
             </div>
         </header>
@@ -60,6 +60,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         searchToggle.setAttribute('aria-expanded', String(!searchPanel.hidden));
         if (!searchPanel.hidden) searchInput?.focus();
       });
+
+      document.addEventListener('pointerdown', (event) => {
+        if (!searchPanel || !searchToggle || searchPanel.hidden) return;
+        const target = event.target;
+        if (!(target instanceof Node)) return;
+        
+        // Keep it open when interacting with the search panel or its button.
+        if (
+            searchPanel.contains(target) ||
+            searchToggle.contains(target)
+        ) {
+            return;
+        }
+        
+        searchPanel.hidden = true;
+        searchToggle.setAttribute('aria-expanded', 'false');
+    });
       
       searchInput?.addEventListener('input', () => {
         if (!searchFeedback) return;
@@ -74,6 +91,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       // keep it visible when the search or mobile navigation is open
       const header = document.querySelector<HTMLElement>('.site-header');
       const mobileNavigation = document.querySelector<HTMLElement>('#main-navigation');
+        const mobileMenuToggle = document.querySelector<HTMLButtonElement>(
+            '.mobile-menu-toggle');
+            document.addEventListener('pointerdown', (event) => {
+                if (
+                    !mobileNavigation?.classList.contains('show') ||
+                    !mobileMenuToggle ||
+                    mobileMenuToggle.getClientRects().length === 0
+                ) {return;}
+                
+                const target = event.target;
+                if (!(target instanceof Node)) return;
+                // Keep the menu open while interacting with navigation or search.
+                if (
+                    mobileNavigation.contains(target) ||
+                    mobileMenuToggle.contains(target) ||
+                    searchPanel?.contains(target)
+                ) {return;}
+                mobileMenuToggle.click();});
+                
       let previousScrollY = Math.max(0, window.scrollY);
       const scrollThreshold = 8;
 
