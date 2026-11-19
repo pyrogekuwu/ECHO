@@ -1,109 +1,258 @@
 # ECHO
 
-**autorka:** Julia Gonkiewicz  
+**autor:** Julia Gonkiewicz  
 **nazwa serwisu:** ECHO  
 **forma realizacji:** indywidualna  
-**profil podmiotu:** komercyjny (fikcyjna marka koncepcyjna)  
+**profil podmiotu:** komercyjny  
 **repozytorium:** https://github.com/pyrogekuwu/ECHO  
-**projekt interfejsu:** https://www.figma.com/design/ZNbElkiCFw3ZDcek7ghxgi/echo?node-id=12-28  
+**github pages:** 
 
 ## KONCEPCJA
 
-ECHO jest fikcyjną marką elektroniki użytkowej inspirowaną współczesnym wzornictwem produktów audio, osadzoną w kontekście południowokoreańskiego rynku technologicznego. Serwis prezentuje kolekcje słuchawek nausznych, słuchawek bezprzewodowych, głośników przenośnych i akcesoriów, eksponując ich formę, materiały oraz charakter wizualny. Strona łączy funkcję wizerunkową z katalogiem produktów i stanowi podstawę do rozbudowy o blog oraz moduł sprzedażowy.
+ECHO jest marką audio i elektroniki użytkowej osadzoną w Korei Południowej. Oferta obejmuje słuchawki nauszne, słuchawki bezprzewodowe, głośniki oraz akcesoria.
 
-Grupa docelowa soby zainteresowane elektroniką audio, wzornictwem przemysłowym i modą, w szczególności młodzi dorośli orientacyjnie w wieku 18–35 lat. Projekt zakłada zarówno szybkie przeglądanie oferty na smartfonie, jak i bardziej szczegółowe poznawanie kolekcji na tablecie i komputerze. Wiek i urządzenia są założeniami projektowymi, a nie wynikami badań użytkowników.
+Grupa docelowa soby zainteresowane elektroniką audio, wzornictwem i modą, w szczególności młodzi dorośli. Układ pozwala przeglądać ofertę na telefonach, tabletach i komputerach.
 
-W docelowej wersji serwisu: przejście na kartę produktu i zakup. W obecnym etapie: zapoznanie się z kategoriami, przejście do wyróżnionych produktów oraz wysłanie zapytania przez formularz kontaktowy (obecnie demonstracyjny, bez backendu).
+Identyfikacja wizualna opiera się na dużych fotografiach produktów, czerni, bieli, chłodnych szarościach, jasnolawendowych tłach, prostokątnych przyciskach oraz redakcyjnej typografii.
 
-## STYL GUIDE
+## STYL
 
-| Funkcja | Kolor | HEX |
+Nagłówkom redakcyjnym towarzyszą cienka linia i czteroramienny ornament. 
+
+Przyciski wykorzystują prostokątny kształt, kontrastowe wypełnienie lub obramowanie oraz stany interakcji. 
+
+Ikony Bootstrap Icons oznaczają między innymi wyszukiwanie, konto, koszyk, filtrowanie i nawigację. 
+
+Karty produktów eksponują zdjęcie, nazwę i cenę, a dodatkowe informacje przedstawiają jako etykiety, oceny lub przyciski. 
+
+Powtarzalne elementy zachowują wspólne kolory, odstępy i sposób wyrównania.
+
+## KOLORYSTYKA
+
+| Funkcja | Kolor | Wartość |
 |---|---|---|
-| Primary — ciemne tło, nawigacja, sekcja marki | Głęboka czerń | `#050506` |
-| Secondary — tło katalogu i kolekcji | Jasny lawendowy | `#EEF1FD` |
-| Accent / CTA — jasne przyciski na ciemnym tle | Lodowa biel | `#EFF2FF` |
-| Text — tekst na jasnych tłach | Grafitowa czerń | `#101114` |
-| Text inverse — tekst na ciemnych tłach | Chłodna biel | `#F8F9FF` |
-| Supporting — detal techniczny i ornamenty | Srebrnoszary | `#C0C3CD` |
+| Bazowe ciemne tło | Głęboka czerń | `#050506` |
+| Tekst na jasnym tle | Grafitowa czerń | `#101114` |
+| Jasne powierzchnie i tekst na ciemnym tle | Biel | `#FFFFFF` |
+| Jasne przyciski na ciemnym tle | Chłodna biel | `#EFF2FF` |
+| Teksty pomocnicze i metadane | Chłodna szarość | `#62646D` |
+| Delikatne obramowania i podziały | Jasna szarość | `#DEDEE3` |
 
-Paleta bazuje na czerni i chłodnych odcieniach bieli. Jasnolawendowe tła i rozmyte fioletowe formy stanowią uzupełnienie fotografii produktowej, a nie dominujący kolor interfejsu. Dla wskazanych par tekst–tło kontrast wynosi orientacyjnie: `#F8F9FF` na `#050506` — **19,39:1**, `#101114` na `#EEF0FF` — **16,67:1**, `#06070B` na `#EFF2FF` — **18,04:1**. Spełniają wymaganie WCAG AA dla zwykłego tekstu; pozostałe warianty, stany interakcji i tekst na zdjęciach wymagają osobnego sprawdzenia.
+Paletę uzupełniają jasnolawendowe tła i rozmyte formy graficzne. Srebrne akcenty wynikają również z fotografii produktów. Kolor nie jest jedynym nośnikiem informacji — dostępność, promocje oraz wybrane filtry mają także oznaczenia tekstowe.
 
 ## TYPOGRAFIA
 
-| Funkcja | Krój pisma | Zastosowanie |
-|---|---|---|
-| Tekst podstawowy i większość nagłówków | **Inter** | Opisy produktów, menu, formularze, tytuły sekcji technicznych |
-| Nagłówki redakcyjne | **Cormorant Garamond** | „shop by categories”, „shop by collections”, „our bestsellers” |
-| Nagłówek produktu w Hero | **DotGothic16** | „LUMIA PRO 2” — cyfrowy charakter typografii |
-| Logotyp | **Genos** | Znak słowny ECHO w nawigacji i stopce |
-| Drobne etykiety techniczne | **IBM Plex Mono** | Metadane, numery, opisy o charakterze technicznym |
+| Zastosowanie | Krój pisma |
+|---|---|
+| Treść, nawigacja i formularze | Inter |
+| Nagłówki redakcyjne | Cormorant Garamond |
+| Logotyp ECHO | Genos |
+| Metadane i etykiety techniczne | IBM Plex Mono |
+| LUMIA i nagłówek hero | VT323 |
+| AEROSPACE | Sekuya |
+| STARLIGHT | Uncial Antiqua |
+| VENUS | BBH Bartle |
+| VESPER | Major Mono Display |
+| MONO | Sixtyfour |
+| SPHERE | Plaster |
 
-## KOMPOZYCJA
-
-Estetyka ECHO opiera się na dużych fotografiach produktowych, prostokątnych przyciskach i płaskich kartach bez nadmiernego zaokrąglania. Kontrast czarnych sekcji z jasnym katalogiem, asymetryczny układ materiałów redakcyjnych oraz chromowane detale budują futurystyczny, minimalistyczny charakter. Nawigacja pozostaje oszczędna; na mniejszych ekranach przechodzi w menu zwijane. Inspiracje nowoczesnymi sklepami technologicznymi służą do opracowania własnego języka wizualnego marki.
+Fonty są dołączane w `SiteHead.astro`, a ich zastosowanie definiuje wspólny arkusz CSS.
 
 ## ZAKRES
 
-Aktualny **One-Page Hub** zawiera następujące bloki, ułożone od góry strony:
+Strona zawiera 11 produktów, 6 artykułów, 4 kategorie produktów i 7 kolekcji. Astro generuje z projektu 37 statycznych stron.
 
-1. **Nawigacja ECHO** — logotyp, kategorie „headphones”, „ear buds”, „speakers”, „accessories”, skróty do wyszukiwania i sekcji serwisu; na małych ekranach menu typu hamburger.
-2. **Hero — Lumia Pro 2** — zdjęcie przewodnie, nazwa produktu, krótki opis i przycisk „discover”.
-3. **Shop by categories** — cztery kafelki: headphones, earbuds, speakers, accessories.
-4. **Shop by collections / AEROSPACE** — redakcyjna prezentacja kolekcji z zestawieniem dwóch fotografii.
-5. **About Our World** — opis koncepcji marki i jej podejścia do wzornictwa.
-6. **Our bestsellers** — trzy karty produktowe, nazwy, ceny i interfejs oznaczania ulubionych.
-7. **Get in contact** — dane kontaktowe i formularz z polami imię, e-mail, temat i wiadomość.
-8. **Footer** — identyfikacja marki, nawigacja, elementy społecznościowe i prawa autorskie.
+| Moduł | Zawartość |
+|---|---|
+| Strona główna | Prezentacja LUMIA, kategorie, sekcja AEROSPACE, informacje o marce i bestsellery |
+| Kategorie | Headphones, earbuds, speakers i accessories; filtry, sortowanie, licznik wyników i mechanizm paginacji |
+| Kolekcje | Kafelki kolekcji oraz osobne strony z przypisanymi produktami |
+| Produkt | Galeria, cena, dostępność, warianty, ilość, opis, parametry, opinie i powiązane produkty |
+| Koszyk | Zmiana ilości, usuwanie produktów, kod rabatowy i podsumowanie kosztów |
+| Checkout | Dane klienta, adres, dostawa, wybór płatności, dane do faktury i podsumowanie zamówienia |
+| Moje konto | Pulpit, historia i szczegóły zamówień, edycja adresu i profilu oraz demonstracyjne wylogowanie |
+| Magazine | Lista artykułów i podstrony wpisów zapisanych w Markdown |
+| Kontakt | Dane przykładowej firmy, formularz, mapa i wskazówki dojazdu |
+| Polityka prywatności | Informacje o projekcie, formularzach, pamięci przeglądarki i usługach zewnętrznych |
+| Strona 404 | Komunikat błędu, wyszukiwarka zasobów i odnośniki pomocnicze |
+| Elementy wspólne | Nawigacja mobilna, ikony Bootstrap Icons oraz czterokolumnowa stopka z newsletterem |
 
-**Priorytet nawigacyjny:** produkty i kolekcje są prezentowane przed informacjami o marce. Odbiorca może przejść od produktu promowanego do kategorii, a następnie do oferty wyróżnionej lub kontaktu. Obecne odnośniki działają głównie jako kotwice; osobne strony produktów zostaną opracowane później.
+Kategoriami sklepu są `headphones`, `earbuds`, `speakers` i `accessories`. Kolekcje to AEROSPACE, LUMIA, STARLIGHT, VENUS, VESPER, MONO oraz SPHERE.
 
 ## TECHNOLOGIA
 
-### Uruchamianie i publikacja
+- **Astro 7.4** — komponenty, routing i generowanie statycznych stron.
+- **HTML5, CSS3 i TypeScript** — struktura, wygląd oraz interakcje interfejsu.
+- **Bootstrap 5.3.3** — siatka i komponenty interfejsu, dołączane przez CDN.
+- **Bootstrap Icons 1.13.2** — ikony, dołączane przez CDN.
+- **Markdown** — treści artykułów oraz dane i opisy produktów.
+- **yaml** — odczyt metadanych YAML z plików produktów.
+- **marked** — renderowanie opisów produktów z Markdown do HTML.
+- **Google Fonts** — kroje pisma używane w identyfikacji wizualnej.
+- **GitHub Actions i GitHub Pages** — automatyczne budowanie i publikacja.
 
-Wymagany jest Node.js co najmniej 22.22.0. W katalogu projektu uruchom:
+Wersje zależności są zapisane w `package.json` i `package-lock.json`.
 
-```sh
+### Uruchamianie lokalne
+
+Wymagany jest **Node.js w wersji co najmniej 22.22.0** oraz npm. Workflow publikacji korzysta z Node.js 24.
+
+W katalogu projektu, zawierającym `package.json`, strone uruchomić można za pomocą:
+
+```bash
 npm ci
-npm run dev -- --background
+npm run dev
 ```
 
-Lokalnie strona działa pod `/`, a katalog słuchawek pod `/headphones/`.
-Serwerem w tle zarządzają polecenia `npm run astro -- dev status`,
-`npm run astro -- dev logs` i `npm run astro -- dev stop`.
-Lokalny build i podgląd: `npm run build`, następnie `npm run preview`.
+Adres podany w terminalu to `http://localhost:4321/`.
 
-Workflow `.github/workflows/deploy.yml` ustawia `ECHO_BASE_PATH=/ECHO` wyłącznie
-na czas budowania witryny dla GitHub Pages. Dzięki temu ta sama aplikacja działa
-pod `https://pyrogekuwu.github.io/ECHO/`, bez ręcznego zmieniania linków.
-W ustawieniach repozytorium **Settings → Pages → Source** wybierz **GitHub Actions**.
+## BUILD I PODGLĄD
 
-**Środowisko:** Astro (szablony `.astro` generujące semantyczny HTML5), CSS3, Bootstrap 5 udostępniany przez CDN, niewielkie skrypty JavaScript i GitHub Codespaces. Główny widok znajduje się w `src/pages/index.astro`, niestandardowe style w `public/style.css`, grafiki w `public/images/`.
+```bash
+npm run build
+npm run preview
+```
 
-**Elementy już obecne w wersji roboczej:** znaczniki `header`, `nav`, `main`, `section` i `footer`, jeden nagłówek `h1`, teksty alternatywne dla merytorycznych obrazów, etykiety pól formularza, `meta viewport`, `title`, `description`, Open Graph oraz JSON-LD typu `Organization`. Zastosowano siatkę i komponenty Bootstrapa z własnymi nadpisaniami CSS, w tym menu mobilne oraz formularz.
+Build zapisuje wygenerowane pliki w folderze `dist/`. Podgląd uruchamia się pod adresem wskazanym w terminalu.
 
-**Wymogi do utrzymania podczas kolejnych etapów:** układ mobile-first, testy przy szerokościach 360–390, 768 i co najmniej 1200 px, brak niekontrolowanego poziomego przewijania, elastyczne obrazy i typografia, cele dotykowe minimum 44 × 44 px, logiczna hierarchia nagłówków i widoczny fokus klawiatury. Dokumentacja projektu wymaga także walidacji danych strukturalnych oraz audytu Lighthouse. Obecny arkusz zawiera również reguły `@media (max-width: …)`, dlatego przejście na konsekwentnie mobile-first pozostaje zadaniem porządkującym, a nie zakończonym wdrożeniem.
+Bootstrap, ikony, fonty oraz osadzone usługi zewnętrzne wymagają dostępu do internetu.
 
-## PLAN ROZBUDOWY
+## PUBLIKACJA NA GITHUB PAGES
 
-| Etap | Planowany moduł | Zakres |
-|---|---|---|
-| Wizytówka | Strona główna | Prezentacja oferty, tożsamości marki i kontaktu; aktualny etap projektu |
-| Informacyjny | Blog / artykuły | Poradniki i treści redakcyjne dotyczące sprzętu audio oraz projektowania produktów |
-| Sprzedażowy | Sklep internetowy | Podstrony produktów, filtrowanie katalogu, koszyk i proces zamówienia w zakresie wymagań prowadzącego |
-| Architektura | Brakujące podstrony | Np. szczegóły produktu, informacje o marce, kontakt i inne wymagane widoki |
-| Optymalizacja | Audyt i poprawki | Lighthouse, WCAG, SEO, testy responsywności i poprawność linków |
+Publikację obsługuje workflow `.github/workflows/deploy.yml`.
 
-Projekt prowadzony jest przyrostowo w jednym repozytorium. Kolejne etapy powinny być dokumentowane commitami na GitHubie, zgodnie z zasadami przedmiotu.
+Po wysłaniu zmian do gałęzi `main` GitHub Actions automatycznie instaluje zależności, buduje witrynę i publikuje ją na GitHub Pages. Workflow można również uruchomić ręcznie z zakładki Actions.
 
-## PROMPT
+W ustawieniach repozytorium źródłem publikacji w **Settings → Pages → Source** jest **GitHub Actions**.
 
-> Jesteś front-end developerem pracującym nad studenckim projektem ECHO — responsywnym serwisem fikcyjnej marki elektroniki audio. Rozwijaj istniejący projekt w Astro, wykorzystując semantyczny HTML5, czysty CSS3 i Bootstrap 5 z CDN do siatki i niezbędnych komponentów. Nie zmieniaj samowolnie przyjętej architektury, nazewnictwa klas ani identyfikacji wizualnej. Pracuj przyrostowo: zachowuj działające sekcje i modyfikuj tylko zakres wymagany w bieżącym zadaniu.
->
-> Zachowaj kolory: #050506 (ciemne tło), #EEF0FF (jasne tło katalogu), #EFF2FF (jasny CTA), #101114 (tekst na jasnym tle) i #F8F9FF (tekst na ciemnym tle). Typografia: Inter — treść; Cormorant Garamond — nagłówki redakcyjne; DotGothic16 — ekspozycja produktu Lumia Pro 2; Genos — logotyp; IBM Plex Mono — etykiety techniczne. Estetyka: editorial tech, prostokątne przyciski, regularny grid produktów, asymetryczne fotografie kolekcji, umiarkowane efekty i brak przypadkowych ozdobników.
->
-> Każdy widok ma spełniać wymagania RWD: mobile-first, czytelność w szerokościach 360–390, 768 i 1200+ px, brak przewijania poziomego, dostępne menu mobilne, co najmniej 44 × 44 px dla celów dotykowych, jeden h1, logiczna hierarchia h2–h3, poprawne alt, label/for/id i czytelny fokus. Każda podstrona musi mieć własne title, description, Open Graph i adekwatny JSON-LD Schema.org.
->
-> Style własne zapisuj w zewnętrznym pliku public/style.css, a obrazy odwołuj do public/images/. Nie zastępuj dostarczonych grafik generowanymi zamiennikami. Nie dodawaj nieuzgodnionych frameworków. Nie pozoruj działających zakupów, płatności, logowania lub wysyłania wiadomości: funkcje demonstracyjne oznaczaj wyraźnie. Zanim zaproponujesz kod, wskaż pliki i sekcje do zmiany; po zmianach podaj krótką listę testów w DevTools.
+Konfiguracja `astro.config.mjs` rozróżnia dwa środowiska:
 
+- lokalnie projekt działa pod `/`;
+- podczas publikacji workflow ustawia `ECHO_BASE_PATH=/ECHO`, zgodnie z adresem `https://pyrogekuwu.github.io/ECHO/`.
 
+Odnośniki w szablonach korzystają z `import.meta.env.BASE_URL`, dzięki czemu działają w obu środowiskach.
+
+## STRUKTURA PROJEKTU
+
+```text
+ECHO/
+├── .github/workflows/deploy.yml
+├── public/
+│   ├── images/
+│   └── style.css
+├── src/
+│   ├── components/
+│   │   ├── Navbar.astro
+│   │   ├── Footer.astro
+│   │   ├── SiteHead.astro
+│   │   ├── ProductCard.astro
+│   │   ├── Product.astro
+│   │   └── CategoryPage.astro
+│   ├── content/
+│   │   └── magazine/
+│   │       ├── *.md
+│   │       └── images/
+│   ├── data/
+│   │   ├── products/
+│   │   │   └── *.md
+│   │   ├── products.ts
+│   │   └── collections.ts
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── headphones.astro
+│   │   ├── earbuds.astro
+│   │   ├── speakers.astro
+│   │   ├── accessories.astro
+│   │   ├── collections/
+│   │   │   ├── index.astro
+│   │   │   └── [slug].astro
+│   │   ├── product/[id].astro
+│   │   ├── magazine.astro
+│   │   ├── magazine/[id].astro
+│   │   ├── cart.astro
+│   │   ├── checkout.astro
+│   │   ├── my-account.astro
+│   │   ├── contact.astro
+│   │   ├── privacy-policy.astro
+│   │   └── 404.astro
+│   ├── scripts/
+│   │   ├── cart.ts
+│   │   ├── checkout.ts
+│   │   ├── account.ts
+│   │   └── category-filters.ts
+│   └── content.config.ts
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+`Navbar.astro` pełni funkcję wspólnego komponentu nagłówka. `Footer.astro` zawiera wspólną stopkę, a `ProductCard.astro` jest używany na stronie głównej, w kategoriach, kolekcjach i rekomendacjach.
+
+Wspólne style znajdują się w `public/style.css`. Foldery `dist/`, `.astro/` i `node_modules/` są generowane przez narzędzia i nie stanowią źródła treści serwisu.
+
+## PRODUKTY W MARKDOWN
+
+Źródłem danych produktów są pliki **`src/data/products/*.md`**. Każdy produkt ma osobny plik.
+
+- Pomiędzy liniami `---` znajdują się metadane YAML: identyfikator, nazwa, cena, kategoria, kolekcja, kolory, dostępność, zdjęcia i pozostałe parametry.
+- Poniżej drugiej linii `---` znajduje się długi opis w Markdown.
+- `src/data/products.ts` automatycznie odczytuje wszystkie pasujące pliki i udostępnia wspólną tablicę `products`.
+- `src/pages/product/[id].astro` generuje statyczne podstrony produktów. `Product.astro` renderuje ich opisy przy użyciu `marked`.
+
+### Edycja produktów
+
+| Pole | Znaczenie |
+|---|---|
+| `description` | Krótki opis obok ceny |
+| `order` | Kolejność Featured; niższa liczba pojawia się wcześniej, domyślna wartość to 999 |
+| `popularity` | Sortowanie według popularności; wyższa liczba oznacza wyższą pozycję |
+| `originalPrice` | Cena regularna, przekreślana, gdy jest wyższa od `price` |
+| `badge` | Etykieta produktu, np. New lub Bestseller |
+| `gallery` | Lista zdjęć zawierających `src` i `alt` |
+| `variants` | Lista wariantów zawierających `label` i `productId` |
+| `specifications` | Parametry w parach `label` i `value` |
+| `reviews` | Opinie z polami `author`, `rating` i `text` |
+
+Zdjęcia produktów znajdują się w `public/images/`. W metadanych zapisuje się ścieżkę `/images/nazwa-pliku.png`, bez prefiksu `public` ani `/ECHO`.
+
+### Dodawanie produktów
+
+Nowy produkt dodawany jest za pomocą duplikacji już istniejących plików `.md`, nadając mu nową nazwę i unikalne `id`, a następnie uzupełniając nowe dane.
+
+Zostanie on automatycznie uwzględniony w odpowiedniej kategorii, filtrach, danych koszyka oraz istniejącej kolekcji, której nazwa odpowiada polu `collection`.
+
+Dostępne kategorie to `headphones`, `earbuds`, `speakers` i `accessories`. Nazwy kolekcji powinny odpowiadać wpisom w `src/data/collections.ts`, z zachowaniem wielkości liter.
+
+Filtry dostępności, kolekcji i kolorów powstają z danych produktów danej strony. Zakres cen zaczyna się od 0 i obejmuje co najmniej 1000 EUR; wyższe ceny automatycznie zwiększają górny limit. Wygląd próbek nowych kolorów można dopisać w obiekcie `swatches` w `CategoryPage.astro`.
+
+Nową kolekcję i jej okładkę dodaje się w `src/data/collections.ts`; jej typografię określa `public/style.css`. Produkty wyróżnione na stronie głównej wybiera lista `bestsellerIds` w `src/pages/index.astro`.
+
+## ARTYKUŁY W MARKDOWN
+
+Artykuły znajdują się w **`src/content/magazine/*.md`**. Kolekcję i wymagane metadane definiuje `src/content.config.ts`.
+
+Każdy wpis zawiera pola `title`, `description`, `pubDate`, `category`, `author`, `image`, `imageAlt` i `tags`, a następnie treść w Markdown.
+
+Nowy artykuł można utworzyć, kopiując istniejący wpis i zmieniając nazwę pliku, metadane oraz treść. Domyślnie nazwa pliku określa identyfikator wpisu używany w adresie `/magazine/[id]/`.
+
+Lista w `src/pages/magazine.astro` automatycznie wyświetla artykuły od najnowszego. Szablon `src/pages/magazine/[id].astro` generuje ich statyczne podstrony.
+
+## FUNKCJE DEMONSTRACYJNE I PRZECHOWYWANIE DANYCH
+
+- Koszyk, demonstracyjne zamówienia, profil oraz adres są przechowywane w `localStorage` danej przeglądarki. Stan demonstracyjnego wylogowania korzysta z `sessionStorage`.
+- Podczas pierwszej wizyty koszyk może zawierać dwa przykładowe produkty. Kod `ECHO10` nalicza 10% rabatu od wartości produktów.
+- Checkout symuluje złożenie zamówienia i zapisuje je lokalnie. Wybór BLIK, karty lub przelewu nie uruchamia prawdziwej płatności.
+- Panel konta prezentuje funkcje klienta bez rzeczywistego uwierzytelniania użytkownika.
+- Formularz kontaktowy i newsletter walidują dane oraz wyświetlają komunikaty demonstracyjne, lecz nie wysyłają wiadomości ani nie zapisują adresów do zewnętrznej listy mailingowej.
+- Linki społecznościowe prowadzą do zewnętrznych serwisów i mają charakter demonstracyjny.
+- Mapa przedstawia przykładową lokalizację COEX w Seulu.
+
+## DODATKOWE WYMAGANIA ASTRO
+
+| Wymaganie | Realizacja |
+|---|---|
+| Działanie lokalne i automatyczna publikacja na GitHub Pages | Skrypty npm, konfiguracja Astro i workflow GitHub Actions uruchamiany po wysłaniu zmian do `main` |
+| Wspólne komponenty Header, Footer i Card | `Navbar.astro`, `Footer.astro` i `ProductCard.astro` |
+| Wpisy blogowe w formacie Markdown | `src/content/magazine/*.md` |
+| Produkty jako wpisy Markdown i statyczne strony sklepu | `src/data/products/*.md` oraz szablon `src/pages/product/[id].astro` |
