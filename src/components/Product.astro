@@ -4,6 +4,7 @@ import Footer from './Footer.astro';
 import SiteHead from './SiteHead.astro';
 import ProductCard from './ProductCard.astro';
 import { products, type Product } from '../data/products';
+import { marked } from 'marked';
 
 interface Props {
   product: Product;
@@ -210,7 +211,7 @@ const price = new Intl.NumberFormat('en-IE', {
                   </button>
                 </h2>
                 <div id="product-description" class="accordion-collapse collapse show" data-bs-parent="#product-details">
-                  <div class="accordion-body"><p>{product.fullDescription ?? description}</p></div>
+                  <div class="accordion-body" set:html={marked.parse(product.fullDescription ?? description, {async: false,})}></div>
                 </div>
               </div>
               <div class="accordion-item">
