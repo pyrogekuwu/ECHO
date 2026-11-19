@@ -1,0 +1,27 @@
+---
+id: product-charms-silver
+name: CHARMS Silver
+sku: ECHO-CHA-SLV
+description: Pointed silver star motifs and clear rectangular centres bring ECHO's sculptural design language into a decorative accessory.
+specifications:
+  - label: Collection
+    value: CHARMS
+  - label: Product type
+    value: Decorative charm accessory
+  - label: Colour
+    value: Silver
+  - label: Design details
+    value: Pointed star motifs with clear rectangular centres
+  - label: Product code
+    value: ECHO-CHA-SLV
+category: accessories
+price: 19.99
+image: /images/product-charms-silver.jpg
+alt: Silver CHARMS accessory
+inStock: true
+collection: CHARMS
+color: Silver
+order: 10
+---
+
+CHARMS translates the star motif into a smaller ornamental form. Silver-toned points surround clear rectangular centres, combining sharp outlines with a jewellery-inspired appearance. The design echoes the decorative details found across ECHO's earbud collection, making it a visual continuation of the same sharp, sculptural design language. Its small-scale silhouette brings that character into the accessory collection.

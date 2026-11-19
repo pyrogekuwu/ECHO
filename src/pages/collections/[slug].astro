@@ -1,7 +1,9 @@
 ---
 import CategoryPage from '../../components/CategoryPage.astro';
 import { collections, type Collection } from '../../data/collections';
-import { products } from '../../data/products';
+import { getProducts } from '../../data/products';
+
+const products = await getProducts();
 
 export function getStaticPaths() {
   return collections.map((collection) => ({

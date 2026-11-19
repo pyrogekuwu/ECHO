@@ -1,0 +1,29 @@
+---
+id: product-starlight-silver
+name: STARLIGHT Earbuds Silver
+sku: ECHO-STA-SLV
+description: Sculptural silver stars with pink centre accents give STARLIGHT a playful, jewellery-inspired finish.
+specifications:
+  - label: Collection
+    value: STARLIGHT
+  - label: Product type
+    value: Earbuds
+  - label: Colours
+    value: Silver and pink
+  - label: Design details
+    value: Curved earpieces and star-shaped fronts with pink centre accents
+  - label: Product code
+    value: ECHO-STA-SLV
+category: earbuds
+price: 299.99
+image: /images/product-starlight-silver.png
+alt: Silver STARLIGHT earbuds
+inStock: true
+collection: STARLIGHT
+color:
+  - Silver
+  - Pink
+order: 6
+---
+
+STARLIGHT develops ECHO's star motif through a softer use of colour. Curved silver earpieces frame pointed star-shaped fronts, with pink accents creating a small focal point at the centre of each design. The contrast between the silver surfaces and pale pink details gives the earbuds an ornamental character. The silver-and-pink colourway connects the collection's futuristic silhouette with a playful jewellery influence.

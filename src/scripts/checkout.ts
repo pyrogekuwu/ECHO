@@ -1,4 +1,4 @@
-import { products } from '../data/products';
+import { products } from '../data/client-products';
 import { readCart, getCartTotals, saveCart } from './cart';
 
 const ORDERS_KEY = 'echo:orders:v1';

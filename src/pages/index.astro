@@ -2,8 +2,10 @@
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
-import { products } from '../data/products';
+import { getProducts } from '../data/products';
 import ProductCard from '../components/ProductCard.astro';
+
+const products = await getProducts();
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
