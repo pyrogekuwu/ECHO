@@ -1,0 +1,22 @@
+{
+    "id": "product-tamagotchi-keychain-silver",
+    "name": "TAMAGOTCHI Keychain Silver",
+    "sku": "ECHO-TAM-SLV",
+    "description": "A silver keychain inspired by handheld digital toys, finished with a screen-style face, small buttons and a dangling star detail.",
+    "fullDescription": "The TAMAGOTCHI keychain brings a nostalgic digital-toy reference into the ECHO accessory collection. Its rounded silver body, small front buttons and screen-style face create a miniature handheld silhouette. A key ring and short chain connect the main body to a hanging star detail. The combination of familiar toy-inspired shapes and a silver finish gives this accessory its distinctive character.",
+    "specifications": [
+      { "label": "Collection", "value": "TAMAGOTCHI" },
+      { "label": "Product type", "value": "Keychain accessory" },
+      { "label": "Colour", "value": "Silver" },
+      { "label": "Attachment", "value": "Key ring and short chain" },
+      { "label": "Design details", "value": "Digital-toy-inspired body, screen-style face and hanging star" },
+      { "label": "Product code", "value": "ECHO-TAM-SLV" }
+    ],
+    "category": "accessories",
+    "price": 29.99,
+    "image": "/images/product-tamagotchi-keychain-silver.jpg",
+    "alt": "Silver TAMAGOTCHI keychain",
+    "inStock": true,
+    "collection": "TAMAGOTCHI",
+    "color": "Silver"
+  }

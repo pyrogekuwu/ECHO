@@ -5,10 +5,8 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import SiteHead from '../components/SiteHead.astro';
 
-import { getProducts } from '../data/products';
+import { products } from '../data/products';
 import { collections } from '../data/collections';
-
-const products = await getProducts();
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 

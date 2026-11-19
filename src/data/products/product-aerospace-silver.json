@@ -1,0 +1,70 @@
+{
+    "id": "product-aerospace-silver",
+    "name": "AEROSPACE Earbuds Silver",
+    "sku": "ECHO-AER-SLV",
+    "description": "Sculptural silver earbuds with star-shaped details. AEROSPACE brings the visual language of jewellery to everyday audio.",
+    "fullDescription": "AEROSPACE explores the relationship between audio and personal style. Its silver finish, sculptural silhouette and star-shaped details make the earbuds a visible part of an outfit. This model belongs to ECHO’s experimental AEROSPACE collection.",
+    "specifications": [
+      { "label": "Collection", "value": "AEROSPACE" },
+      { "label": "Product type", "value": "Earbuds" },
+      { "label": "Colour", "value": "Silver"} ,
+      { "label": "Product code", "value": "ECHO-AER-SLV" }
+    ],
+    "category": "earbuds",
+    "price": 299.99,
+    "badge": "Bestseller",
+    "popularity": 80,
+    "image": "/images/product-aerospace-silver.png",
+    "alt": "Silver AEROSPACE earbuds",
+    "inStock": true,
+    "collection": "AEROSPACE",
+    "color": "Silver",
+    "gallery": [
+      {
+        "src": "/images/product-aerospace-silver.png",
+        "alt": "Silver AEROSPACE earbuds"
+      },
+      {
+        "src": "/images/product-aerospace-silver-detail-1.png",
+        "alt": "Silver AEROSPACE earbuds, detail view 1"
+      },
+      {
+        "src": "/images/product-aerospace-silver-detail-2.png",
+        "alt": "Silver AEROSPACE earbuds, detail view 2"
+      },
+      {
+        "src": "/images/product-aerospace-silver-detail-3.webp",
+        "alt": "Silver AEROSPACE earbuds, detail view 3"
+      },
+      {
+        "src": "/images/product-aerospace-silver-detail-4.jpg",
+        "alt": "Silver AEROSPACE earbuds, detail view 4"
+      }
+    ],
+    "variants": [
+      {
+        "label": "Black",
+        "productId": "product-aerospace-black"
+      },
+      {
+        "label": "Silver",
+        "productId": "product-aerospace-silver"
+      },
+      {
+        "label": "White",
+        "productId": "product-aerospace-white"
+      }
+    ],
+    "reviews": [
+      {
+        "author": "Alex",
+        "rating": 5,
+        "text": "The star-shaped details make this my favourite design in the collection."
+      },
+      {
+        "author": "Sam",
+        "rating": 4,
+        "text": "I like the silver finish and the sculptural shape."
+      }
+    ]
+  }

@@ -1,4 +1,4 @@
-import { products } from '../data/client-products';
+import { products } from '../data/products';
 
 export interface CartItem {
   productId: string;

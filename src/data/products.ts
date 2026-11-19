@@ -1,25 +1,52 @@
-import { getCollection } from 'astro:content';
-import type { Product } from './product-types';
+import lumiaWhite from './products/product-lumia-white.json';
+import vesperSilver from './products/product-vesper-silver.json';
+import venusSilver from './products/product-venus-silver.json';
+import aerospaceBlack from './products/product-aerospace-black.json';
+import aerospaceSilver from './products/product-aerospace-silver.json';
+import aerospaceWhite from './products/product-aerospace-white.json';
+import starlightSilver from './products/product-starlight-silver.json';
+import monoWhite from './products/product-mono-white.json';
+import sphereBlack from './products/product-sphere-black.json';
+import tamagotchiKeychainSilver from './products/product-tamagotchi-keychain-silver.json';
+import charmsSilver from './products/product-charms-silver.json';
 
-export type { Product, ProductImage } from './product-types';
-
-// Read Markdown for each page/build so content edits also appear during local development.
-export async function getProducts(): Promise<Product[]> {
-  const entries = await getCollection('products');
-  const products: Product[] = entries
-    .sort((a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id))
-    .map(({ data, body }) => {
-      const { order, ...product } = data;
-      return { ...product, fullDescription: body?.trim() || product.description };
-    });
-
-  const ids = new Set(products.map((product) => product.id));
-  for (const product of products) {
-    for (const variant of product.variants ?? []) {
-      if (!ids.has(variant.productId)) {
-        throw new Error(`Unknown variant "${variant.productId}" in product "${product.id}".`);
-      }
-    }
-  }
-  return products;
+export interface ProductImage {
+  src: string;
+  alt: string;
 }
+
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  collection: string;
+  color: string | string[];
+  price: number;
+  originalPrice?: number;
+  badge?: string;
+  popularity?: number;
+  image: string;
+  alt: string;
+  sku?: string;
+  description?: string;
+  fullDescription?: string;
+  gallery?: ProductImage[];
+  variants?: { label: string; productId: string }[];
+  inStock?: boolean;
+  specifications?: { label: string; value: string }[];
+  reviews?: { author: string; rating: number; text: string }[];
+}
+
+export const products: Product[] = [
+  lumiaWhite,
+  vesperSilver,
+  venusSilver,
+  aerospaceBlack,
+  aerospaceSilver,
+  aerospaceWhite,
+  starlightSilver,
+  monoWhite,
+  sphereBlack,
+  tamagotchiKeychainSilver,
+  charmsSilver,
+];

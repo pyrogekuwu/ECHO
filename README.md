@@ -80,13 +80,6 @@ W ustawieniach repozytorium **Settings → Pages → Source** wybierz **GitHub A
 
 **Środowisko:** Astro (szablony `.astro` generujące semantyczny HTML5), CSS3, Bootstrap 5 udostępniany przez CDN, niewielkie skrypty JavaScript i GitHub Codespaces. Główny widok znajduje się w `src/pages/index.astro`, niestandardowe style w `public/style.css`, grafiki w `public/images/`.
 
-### Produkty w Markdown
-
-Produkty są wpisami `.md` w `src/content/products/`, a artykuły w `src/content/magazine/`.
-Kolekcje są zdefiniowane w `src/content.config.ts`. Astro generuje z nich statyczne strony
-podczas budowania projektu; katalog nie wymaga serwerowego API.
-Instrukcja edycji cen, opisów, galerii i dodawania nowych produktów: [PRODUCTS.md](PRODUCTS.md).
-
 **Elementy już obecne w wersji roboczej:** znaczniki `header`, `nav`, `main`, `section` i `footer`, jeden nagłówek `h1`, teksty alternatywne dla merytorycznych obrazów, etykiety pól formularza, `meta viewport`, `title`, `description`, Open Graph oraz JSON-LD typu `Organization`. Zastosowano siatkę i komponenty Bootstrapa z własnymi nadpisaniami CSS, w tym menu mobilne oraz formularz.
 
 **Wymogi do utrzymania podczas kolejnych etapów:** układ mobile-first, testy przy szerokościach 360–390, 768 i co najmniej 1200 px, brak niekontrolowanego poziomego przewijania, elastyczne obrazy i typografia, cele dotykowe minimum 44 × 44 px, logiczna hierarchia nagłówków i widoczny fokus klawiatury. Dokumentacja projektu wymaga także walidacji danych strukturalnych oraz audytu Lighthouse. Obecny arkusz zawiera również reguły `@media (max-width: …)`, dlatego przejście na konsekwentnie mobile-first pozostaje zadaniem porządkującym, a nie zakończonym wdrożeniem.

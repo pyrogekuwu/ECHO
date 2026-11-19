@@ -1,10 +1,8 @@
 ---
-import { getEntry, render } from 'astro:content';
 import ProductPage from '../../components/Product.astro';
-import { getProducts, type Product } from '../../data/products';
+import { products, type Product } from '../../data/products';
 
-export async function getStaticPaths() {
-  const products = await getProducts();
+export function getStaticPaths() {
   return products.map((product) => ({
     params: { id: product.id },
     props: { product },
@@ -16,12 +14,6 @@ interface Props {
 }
 
 const { product } = Astro.props;
-const entry = await getEntry('products', product.id);
-if (!entry) throw new Error(`Missing Markdown entry for product "${product.id}".`);
-const { Content } = await render(entry);
-
 ---
 
-<ProductPage product={product}>
-  <Content slot="description" />
-</ProductPage>
+<ProductPage product={product} />
