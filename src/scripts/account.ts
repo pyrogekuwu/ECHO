@@ -1,4 +1,4 @@
-import { products } from '../data/products';
+import { products } from '../data/client-products';
 
 const ORDERS_KEY = 'echo:orders:v1';
 const PROFILE_KEY = 'echo:profile:v1';

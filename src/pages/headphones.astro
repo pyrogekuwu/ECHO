@@ -1,6 +1,8 @@
 ---
 import CategoryPage from '../components/CategoryPage.astro';
-import { products } from '../data/products';
+import { getProducts } from '../data/products';
+
+const products = await getProducts();
 
 const category = 'headphones';
 

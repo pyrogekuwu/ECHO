@@ -1,0 +1,20 @@
+---
+import { getProducts } from '../data/products';
+import type { ClientProduct } from '../data/product-types';
+
+const products = await getProducts();
+const catalog: ClientProduct[] = products.map((product) => ({
+  id: product.id,
+  name: product.name,
+  category: product.category,
+  price: product.price,
+  image: product.image,
+  alt: product.alt,
+  inStock: product.inStock,
+  variants: product.variants,
+}));
+// Escape '<' so product text cannot terminate the non-executable JSON script.
+const serialized = JSON.stringify(catalog).replace(/</g, '\\u003c');
+---
+
+<script type="application/json" id="product-catalog" set:html={serialized}></script>
